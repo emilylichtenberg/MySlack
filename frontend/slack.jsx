@@ -8,7 +8,20 @@ import {signup, login, logout} from './util/session_api_util' //testing
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const store = configureStore();
+
+    let preloadedState
+    if (window.currentUser) {
+        preloadedState = {
+            session: {id: window.currentUser.id},
+            entities: {
+                users: {[window.currentUser.id]: window.currentUser}
+            }
+        }
+    } else {
+        preloadedState = {}
+    }
+    const store = configureStore(preloadedState);
+
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}/>, root)
 
