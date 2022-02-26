@@ -3,7 +3,7 @@ import React from "react";
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {email: '', password: '', displayName: ''};
+        this.state = {username: '', password: ''};
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -12,17 +12,19 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.action(this.state)
+        this.props.action(this.state);
+        this.setState({username: '', password: ''})
     }
 
     render() {
-        const {formType} = this.props
+        const {formType, otherLoc} = this.props
         return(
         <div>
-            <h1>{formType}</h1>
+            <h1>Welcome to Slack</h1>
+            <h2>Please {formType} or {otherLoc} instead</h2>
             <form onSubmit={this.handleSubmit}>
-                <label>Email: 
-                    <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
+                <label>Username: 
+                    <input type="text" value={this.state.username} onChange={this.handleChange('username')}/>
                 </label>
                 <br />
                 <label>Password: 
@@ -35,3 +37,5 @@ class SessionForm extends React.Component {
         )
     }
 }
+
+export default SessionForm

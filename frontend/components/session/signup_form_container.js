@@ -7,7 +7,8 @@ import SessionForm from './session_form';
 
 const mSTP = state => ({
     errors: state.errors.session,
-    formType: 'sign up'
+    formType: 'Sign Up',
+    otherLoc: <Link to='/login'>Log In</Link>
 });
 
 const mDTP = dispatch => ({
