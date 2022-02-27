@@ -4,15 +4,13 @@ import AuthRoute from '../util/route_util'
 import WelcomeContainer from './welcome/welcome_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import SplashNavContainer from "./welcome/splash_nav_container";
 
 const App = () => (
   <div>
-    <header>
-      <h1>Welcome to Slack</h1>
-      <WelcomeContainer />
-    </header>
-    <AuthRoute path='/login' component={LoginFormContainer}/>
-    <AuthRoute path='/signup' component={SignupFormContainer}/>
+    <Route exact path='/' component={SplashNavContainer}/>
+    <Route path='/signin' component={LoginFormContainer}/>
+    <Route path='/signup' component={SignupFormContainer}/>
   </div>
 );
 

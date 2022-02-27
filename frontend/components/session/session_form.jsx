@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import logo from '../../../app/assets/images/SlackIcon.png'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -11,27 +13,41 @@ class SessionForm extends React.Component {
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        // debugger
+        e.preventDefault();
         this.props.action(this.state);
         this.setState({username: '', password: ''})
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors()
+    }
+
     render() {
-        const {formType, otherLoc} = this.props
+        const {formType, otherLoc} = this.props;
+        // debugger
+        let sessionErrors = this.props.errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+        ))
+
         return(
-        <div>
-            <h1>Welcome to Slack</h1>
-            <h2>Please {formType} or {otherLoc} instead</h2>
+        <div className='session-form'>
+            <Link to='/' className='form-slackLogo'>
+                <img className="form-logo-image" src={logo} alt="logo" />
+                <p>mySlack</p>
+            </Link>
+            <h2 className="form-welcome-message">{formType} below</h2>
+            <h4 className="form-other-nav">{otherLoc} instead</h4>
             <form onSubmit={this.handleSubmit}>
-                <label>Username: 
-                    <input type="text" value={this.state.username} onChange={this.handleChange('username')}/>
-                </label>
+                <input className="form-input" placeholder='Enter Username' type="text" value={this.state.username} onChange={this.handleChange('username')}/>
                 <br />
-                <label>Password: 
-                    <input type="password" value={this.state.password} onChange={this.handleChange('password')}/>
-                </label>
+                <input className="form-input" placeholder='Enter Password' type="password" value={this.state.password} onChange={this.handleChange('password')}/>
                 <br />
-                <input type="submit" value={formType} />
+                <ul className="form-errors">{sessionErrors}</ul>
+                <input className="form-button" type="submit" value={formType} />
+                <br />
+                <button className="form-button">Demo Log In</button>
             </form>
         </div>
         )

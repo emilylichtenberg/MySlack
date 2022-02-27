@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/session_actions';
+import { login, removeErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
 const mSTP = state => ({
     errors: state.errors.session,
-    formType: 'Log In',
-    otherLoc: <Link to='/signup'>Sign Up</Link>
+    formType: 'Sign In',
+    otherLoc: <Link to='/signup'>Create an account</Link>
 })
 
 const mDTP = dispatch => ({
-    action: user => dispatch(login(user))
+    action: user => dispatch(login(user)),
+    removeErrors: () => dispatch(removeErrors())
 })
 
 export default connect(mSTP, mDTP)(SessionForm);

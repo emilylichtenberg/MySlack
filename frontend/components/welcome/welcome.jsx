@@ -7,13 +7,13 @@ const Welcome = (props) => {
   
     const loggedin = () => (
         <div>
-            <h2>Welcome {currentUser.displayName}</h2>
+            <h2>Welcome {currentUser.username}</h2>
             <button onClick={logout}>Log Out</button>
         </div>
     )
     const loggedout = () => (
         <div>
-            <Link to='/login'>Login</Link>
+            <Link to='/signin'>Sign In</Link>
             <br />
             <Link to='/signup'>Sign Up</Link>
         </div>
