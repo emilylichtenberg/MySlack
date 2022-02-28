@@ -6,7 +6,6 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const REMOVE_ERRORS = 'REMOVE_ERRORS'
 
 const receiveCurrentUser = currentUser => {
-  // debugger
   return ({
     type: RECEIVE_CURRENT_USER,
     currentUser
@@ -45,3 +44,13 @@ export const logout = () => (dispatch) => {
   SessionAPIUtil.logout()
     .then(() => dispatch(logoutCurrentUser()))
 )}
+
+export const loginDemo = () => dispatch => {
+  const user = {username: 'demoUser', password: '123456'};
+  // debugger
+  return(
+    SessionAPIUtil.login(user)
+    .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(errors => dispatch(receiveErrors(errors))) 
+  )
+}

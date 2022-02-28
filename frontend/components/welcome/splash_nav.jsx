@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from '../../../app/assets/images/SlackIcon.png'
 
-const SplashNav = ({logout, currentUser}) => {
+const SplashNav = ({logout, loginDemo, currentUser}) => {
+    // debugger
     const loggedOut = () => (
         <div className='splash-nav'>
             <div className="nav-left">
@@ -15,7 +16,7 @@ const SplashNav = ({logout, currentUser}) => {
             <div className="nav-right">
                 <Link className='nav-signin' to='/signin'>Sign In</Link>
                 <Link className='nav-signup' to='/signup'>Sign Up</Link>
-                <button className='nav-demologin'>TRY A DEMO</button>
+                <button className='nav-demologin' onClick={() => loginDemo()}>TRY A DEMO</button>
             </div>
         </div>
     )
@@ -29,7 +30,7 @@ const SplashNav = ({logout, currentUser}) => {
                 <p className='about-me'>About Me</p>
             </div>
             <div className="nav-right">
-                <button className='nav-logout' onClick={logout()}>Log Out</button>
+                <button className='nav-logout' onClick={() => logout()}>Log Out</button>
             </div>
         </div>
     )

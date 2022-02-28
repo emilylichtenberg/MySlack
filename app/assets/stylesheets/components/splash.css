@@ -30,7 +30,7 @@
     /* padding: 10px */
 }
 
-.nav-signin, .nav-signup, .nav-demologin, .nav-slackLogo, .about-me {
+.nav-signin, .nav-signup, .nav-demologin, .nav-logout, .nav-slackLogo, .about-me {
     padding: 5px 14px;
     margin: 0 10px;
     cursor: pointer;
@@ -67,7 +67,7 @@
     box-shadow: inset 0 0 0 1px #f4ede4
 }
 
-.nav-demologin {
+.nav-demologin, .nav-logout {
     border: 1px solid #611f69;
     background-color: white;
     color: #611f69;
@@ -75,7 +75,7 @@
     margin-right: 100px;
 }
 
-.nav-demologin:hover {
+.nav-demologin:hover, .nav-logout:hover {
     background-color: #f7f3ee;
 }
 /* LOGIN/SIGNUP FORMS */
@@ -222,17 +222,18 @@
 
 .mySlack-stats {
     display: flex;
-    justify-content: space-around;
-    margin-right: 0;
+    justify-content: space-between;
+    margin-right: -50px;
 }
 
 #stat-1, #stat-2, #stat-3 {
     width: 21%;
+    box-sizing: border-box;
 }
 
-#stat-2, #stat-3 {
+/* #stat-2, #stat-3 {
     padding-left: 8%;
-}
+} */
 #stat-1 p, #stat-2 p, #stat-3 p {
     margin-top: 10px;
     line-height: 1.3;
@@ -251,9 +252,22 @@
     display: flex;
     height: 100px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .splash-footer-left {
     margin-left: 70px;
-    
+}
+
+.splash-footer-right {
+    display: flex;
+    margin-right: 70px;
+}
+
+.splash-footer-right button {
+    color: #3d1640;
+    background-color: transparent;
+    border: none;
+    height: 50px;
+    margin: 2%;
 }

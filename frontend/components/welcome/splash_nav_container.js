@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { logout } from "../../util/session_api_util"
+import { loginDemo, logout } from "../../actions/session_actions"
 import SplashNav from "./splash_nav"
 
 const mSTP = state => ({
@@ -7,7 +7,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    loginDemo: () => dispatch(loginDemo())
 })
 
 export default connect(mSTP, mDTP)(SplashNav)

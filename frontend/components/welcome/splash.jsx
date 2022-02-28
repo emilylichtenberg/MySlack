@@ -14,7 +14,7 @@ class Splash extends React.Component {
         return(
             <div>
                 <SplashNavContainer />
-                <SplashBody />
+                <SplashBody loginDemo={this.props.loginDemo}/>
                 <SplashFooter />
             </div>
         )

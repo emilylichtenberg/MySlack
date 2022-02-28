@@ -9,7 +9,7 @@ const SplashBody = (props) => {
                     <p id="sb1l-mySlack">mySlack is your</p>
                     <p id="sb1l-digital">digital HQ</p>
                     <p id="sb1l-paragraph">Transform the way you work with one place for everyone and everything you need to get stuff done.</p>
-                    <button id="sb1l-button">TRY A DEMO</button>
+                    <button id="sb1l-button" onClick={() => props.loginDemo()}>TRY A DEMO</button>
                 </div>
                 <div className="splash-body-1-right">
                     
