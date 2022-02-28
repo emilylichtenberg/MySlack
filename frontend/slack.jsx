@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore(preloadedState);
 
     const root = document.getElementById('root');
-    ReactDOM.render(<ChatRoom />, root)
-    {/* <Root store={store}/> */}
+    ReactDOM.render(<Root store={store}/> , root)
+
     
     // for testing
     window.signup = signup;

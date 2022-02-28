@@ -1,5 +1,6 @@
 import React from "react";
-import MessageForm from './message_form'
+import HeaderContainer from "../header/header_container";
+// import MessageForm from './message_form'
 
 class ChatRoom extends React.Component {
     constructor(props) {
@@ -38,12 +39,18 @@ class ChatRoom extends React.Component {
         );
     }
 
+    loadChat(e) {
+        // shows all chat history even after refresh. maybe include this in component did mount?
+        e.preventDefault();
+        App.cable.subscriptions.subscriptions[0].load();
+    }
+
     componentDidUpdate() {
         this.bottom.current.scrollIntoView();
     }
 
     render() {
-        const messageList = this.state.messages.map(message => {
+        const messageList = this.state.messages.map((message, ind) => {
             return (
                 <li key={message.id}>{message}
                     <div ref={this.bottom}/>
@@ -52,10 +59,16 @@ class ChatRoom extends React.Component {
         });
         return (
             <div className="chatroom-container">
+                {/* <HeaderContainer /> */}
                 <div>ChatRoom</div>
-                <ul className="message-list">{messageList}</ul>
+                    <button className="load-button" 
+                    onClick={this.loadChat.bind(this)}>
+                    Load Chat History
+                    </button>
+                <div className="message-list">{messageList}</div>
+                {/* create a MessageItem component? will want to include sender name, body, time sent */}
                 <MessageForm />
-            </div>
+          </div>
         )
     }
 }

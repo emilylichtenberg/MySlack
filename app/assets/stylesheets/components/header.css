@@ -1,0 +1,23 @@
+.header {
+    background-color: #3d1640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+}
+
+.header input {
+    background-color: #6c476d;
+    color: white;
+    opacity: 1;
+    height: 20px;
+    width: 50%;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+}
+
+::placeholder {
+    opacity: 1;
+    color: white;
+}
