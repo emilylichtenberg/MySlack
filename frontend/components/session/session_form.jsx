@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
         return(
         <div className='session-form'>
             <Link to='/' className='form-slackLogo'>
-                <img className="form-logo-image" src={logo} alt="logo" />
+                <img className="form-logo-image" src={window.SlackIcon} alt="logo" />
                 <p>mySlack</p>
             </Link>
             <h2 className="form-welcome-message">{formType} below</h2>

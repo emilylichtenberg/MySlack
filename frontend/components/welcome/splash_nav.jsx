@@ -7,7 +7,7 @@ const SplashNav = ({logout, loginDemo, currentUser}) => {
         <div className='splash-nav'>
             <div className="nav-left">
                 <Link to='/' className='nav-slackLogo'>
-                    <img className="nav-logo-image" src={logo} alt="logo" />
+                    <img className="nav-logo-image" src={window.SlackIcon} alt="logo" />
                     <h2>mySlack</h2>
                 </Link>
                 <p className='about-me'>About Me</p>
