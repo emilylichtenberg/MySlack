@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         this.props.action(this.state);
         this.setState({username: '', password: ''})
@@ -26,7 +25,7 @@ class SessionForm extends React.Component {
 
     render() {
         const {formType, otherLoc, loginDemo} = this.props;
-        // debugger
+
         let sessionErrors = this.props.errors.map((error, idx) => (
             <li key={idx}>{error}</li>
         ))

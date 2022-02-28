@@ -3,7 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import logo from '../../../app/assets/images/SlackIcon.png'
 
 const SplashNav = ({logout, loginDemo, currentUser}) => {
-    // debugger
     const loggedOut = () => (
         <div className='splash-nav'>
             <div className="nav-left">

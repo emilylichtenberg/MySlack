@@ -47,7 +47,6 @@ export const logout = () => (dispatch) => {
 
 export const loginDemo = () => dispatch => {
   const user = {username: 'demoUser', password: '123456'};
-  // debugger
   return(
     SessionAPIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)))

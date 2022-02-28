@@ -6,7 +6,6 @@ import SessionForm from './session_form';
 
 
 const mSTP = state => {
-    // debugger
     return({
         errors: state.errors.session,
         formType: 'Sign Up',
