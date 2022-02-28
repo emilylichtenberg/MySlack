@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const {formType, otherLoc} = this.props;
+        const {formType, otherLoc, loginDemo} = this.props;
         // debugger
         let sessionErrors = this.props.errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -46,9 +46,8 @@ class SessionForm extends React.Component {
                 <br />
                 <ul className="form-errors">{sessionErrors}</ul>
                 <input className="form-button" type="submit" value={formType} />
-                <br />
-                <button className="form-button">Demo Log In</button>
             </form>
+                <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
         </div>
         )
     }
