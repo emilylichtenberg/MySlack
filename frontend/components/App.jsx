@@ -5,13 +5,13 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import SplashContainer from './welcome/splash_container';
 import HeaderContainer from './header/header_container'
-
+import SideNavContainer from './side_nav/side_nav_container'
 
 const App = () => (
   <div>
     {/* <Route exact path='/' component={SplashContainer}/> */}
     <Route exact path='/' component={HeaderContainer}/>
-    <Route exact path='/' component={SidebarContainer}/>
+    <Route exact path='/' component={SideNavContainer}/>
     <Route path='/signin' component={LoginFormContainer}/>
     <Route path='/signup' component={SignupFormContainer}/>
   </div>

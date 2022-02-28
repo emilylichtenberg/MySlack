@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
     height: 38px;
+    width: 100%;
+    border-bottom: .1px solid #bbb4aa;
+    position: fixed;
 }
 
 .header input {
@@ -15,6 +18,7 @@
     text-align: center;
     border-radius: 6px;
     border: none;
+    border-color: none;
 }
 
 ::placeholder {
