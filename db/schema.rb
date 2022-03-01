@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_151336) do
+ActiveRecord::Schema.define(version: 2022_03_01_013145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: :cascade do |t|
+    t.string "chat_type", null: false
+    t.string "name"
+    t.string "description"
+    t.boolean "private"
+    t.integer "admin_id"
+    t.integer "workspace_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text "body"

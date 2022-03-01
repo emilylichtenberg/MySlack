@@ -6,12 +6,14 @@ import SignupFormContainer from './session/signup_form_container';
 import SplashContainer from './welcome/splash_container';
 import HeaderContainer from './header/header_container'
 import SideNavContainer from './side_nav/side_nav_container'
+import ChatRoom from "./action_cable/chat_room";
 
 const App = () => (
   <div>
-    {/* <Route exact path='/' component={SplashContainer}/> */}
-    <Route exact path='/' component={HeaderContainer}/>
-    <Route exact path='/' component={SideNavContainer}/>
+    <Route exact path='/' component={SplashContainer}/>
+    {/* <Route exact path='/' component={HeaderContainer}/>
+    <Route exact path='/' component={SideNavContainer}/> */}
+    <Route  path='/cable' component={ChatRoom}/>
     <Route path='/signin' component={LoginFormContainer}/>
     <Route path='/signup' component={SignupFormContainer}/>
   </div>

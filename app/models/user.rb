@@ -6,6 +6,14 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_many :messages,
+        foreign_key: :sender_id,
+        class_name: :Message
+    
+    has_many :chats_as_admin,
+        foreign_key: :admin_id,
+        class_name: :Chat
+
     def self.find_by_credentials(username, password)
         @user = User.find_by(username: username)
         if @user && @user.is_password?(password)

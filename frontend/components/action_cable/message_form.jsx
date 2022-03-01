@@ -3,7 +3,8 @@ import React from "react";
 class MessageForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {body: ''};
+        this.state = {body: '', chat_id: 1, sender_id: 1, parent_message_id: 1}; //update to be dynamic
+            // add chat id, curr user etc to state on submit
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -13,8 +14,9 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        App.cable.subscriptions.subscriptions[0].speak({message: this.state.body})
-        this.setState({body: ''})
+        // debugger
+        App.cable.subscriptions.subscriptions[0].speak({message: this.state}) // message: this.state
+        this.setState({body: ''}) //
     }
 
     render() {

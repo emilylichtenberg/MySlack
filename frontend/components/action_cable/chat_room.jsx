@@ -1,15 +1,17 @@
 import React from "react";
 import HeaderContainer from "../header/header_container";
-// import MessageForm from './message_form'
+import MessageForm from './message_form'
 
 class ChatRoom extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = {messages: []};
         this.bottom = React.createRef();
     }
 
     componentDidMount() {
+        debugger
         // creating a subscription to match the chat_channel.rb backend
         // channel - subscription to this channel is created once.  will make this dynamic for specific channel?
         // received - when new data is transmitted to stream, received function invoked and message added to state
@@ -18,15 +20,16 @@ class ChatRoom extends React.Component {
             {channel: 'ChatChannel'},
             {
                 received: data => {
+                    debugger
                     switch (data.type) {
                       case "message":
-                        this.setState({
-                          messages: this.state.messages.concat(data.message)
-                        });
+                        this.props.receiveMessage(data.message);
                         break;
                       case "messages":
                         this.setState({ messages: data.messages });
                         break;
+                      case "remove":
+                        this.props.removeMessage(data.messageId)
                     }
                   },
                 speak: function(data) {
@@ -34,7 +37,13 @@ class ChatRoom extends React.Component {
                 },
                 load: function() {
                     return this.perform('load');
-                }
+                },
+                update: function(data) {
+                    return this.perform('update', data);
+                },
+                delete: function(data) {
+                    return this.perform('delete', data);
+                },
             }
         );
     }
@@ -46,29 +55,28 @@ class ChatRoom extends React.Component {
     }
 
     componentDidUpdate() {
+        // debugger
         this.bottom.current.scrollIntoView();
     }
 
     render() {
-        const messageList = this.state.messages.map((message, ind) => {
-            return (
-                <li key={message.id}>{message}
-                    <div ref={this.bottom}/>
-                </li>
-            );
-        });
-        return (
+        // debugger
+        return(
             <div className="chatroom-container">
-                {/* <HeaderContainer /> */}
-                <div>ChatRoom</div>
-                    <button className="load-button" 
+                <ul>
+                    {
+                        this.state.messages.map((message, ind) => <li key={ind}>{message.body}</li>)
+                        // ADD back in div for reference so scroll into view works
+                        // any time we update page we want that bottom div to be in view
+                    }
+                    <div ref={this.bottom} />
+                </ul>
+                <button className="load-button" 
                     onClick={this.loadChat.bind(this)}>
                     Load Chat History
-                    </button>
-                <div className="message-list">{messageList}</div>
-                {/* create a MessageItem component? will want to include sender name, body, time sent */}
+                </button>
                 <MessageForm />
-          </div>
+            </div>
         )
     }
 }

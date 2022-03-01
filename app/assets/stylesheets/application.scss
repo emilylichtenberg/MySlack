@@ -14,5 +14,7 @@
  *= require_self
  */
 
- @import 'reset.css';
- /* @import 'components/_header.css'; */
+ @import 'base/reset.css';
+
+ @import 'base/colors.scss';
+ @import 'components/_splash.scss';

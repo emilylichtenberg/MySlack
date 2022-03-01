@@ -21,7 +21,9 @@
     border-color: none;
 }
 
-::placeholder {
+.header ::placeholder {
     opacity: 1;
     color: white;
 }
+
+  
