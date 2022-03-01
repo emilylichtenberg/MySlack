@@ -6,5 +6,6 @@ class Workspace < ApplicationRecord
         class_name: :User
 
     has_many :chats,
-        foreign_key
+        foreign_key: :workspace_id,
+        class_name: :Chat
 end

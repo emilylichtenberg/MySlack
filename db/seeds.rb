@@ -9,6 +9,7 @@
 demoUser = User.create!(username: 'demoUser', password: '123456')
 user2 = User.create!(username: 'emily', password: '123456')
 
-chat1 = Chat.create!(chat_type: 'channel', name: 'general', description: 'for general discussion', private: false, admin_id: 1)
-chat2 = Chat.create!(chat_type: 'channel', name: 'test', description: 'test', private: false, admin_id: 1)
+workspace1 = Workspace.create!(name: 'App Academy', admin_id: 1)
 
+chat1 = Chat.create!(chat_type: 'channel', name: 'general', description: 'for general discussion', private: false, admin_id: 1, workspace_id: 1)
+chat2 = Chat.create!(chat_type: 'channel', name: 'test', description: 'test', private: false, admin_id: 1, workspace_id: 1)

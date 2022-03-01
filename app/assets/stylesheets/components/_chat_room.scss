@@ -1,0 +1,15 @@
+.chatroom-container {
+    border: 1px solid black;
+    margin-left: 260px;
+    padding-top: 38px;
+    // overflow-y: scroll;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.message-list {
+    overflow-y: auto;
+}

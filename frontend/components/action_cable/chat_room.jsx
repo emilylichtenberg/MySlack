@@ -6,7 +6,7 @@ class ChatRoom extends React.Component {
     constructor(props) {
         super(props);
         // debugger
-        this.state = {messages: []};
+        // this.state = {messages: []};
         this.bottom = React.createRef();
     }
 
@@ -27,7 +27,7 @@ class ChatRoom extends React.Component {
                         this.props.receiveMessage(data.message);
                         break;
                       case "messages":
-                        this.setState({ messages: data.messages });
+                        this.props.receiveMessages(data.messages)
                         break;
                       case "remove":
                         this.props.removeMessage(data.messageId)
@@ -52,6 +52,7 @@ class ChatRoom extends React.Component {
     loadChat(e) {
         // shows all chat history even after refresh. maybe include this in component did mount?
         e.preventDefault();
+        // debugger
         App.cable.subscriptions.subscriptions[0].load();
     }
 
@@ -61,12 +62,12 @@ class ChatRoom extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return(
             <div className="chatroom-container">
-                <ul>
+                <ul className="message-list">
                     {
-                        this.state.messages.map((message, ind) => <li key={ind}>{message.body}</li>)
+                        this.props.messages.map((message, ind) => <li key={ind}>{message.body}</li>)
                         // ADD back in div for reference so scroll into view works
                         // any time we update page we want that bottom div to be in view
                     }

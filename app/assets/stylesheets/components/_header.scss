@@ -7,6 +7,7 @@
     width: 100%;
     border-bottom: .1px solid $border-purple;
     position: fixed;
+    z-index: 2;
 }
 
 .header input {
