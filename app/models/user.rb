@@ -14,6 +14,10 @@ class User < ApplicationRecord
         foreign_key: :admin_id,
         class_name: :Chat
 
+    has_many :workspaces_as_admin,
+        foreign_key: :admin_id,
+        class_name: :Workspace
+
     def self.find_by_credentials(username, password)
         @user = User.find_by(username: username)
         if @user && @user.is_password?(password)
