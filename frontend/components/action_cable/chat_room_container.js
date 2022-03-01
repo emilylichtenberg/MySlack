@@ -3,7 +3,7 @@ import { receiveMessage, receiveMessages, removeMessage } from "../../actions/me
 import ChatRoom from "./chat_room";
 
 const mSTP = (state, ownProps) => ({
-    messages: Object.values(state.messages),
+    messages: Object.values(state.entities.messages),
     currentUser: state.entities.users[state.session.id]
 });
 

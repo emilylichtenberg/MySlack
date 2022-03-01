@@ -4,8 +4,8 @@
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background-color: #3d1640;
-    color: #f4ede4;
+    background-color: $dark-purple;
+    color: $light-beige;
     text-decoration: none;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -38,7 +38,7 @@
 
 .nav-slackLogo, .nav-slackLogo a {
     font-weight: bold;
-    color: #f4ede4;
+    color: $light-beige;
     display: flex;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .nav-signin, .nav-signin a {
-    color: #f4ede4;
+    color: $light-beige;
 }
 
 .nav-signin:hover {
@@ -57,20 +57,20 @@
 }
 
 .nav-signup, .nav-signup a, .nav-logout {
-    border: 1px solid #f4ede4;
-    background-color: #3d1640;
-    color: #f4ede4;
+    border: 1px solid $light-beige;
+    background-color: $dark-purple;
+    color: $light-beige;
     border-radius: 4px;
 }
 
 .nav-signup:hover{
-    box-shadow: inset 0 0 0 1px #f4ede4
+    box-shadow: inset 0 0 0 1px $light-beige
 }
 
 .nav-demologin, .nav-logout {
-    border: 1px solid #611f69;
+    border: 1px solid $light-purple;
     background-color: white;
-    color: #611f69;
+    color: $light-purple;
     border-radius: 4px;
     margin-right: 100px;
 }
@@ -139,8 +139,8 @@
     width: 50%;
     padding: 5px;
     margin: 1% 0;
-    background-color: #611f69;
-    color: #f4ede4;
+    background-color: $light-purple;
+    color: $light-beige;
     font-weight: bold;
     border: none;
     border-radius: 3px;
@@ -148,7 +148,7 @@
 }
 
 .form-button:hover {
-    background-color: #67456b;
+    background-color: $grey-purple;
 }
 
 /* SPLASH BODY */
@@ -157,7 +157,7 @@
 .splash-body-1 {
     display: flex;
     height: 430px;
-    background-color: #611f69;
+    background-color: $light-purple;
     padding-top: 160px;
 }
 
@@ -190,9 +190,9 @@
 }
 
 #sb1l-button {
-    border: 1px solid #611f69;
+    border: 1px solid $light-purple;
     background-color: white;
-    color: #611f69;
+    color: $light-purple;
     border-radius: 4px;
     cursor: pointer;
     padding: 15px 30px 15px 30px;
@@ -242,13 +242,13 @@
 .mySlack-stats span {
     font-size: 50px;
     font-weight: bold;
-    color: #611f69;
+    color: $light-purple;
     transform: scaleY(1.5)
 }
 
 /* FOOTER */
 .splash-footer {
-    background-color: #f4ede4;
+    background-color: $light-beige;
     display: flex;
     height: 100px;
     align-items: center;
@@ -265,7 +265,7 @@
 }
 
 .splash-footer-right button {
-    color: #3d1640;
+    color: $dark-purple;
     background-color: transparent;
     border: none;
     height: 50px;

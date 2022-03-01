@@ -1,16 +1,16 @@
 .header {
-    background-color: #3d1640;
+    background-color: $dark-purple;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 38px;
     width: 100%;
-    border-bottom: .1px solid #bbb4aa;
+    border-bottom: .1px solid $border-purple;
     position: fixed;
 }
 
 .header input {
-    background-color: #6c476d;
+    background-color: $grey-purple;
     color: white;
     opacity: 1;
     height: 20px;

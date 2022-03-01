@@ -5,22 +5,23 @@ import MessageForm from './message_form'
 class ChatRoom extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         this.state = {messages: []};
         this.bottom = React.createRef();
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         // creating a subscription to match the chat_channel.rb backend
         // channel - subscription to this channel is created once.  will make this dynamic for specific channel?
         // received - when new data is transmitted to stream, received function invoked and message added to state
         // speak - sends data to backend. invokes backend speak method
+        // const that = this
         App.cable.subscriptions.create(
             {channel: 'ChatChannel'},
             {
                 received: data => {
-                    debugger
+                    // debugger
                     switch (data.type) {
                       case "message":
                         this.props.receiveMessage(data.message);
@@ -60,7 +61,7 @@ class ChatRoom extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         return(
             <div className="chatroom-container">
                 <ul>
