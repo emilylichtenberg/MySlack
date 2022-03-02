@@ -64,6 +64,7 @@ class ChatRoom extends React.Component {
 
     render() {
         // debugger
+        // debugger
         return(
             <div className="chatroom-container">
                 <ul className="message-list">
@@ -79,7 +80,7 @@ class ChatRoom extends React.Component {
                     onClick={this.loadChat.bind(this)}>
                     Load Chat History
                 </button> */}
-                <MessageForm />
+                <MessageForm currentUser={this.props.currentUser}/>
             </div>
         )
     }

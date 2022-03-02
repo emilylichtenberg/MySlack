@@ -37,7 +37,7 @@
 
 .message-header {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 5px;
     // background-color: yellow;
 }
@@ -51,7 +51,8 @@
 #message-time {
     font-size: 10px;
     color: gray;
-    margin-top: .5%;
+    // margin-top: .5%;
+    margin-left: 5%;
 }
 
 .message-content {
