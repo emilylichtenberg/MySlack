@@ -4,7 +4,8 @@ import ChatRoom from "./chat_room";
 
 const mSTP = (state, ownProps) => ({
     messages: Object.values(state.entities.messages),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    users: state.entities.users
 });
 
 const mDTP = dispatch => ({

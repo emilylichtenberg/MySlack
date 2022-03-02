@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderContainer from "../header/header_container";
 import MessageForm from './message_form'
+import MessageItem from "./message_item";
 
 class ChatRoom extends React.Component {
     constructor(props) {
@@ -67,16 +68,17 @@ class ChatRoom extends React.Component {
             <div className="chatroom-container">
                 <ul className="message-list">
                     {
-                        this.props.messages.map((message, ind) => <li key={ind}>{message.body}</li>)
+                        this.props.messages.map((message, ind) => <MessageItem key={message.id} message={message} users={this.props.users}/>)
+                        // <li key={ind}>{message.body}</li>
                         // ADD back in div for reference so scroll into view works
                         // any time we update page we want that bottom div to be in view
                     }
                     <div ref={this.bottom} />
                 </ul>
-                <button className="load-button" 
+                {/* <button className="load-button" 
                     onClick={this.loadChat.bind(this)}>
                     Load Chat History
-                </button>
+                </button> */}
                 <MessageForm />
             </div>
         )
