@@ -9,7 +9,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 class MessageItem extends React.Component {
     constructor(props) {
         super(props)
-        props.receiveUsers(props.users) // when you fetch channel you will also fet all users in that channel
+        // props.receiveUsers(props.users) // when you fetch channel you will also fet all users in that channel
     }
 
     render() {

@@ -8,6 +8,11 @@ class Api::ChatsController < ApplicationController
         end
     end
 
+    def index
+        @chats = Chat.all
+        render '/api/chats/index'
+    end
+
     private
     def chat_params
         params.require(:chat).permit(:chat_type, :name, :description, :private, :admin_id, :workspace_id)

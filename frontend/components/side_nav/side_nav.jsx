@@ -1,4 +1,5 @@
 import React from "react";
+import ChatIndexContainer from '../chats/chats_index_container'
 
 class SideNav extends React.Component {
     constructor(props) {
@@ -6,7 +7,7 @@ class SideNav extends React.Component {
         this.top = React.createRef()
     }
 
-    componentDidUpdate() {
+    componentDidMount() {
         this.top.current.scrollIntoView()
     }
 
@@ -14,7 +15,7 @@ class SideNav extends React.Component {
         return(
             <div className="side-nav">
                 <div ref={this.top}/>
-                SIDE NAV
+                <ChatIndexContainer />
             </div>
         )
     }

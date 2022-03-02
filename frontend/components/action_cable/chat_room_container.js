@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { receiveMessage, receiveMessages, removeMessage } from "../../actions/message_actions";
 import { receiveUsers } from "../../actions/user_actions";
+
 import ChatRoom from "./chat_room";
 
 const mSTP = (state, ownProps) => ({
