@@ -3,8 +3,9 @@ class Chat < ApplicationRecord
          chat_type == `channel`
     end
     validates :name, :description, :private, :admin_id, presence: true, if: :is_channel
-        # add workspace id validation
     validates :name, uniqueness: true, if: :is_channel
+    
+    validates :workspace_id, presence: true
 
     belongs_to :admin,
         foreign_key: :admin_id,
@@ -13,5 +14,13 @@ class Chat < ApplicationRecord
     belongs_to :workspace,
         foreign_key: :workspace_id,
         class_name: :Workspace
+    
+    has_many :conversations,
+        foreign_key: :chat_id,
+        class_name: :Conversation
+    
+    has_many :users,
+        through: :conversation,
+        source: :user
     
 end

@@ -26,6 +26,14 @@ class User < ApplicationRecord
         through: :subscriptions,
         source: :workspace
 
+    has_many :conversations,
+        foreign_key: :user_id,
+        class_name: :Conversation
+
+    has_many :chats,
+        through: :conversations,
+        source: :chat
+
     def self.find_by_credentials(username, password)
         @user = User.find_by(username: username)
         if @user && @user.is_password?(password)
