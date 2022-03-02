@@ -10,7 +10,7 @@ const MessagesReducer = (state = {}, action) => {
             // debugger
             return nextState;
         case RECEIVE_MESSAGES:
-            // debugger
+            debugger
             return action.messages;
         case REMOVE_MESSAGE:
             delete nextState[action.messageId];

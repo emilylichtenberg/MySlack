@@ -7,7 +7,7 @@ import SplashContainer from './welcome/splash_container';
 import HeaderContainer from './header/header_container'
 import SideNavContainer from './side_nav/side_nav_container'
 import ChatRoomContainer from "./action_cable/chat_room_container";
-import ChatIndexContainer from './chats/chats_index_container'
+
 
 const App = () => (
   <div>
@@ -16,8 +16,8 @@ const App = () => (
     <AuthRoute path='/signup' component={SignupFormContainer}/>
     <ProtectedRoute path='/' component={HeaderContainer}/>
     <ProtectedRoute path='/' component={SideNavContainer}/>
-    <ProtectedRoute path='/' component={ChatRoomContainer}/>
-    {/* <Route path='/chats/:id' component={ChatIndexContainer}/> */}
+    <ProtectedRoute path='/chats/:chatId' component={ChatRoomContainer}/>
+    
   </div>
 );
 

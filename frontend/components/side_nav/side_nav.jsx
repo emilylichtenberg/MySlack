@@ -1,5 +1,6 @@
 import React from "react";
 import ChatIndexContainer from '../chats/chats_index_container'
+import WorkspaceContainer from '../workspaces/workspace_container'
 
 class SideNav extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class SideNav extends React.Component {
         return(
             <div className="side-nav">
                 <div ref={this.top}/>
+                <WorkspaceContainer />
                 <ChatIndexContainer />
             </div>
         )
