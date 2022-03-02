@@ -1,14 +1,18 @@
 class Chat < ApplicationRecord
-    def is_channel
+    validates :chat_type, inclusion: {in: %w(channel DM GM)}
+
+    validates :private, inclusion: [true, false], if: :is_channel?
+    validates :name, :description, :admin_id, presence: true, if: :is_channel?
+    validates :name, uniqueness: {scope: :workspace_id}, if: :is_channel?
+    def is_channel?
          chat_type == `channel`
     end
-    validates :name, :description, :private, :admin_id, presence: true, if: :is_channel
-    validates :name, uniqueness: true, if: :is_channel
-    
+
     validates :workspace_id, presence: true
 
     belongs_to :admin,
         foreign_key: :admin_id,
+        optional: true,
         class_name: :User
 
     belongs_to :workspace,
