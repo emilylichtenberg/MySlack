@@ -8,4 +8,12 @@ class Workspace < ApplicationRecord
     has_many :chats,
         foreign_key: :workspace_id,
         class_name: :Chat
+
+    has_many :subscriptions,
+        foreign_key: :workspace_id,
+        class_name: :Subscription
+
+    has_many :users,
+        through: :subscriptions,
+        source: :user
 end

@@ -69,7 +69,7 @@ class ChatRoom extends React.Component {
             <div className="chatroom-container">
                 <ul className="message-list">
                     {
-                        this.props.messages.map((message, ind) => <MessageItem key={message.id} message={message} users={this.props.users}/>)
+                        this.props.messages.map((message, ind) => <MessageItem key={message.id} message={message} users={this.props.users} receiveUsers={this.props.receiveUsers}/>)
                         // <li key={ind}>{message.body}</li>
                         // ADD back in div for reference so scroll into view works
                         // any time we update page we want that bottom div to be in view

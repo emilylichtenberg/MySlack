@@ -17,6 +17,14 @@ class User < ApplicationRecord
     has_many :workspaces_as_admin,
         foreign_key: :admin_id,
         class_name: :Workspace
+    
+    has_many :subscriptions,
+        foreign_key: :user_id,
+        class_name: :Subscription
+    
+    has_many :workspaces,
+        through: :subscriptions,
+        source: :workspace
 
     def self.find_by_credentials(username, password)
         @user = User.find_by(username: username)

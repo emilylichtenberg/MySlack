@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { receiveMessage, receiveMessages, removeMessage } from "../../actions/message_actions";
+import { receiveUsers } from "../../actions/user_actions";
 import ChatRoom from "./chat_room";
 
 const mSTP = (state, ownProps) => ({
@@ -11,7 +12,8 @@ const mSTP = (state, ownProps) => ({
 const mDTP = dispatch => ({
     receiveMessage: message => dispatch(receiveMessage(message)),
     receiveMessages: messages => dispatch(receiveMessages(messages)),
-    removeMessage: messageId => dispatch(removeMessage(messageId))
+    removeMessage: messageId => dispatch(removeMessage(messageId)),
+    receiveUsers: users => dispatch(receiveUsers(users))
 })
 
 export default connect(mSTP,mDTP)(ChatRoom)
