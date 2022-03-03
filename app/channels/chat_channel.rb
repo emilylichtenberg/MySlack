@@ -8,12 +8,13 @@ class ChatChannel < ApplicationCable::Channel
   
   def speak(data)
     message = Message.create(data['message'])
+    # debugger
     socket = {message: message, type: 'message'} # type is for reducer?
-    debugger
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end
 
   def load
+    # debugger
     chat = Chat.find(params['chatId'])
     messages = chat.messages
     users = chat.users

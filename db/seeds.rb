@@ -19,3 +19,4 @@ chat2 = Chat.create!(chat_type: 'channel', name: 'test', description: 'test', pr
 # chat3 = Chat.create!(chat_type: 'DM', workspace_id: 1)
 # chat4 = Chat.create!(chat_type: 'GM', workspace_id: 1)
 
+message1 = Message.create!(body: 'first message')

@@ -16,6 +16,7 @@ class ChatRoom extends React.Component {
         // speak - sends data to backend. invokes backend speak method
         // this.props.receiveMessages()
 
+
         App.cable.subscriptions.create(
             {channel: 'ChatChannel', chatId: this.props.chatId},
             {
@@ -26,7 +27,7 @@ class ChatRoom extends React.Component {
                         break;
                       case "messages":
                         this.props.receiveMessages(data.messages)
-                        this.props.receiveUsers(data.users)
+                        // this.props.receiveUsers(data.users)
                         break;
                       case "remove":
                         this.props.removeMessage(data.messageId)
@@ -46,6 +47,7 @@ class ChatRoom extends React.Component {
                 },
             }
         );
+        // App.cable.subscriptions.subscriptions[0].load();
     }
 
     loadChat(e) {

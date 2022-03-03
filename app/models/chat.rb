@@ -25,7 +25,11 @@ class Chat < ApplicationRecord
         class_name: :Conversation
     
     has_many :users,
-        through: :conversation,
+        through: :conversations,
         source: :user
     
+    has_many :messages,
+        foreign_key: :chat_id,
+        class_name: :Message
+
 end
