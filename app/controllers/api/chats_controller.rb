@@ -4,7 +4,7 @@ class Api::ChatsController < ApplicationController
         if @chat.save
             render '/api/chats/show'
         else
-            render json: @chat.errors.full_messages
+            render json: @chat.errors.full_messages, status: 401
         end
     end
 
