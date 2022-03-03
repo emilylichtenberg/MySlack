@@ -10,7 +10,7 @@ class ChannelForm extends React.Component {
     updateField(field) {
         return e => this.setState({[field]: e.currentTarget.value})
     }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state)
