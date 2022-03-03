@@ -1,4 +1,4 @@
-import { RECEIVE_MESSAGE, RECEIVE_MESSAGES, REMOVE_MESSAGE } from "../actions/message_actions";
+import { RECEIVE_MESSAGE, RECEIVE_MESSAGES, REMOVE_MESSAGE } from "../../actions/message_actions";
 
 const MessagesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -7,10 +7,8 @@ const MessagesReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_MESSAGE:
             nextState[action.message.id] = action.message;
-            // debugger
             return nextState;
         case RECEIVE_MESSAGES:
-            debugger
             return action.messages;
         case REMOVE_MESSAGE:
             delete nextState[action.messageId];

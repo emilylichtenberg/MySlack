@@ -1,4 +1,4 @@
-import { RECEIVE_CHAT_ERRORS } from '../actions/chat_actions'
+import { RECEIVE_CHAT_ERRORS } from '../../actions/chat_actions'
 
 const chatErrorsReducer = (state = [], action) => {
     Object.freeze(state);

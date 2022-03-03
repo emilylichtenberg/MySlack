@@ -2,7 +2,6 @@ import React from "react";
 
 class MessageForm extends React.Component {
     constructor(props) {
-        // debugger
         super(props);
         this.state = {body: '', chat_id: props.chatId, sender_id: props.currentUser.id, parent_message_id: 1}; //update to be dynamic
             // add chat id, curr user etc to state on submit
@@ -15,7 +14,6 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         App.cable.subscriptions.subscriptions[0].speak({message: this.state})
         this.setState({body: ''}) //
     }

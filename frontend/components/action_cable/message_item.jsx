@@ -14,7 +14,6 @@ class MessageItem extends React.Component {
 
     render() {
         const {message, users} = this.props
-        // debugger 
         return (
             <div className="message-item-container">
                <FontAwesomeIcon icon={faUser} className='user-icon'/>

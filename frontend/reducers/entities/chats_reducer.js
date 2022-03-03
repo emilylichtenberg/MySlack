@@ -1,4 +1,4 @@
-import { RECEIVE_CHATS, RECEIVE_CHAT, REMOVE_CHAT } from "../actions/chat_actions";
+import { RECEIVE_CHATS, RECEIVE_CHAT, REMOVE_CHAT } from "../../actions/chat_actions";
 
 const ChatsReducer = (state = {}, action) => {
     Object.freeze(state);

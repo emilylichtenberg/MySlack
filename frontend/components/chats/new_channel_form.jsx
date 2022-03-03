@@ -21,8 +21,20 @@ class ChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // const channel = Object.assign({}, {
+        //     channel: this.state
+        // });
+        // const createChannel = async () => {
+        //     const res = await this.props.action(channel);
+        //     const chat_id = await res.channel.id;
+        //     this.props.history.push({pathname: `/chats/${chat_id}`})
+        //     this.props.closeModal()
+        //     this.setState({name: '', description: '', private: false})
+        // }
         this.props.action(this.state)
         this.setState({name: '', description: '', private: false})
+        // this.props.closeModal()
+        // createChannel()
     }
 
     togglePrivate() {

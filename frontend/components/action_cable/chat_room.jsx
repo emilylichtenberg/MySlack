@@ -51,7 +51,6 @@ class ChatRoom extends React.Component {
     loadChat(e) {
         // shows all chat history even after refresh. maybe include this in component did mount?
         e.preventDefault();
-        // debugger
         App.cable.subscriptions.subscriptions[0].load();
     }
 
@@ -68,10 +67,6 @@ class ChatRoom extends React.Component {
                     }
                     <div ref={this.bottom} />
                 </ul>
-                {/* <button className="load-button" 
-                    onClick={this.loadChat.bind(this)}>
-                    Load Chat History
-                </button> */}
                 <MessageForm currentUser={this.props.currentUser} chatId={this.props.chatId}/>
             </div>
         )
@@ -79,3 +74,9 @@ class ChatRoom extends React.Component {
 }
 
 export default ChatRoom
+
+
+{/* <button className="load-button" 
+    onClick={this.loadChat.bind(this)}>
+    Load Chat History
+</button> */}

@@ -5,10 +5,11 @@ class ChatChannel < ApplicationCable::Channel
     self.load 
     # this is specific channel/chat name
   end
-
+  
   def speak(data)
     message = Message.create(data['message'])
     socket = {message: message, type: 'message'} # type is for reducer?
+    debugger
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end
 
@@ -18,7 +19,6 @@ class ChatChannel < ApplicationCable::Channel
     users = chat.users
   
     # messages = Message.all
-    # debugger
     socket = { messages: messages, type: 'messages'}
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end
