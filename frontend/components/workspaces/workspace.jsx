@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 
 class Workspace extends React.Component {
     constructor(props) {
@@ -7,7 +9,10 @@ class Workspace extends React.Component {
 
     render() {
         return(
-            <h1>WORKSPACE NAME</h1>
+            <div className="workspace-container">
+                <h1 className="workspace-name">App Academy</h1>
+                <button><FontAwesomeIcon icon={faPenToSquare} className='create-workspace-icon'/></button>
+            </div>
         )
     }
 }

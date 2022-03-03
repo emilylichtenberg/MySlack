@@ -32,17 +32,20 @@ class ChatIndex extends React.Component {
         })
         // debugger
         return (
-            <div>
-
+            <div className="channel-message-container">
+                <div className="channel-header-container">
                     <h3>Channels</h3>
                     <button onClick={this.openCreateChannelModal}>+</button>
-                    <ul>
-                        {
-                            channels.map(channel => <ChatIndexItem key={channel.id} chat={channel}/>)
-                        }
-                    </ul>
+                </div>
+                <ul>
+                    {
+                        channels.map(channel => <ChatIndexItem key={channel.id} chat={channel}/>)
+                    }
+                </ul>
+                <div className="dm-message-container">
                     <h3>Direct Messages</h3>
                     <button onClick={this.openCreateNewMessage}>+</button>
+                </div>
 
             </div>
         )
