@@ -8,15 +8,16 @@ import HeaderContainer from './header/header_container'
 import SideNavContainer from './side_nav/side_nav_container'
 import ChatRoomContainer from "./action_cable/chat_room_container";
 import ChannelFormContainer from "./chats/new_channel_form_container";
+import Modal from "./modal";
 
 const App = () => (
   <div>
+    <Modal />
     <AuthRoute exact path='/' component={SplashContainer}/>
     <AuthRoute path='/signin' component={LoginFormContainer}/>
     <AuthRoute path='/signup' component={SignupFormContainer}/>
     <ProtectedRoute path='/' component={HeaderContainer}/>
     <ProtectedRoute path='/' component={SideNavContainer}/>
-    {/* <ProtectedRoute path='/' component={ChannelFormContainer}/> */}
     <ProtectedRoute path='/chats/:chatId' component={ChatRoomContainer}/>
     
   </div>

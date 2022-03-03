@@ -4,13 +4,46 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 10;
   }
   
   .modal-child {
     position: absolute;
+    background-color: white;
     top: 50%;
     left: 50%;
+    height: 60vh;
+    min-height: 300px;
+    width: 20vw;
+    min-width: 400px;
     transform: translate(-50%, -50%);
+    border-radius: 6px;
+    box-shadow: 3px 3px 20px black;
+    padding: 3%;
+  }
+
+  .create-channel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6%;
+    h1 {
+      font-size: x-large;
+      font-weight: bold;
+      transform: scaleY(1.1);
+    }
+  }
+
+  .new-channel-container {
+    h2 {
+      color: grey;
+      font-size: small;
+      line-height: 1.6;
+      padding-bottom: 6%;
+    }
+    label {
+      font-size: small;
+      font-weight: bold;
+    }
   }
