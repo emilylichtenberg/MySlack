@@ -21,6 +21,15 @@ class Api::WorkspacesController < ApplicationController
         render '/api/workspaces/index'
     end
 
+    def show
+        @workspace = Workspace.find(params[:id])
+        if @workspace
+            render '/api/workspaces/show'
+        else
+            render json: ['Workspace does not exist'], status: 422
+        end
+    end
+
     private
     def workspace_params
         params.require(:workspace).permit(:name, :admin_id)

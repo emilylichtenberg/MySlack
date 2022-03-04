@@ -1,5 +1,5 @@
 @workspaces.each do |workspace|
     json.set! workspace.id do
-        json.extract! workspace, :id, :name, :admin_id
+        json.partial! "api/workspaces/workspace", workspace: workspace
     end
 end

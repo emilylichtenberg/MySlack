@@ -13,6 +13,15 @@ class Api::ChatsController < ApplicationController
         render '/api/chats/index'
     end
 
+    def show
+        @chat = Chat.find(params[:id])
+        if @chat
+            render '/api/chats/show'
+        else
+            render json: ['Chat does not exist'], status: 422
+        end
+    end
+
     private
     def chat_params
         params.require(:chat).permit(:chat_type, :name, :description, :private, :admin_id, :workspace_id)
