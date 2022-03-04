@@ -1,7 +1,7 @@
 import * as WorkspaceApiUtil from '../util/workspace_api_util';
 export const RECEIVE_WORKSPACES ='RECEIVE_WORKSPACES';
 export const RECEIVE_WORKSPACE ='RECEIVE_WORKSPACE';
-export const REMOVE_WORKSPACES ='REMOVE_WORKSPACES';
+export const REMOVE_WORKSPACE ='REMOVE_WORKSPACE';
 
 const receiveWorkspaces = workspaces => ({
     type: RECEIVE_WORKSPACES,
@@ -14,7 +14,7 @@ const receiveWorkspace = workspace => ({
 })
 
 const removeWorkspace = workspaceId => ({
-    type: REMOVE_WORKSPACES,
+    type: REMOVE_WORKSPACE,
     workspaceId
 })
 
