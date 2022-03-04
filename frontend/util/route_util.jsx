@@ -4,7 +4,7 @@ import React from "react";
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (
     <Route path={path} exact={exact} 
-        render={props => !loggedIn ? <Component {...props} /> : <Redirect to='/chats/1'/>}
+        render={props => !loggedIn ? <Component {...props} /> : <Redirect to='/chats'/>}
             />
 );
 // ultimately set this to default channel to render???
