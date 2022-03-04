@@ -3,10 +3,11 @@ class Chat < ApplicationRecord
 
     validates :private, inclusion: [true, false], if: :is_channel?
     validates :name, :description, :admin_id, presence: true, if: :is_channel?
-    validates :name, uniqueness: true
-    # , if: :is_channel?
+    validates :name, uniqueness: true, if: :is_channel?
+    # workspace id and name combo validation
     def is_channel?
-         chat_type == `channel`
+        debugger
+        chat_type == `channel`
     end
 
     validates :workspace_id, presence: true

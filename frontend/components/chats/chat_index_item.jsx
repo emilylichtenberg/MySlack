@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 const ChatIndexItem = props => {
     const icon = props.chat.private ? <FontAwesomeIcon icon={faLock} /> : '#'
     return (
-        <Link className="chat-index-item" to={`/chats/${props.chat.id}`}>
+        <Link 
+            className="chat-index-item" 
+            to={`/chats/${props.chat.id}`}
+            // onClick={() => props.fetchChat(props.chat.id)}
+            >
             <li className="chat-li">
                 <span>{icon}</span>
                 {props.chat.name}

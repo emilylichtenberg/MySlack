@@ -1,6 +1,7 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     # "chat_channel_#{params['chatId']}"
+    # debugger
     stream_for "chat_channel_#{params['chatId']}"
     self.load 
     # this is specific channel/chat name
@@ -22,6 +23,8 @@ class ChatChannel < ApplicationCable::Channel
     # messages = Message.all
     socket = { messages: messages, type: 'messages'}
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
+    # this info goes to our redux state
+    # broadcast to calls received in subscription create CDM.
   end
 
   def update(data)

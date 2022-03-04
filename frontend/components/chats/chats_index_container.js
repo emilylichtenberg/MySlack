@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { fetchChats } from "../../actions/chat_actions";
+import { fetchChat, fetchChats } from "../../actions/chat_actions";
 import ChatIndex from "./chats_index";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
@@ -9,6 +9,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
     fetchChats: () => dispatch(fetchChats()),
+    fetchChat: chatId => dispatch(fetchChat(chatId)),
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal())
 });

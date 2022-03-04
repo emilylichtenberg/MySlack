@@ -33,6 +33,8 @@ class ChannelForm extends React.Component {
         // }
         this.props.action(this.state)
         this.setState({name: '', description: '', private: false})
+        // only clear state if successful (no errors)
+
         // this.props.closeModal()
         // createChannel()
     }
