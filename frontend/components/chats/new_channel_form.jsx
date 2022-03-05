@@ -1,4 +1,6 @@
 import React from "react";
+import 'regenerator-runtime/runtime'
+import { async } from "regenerator-runtime/runtime";
 
 class ChannelForm extends React.Component {
     constructor(props) {
@@ -21,22 +23,12 @@ class ChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const channel = Object.assign({}, {
-        //     channel: this.state
-        // });
-        // const createChannel = async () => {
-        //     const res = await this.props.action(channel);
-        //     const chat_id = await res.channel.id;
-        //     this.props.history.push({pathname: `/chats/${chat_id}`})
-        //     this.props.closeModal()
-        //     this.setState({name: '', description: '', private: false})
-        // }
-        this.props.action(this.state)
-        this.setState({name: '', description: '', private: false})
-        // only clear state if successful (no errors)
-
-        // this.props.closeModal()
-        // createChannel()
+        let submitForm = async () => this.props.action(this.state);
+        submitForm()
+            .then(() => this.setState({name: '', description: '', private: false}))
+            .then(() => this.props.removeChatErrors())
+            // .then(channel => this.props.history.push({pathname: `/chats/${channel.id}`}))
+            .then(() => this.props.closeModal())
     }
 
     togglePrivate() {

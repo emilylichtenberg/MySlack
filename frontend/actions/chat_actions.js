@@ -2,7 +2,8 @@ import * as ChatApiUtil from '../util/chat_api_util'
 export const RECEIVE_CHATS = 'RECEIVE_CHATS';
 export const RECEIVE_CHAT = 'RECEIVE_CHAT';
 export const REMOVE_CHAT = 'REMOVE_CHAT';
-export const RECEIVE_CHAT_ERRORS = 'RECEIVE_CHAT_ERRORS'
+export const RECEIVE_CHAT_ERRORS = 'RECEIVE_CHAT_ERRORS';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS'
 
 const receiveChats = chats => ({
     type: RECEIVE_CHATS,
@@ -22,6 +23,10 @@ const removeChat = chatId => ({
 const receiveChatErrors = errors => ({
     type: RECEIVE_CHAT_ERRORS,
     errors: errors.responseJSON
+})
+
+export const removeChatErrors = () => ({
+    type: REMOVE_ERRORS
 })
 
 export const fetchChats = () => dispatch => (

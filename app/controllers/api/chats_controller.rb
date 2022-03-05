@@ -1,6 +1,11 @@
 class Api::ChatsController < ApplicationController
     def create
         @chat = Chat.new(chat_params)
+        
+        if @chat.chat_type != 'channel'
+            @chat.name = SecureRandom::urlsafe_base64
+        end
+
         if @chat.save
             render '/api/chats/show'
         else

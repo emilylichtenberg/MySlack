@@ -3,25 +3,54 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import ChannelFormContainer from './chats/new_channel_form_container'
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
-    return null;
+// function Modal({modal, closeModal}) {
+//   if (!modal) {
+//     return null;
+//   }
+//   let component;
+//   switch (modal) {
+//     case 'createChannel':
+//       component = <ChannelFormContainer />;
+//       break;
+//     default:
+//       return null;
+//   }
+//   return (
+//     <div className="modal-background" onClick={closeModal}>
+//       <div className="modal-child" onClick={e => e.stopPropagation()}>
+//         { component }
+//       </div>
+//     </div>
+//   );
+// }
+
+
+class Modal extends React.Component {
+  constructor(props) {
+    super(props)
   }
-  let component;
-  switch (modal) {
-    case 'createChannel':
-      component = <ChannelFormContainer />;
-      break;
-    default:
+
+  render () {
+    const {modal, closeModal} = this.props
+    if (!modal) {
       return null;
-  }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+    }
+    let component;
+    switch (modal) {
+      case 'createChannel':
+        component = <ChannelFormContainer />;
+        break;
+      default:
+        return null;
+    }
+    return (
+      <div className="modal-background" onClick={closeModal}>
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
+          { component }
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => {

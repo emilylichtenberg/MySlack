@@ -18,8 +18,8 @@ chat1 = Chat.create!(chat_type: 'channel', name: 'general', description: 'for ge
 chat2 = Chat.create!(chat_type: 'channel', name: 'test', description: 'test', private: true, admin_id: 1, workspace_id: 1)
 chat3 = Chat.create!(chat_type: 'channel', name: 'other', description: 'for general discussion', private: false, admin_id: 1, workspace_id: 2)
 chat4 = Chat.create!(chat_type: 'channel', name: 'other2', description: 'test', private: true, admin_id: 1, workspace_id: 2)
-# chat3 = Chat.create!(chat_type: 'DM', workspace_id: 1)
-# chat4 = Chat.create!(chat_type: 'GM', workspace_id: 1)
+chat3 = Chat.create!(chat_type: 'DM', name: '1', workspace_id: 1)
+chat4 = Chat.create!(chat_type: 'GM', name: '2', workspace_id: 1)
 
 message1 = Message.create!(body: 'message1', chat_id: 1, sender_id: 1)
 message2 = Message.create!(body: 'message2', chat_id: 1, sender_id: 2)

@@ -1,7 +1,6 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     # "chat_channel_#{params['chatId']}"
-    # debugger
     stream_for "chat_channel_#{params['chatId']}"
     self.load 
     # this is specific channel/chat name
@@ -9,13 +8,11 @@ class ChatChannel < ApplicationCable::Channel
   
   def speak(data)
     message = Message.create(data['message'])
-    # debugger
     socket = {message: message, type: 'message'} # type is for reducer?
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end
 
   def load
-    # debugger
     chat = Chat.find(params['chatId'])
     messages = chat.messages
     users = chat.users

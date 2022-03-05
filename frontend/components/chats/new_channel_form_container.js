@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ChannelForm from './new_channel_form';
-import { createChat } from "../../actions/chat_actions";
+import { createChat, removeChatErrors } from "../../actions/chat_actions";
 import { closeModal } from "../../actions/modal_actions";
 
 const mSTP = state => ({
@@ -11,7 +11,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     action: channel => dispatch(createChat(channel)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    removeChatErrors: () => dispatch(removeChatErrors())
 })
 
 export default connect(mSTP,mDTP)(ChannelForm)

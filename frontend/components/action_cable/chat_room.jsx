@@ -8,7 +8,7 @@ class ChatRoom extends React.Component {
         super(props);
         this.bottom = React.createRef();
         this.createSubscription = this.createSubscription.bind(this)
-        debugger
+        // debugger
     }
 
     componentDidMount() {
@@ -73,7 +73,7 @@ class ChatRoom extends React.Component {
         //     subIdentifier.chatId === subId ? subIndex.push(i) : null
         //     // debugger
         // })
-        debugger
+        // debugger
         // if (subIndex.length === 0) {
         this.createSubscription()
         // } 

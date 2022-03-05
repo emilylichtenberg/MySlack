@@ -5,7 +5,7 @@ import { receiveMessage, receiveMessages, removeMessage } from "../../actions/me
 import ChatRoom from "./chat_room";
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return ({
         // .filter(message => message.chatId === parseInt(ownProps.match.params.chatId)),
         // filter messages for correct chat id

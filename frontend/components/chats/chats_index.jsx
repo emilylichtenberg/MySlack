@@ -1,8 +1,8 @@
 import React from "react";
-import ChatIndexItem from "./chat_index_item";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
 import {faCaretRight} from '@fortawesome/free-solid-svg-icons'
+import ChatIndexItem from "./chat_index_item";
 
 class ChatIndex extends React.Component {
     constructor(props) {
@@ -10,10 +10,6 @@ class ChatIndex extends React.Component {
         this.props.fetchChats();
         this.state = {channelActive: true}
         this.toggleChannelActive = this.toggleChannelActive.bind(this)
-    }
-
-    componentDidMount() {
-        
     }
 
     toggleChannelActive() {
@@ -32,7 +28,7 @@ class ChatIndex extends React.Component {
                 dms.push(chat)
             }
         })
-
+        // debugger
         return (
             <div className="channel-message-container">
                 <div className="channel-header-container">
