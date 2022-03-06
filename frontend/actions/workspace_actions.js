@@ -27,6 +27,7 @@ export const fetchWorkspace = workspaceId => dispatch => (
     WorkspaceApiUtil.fetchWorkspace(workspaceId)
         .then(workspace => dispatch(receiveWorkspace(workspace)))
 );
+    // workspace, user and chat info
 
 export const createworkspace = workspace => dispatch => (
     WorkspaceApiUtil.createWorkspace(workspace)

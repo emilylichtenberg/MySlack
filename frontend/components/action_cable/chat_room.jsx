@@ -8,7 +8,7 @@ class ChatRoom extends React.Component {
         super(props);
         this.bottom = React.createRef();
         this.createSubscription = this.createSubscription.bind(this)
-        // debugger
+
     }
 
     componentDidMount() {
@@ -18,12 +18,12 @@ class ChatRoom extends React.Component {
         // speak - sends data to backend. invokes backend speak method
         // this.props.receiveMessages()
 
-        // debugger
+
         // this.createSubscription()
     }
 
     createSubscription () {
-        // debugger
+
         App.cable.subscriptions.create(
             {channel: 'ChatChannel', chatId: this.props.chatId},
             {
@@ -33,7 +33,7 @@ class ChatRoom extends React.Component {
                         this.props.receiveMessage(data.message);
                         break;
                       case "messages":
-                        //   debugger
+                        
                         this.props.receiveMessages(data.messages)
                         // this.props.receiveUsers(data.users)
                         break;
@@ -71,9 +71,9 @@ class ChatRoom extends React.Component {
         // App.cable.subscriptions.subscriptions.forEach((sub,i) => {
         //     let subIdentifier = JSON.parse(sub.identifier)
         //     subIdentifier.chatId === subId ? subIndex.push(i) : null
-        //     // debugger
+        //   
         // })
-        // debugger
+
         // if (subIndex.length === 0) {
         this.createSubscription()
         // } 
@@ -84,7 +84,7 @@ class ChatRoom extends React.Component {
 
 
     render() {
-        // debugger
+
         return(
             <div className="chatroom-container">
                 <ul className="message-list">

@@ -23,6 +23,7 @@ class ChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger    
         let submitForm = async () => this.props.action(this.state);
         submitForm()
             .then(() => this.setState({name: '', description: '', private: false}))

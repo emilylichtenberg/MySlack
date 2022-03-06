@@ -1,40 +1,41 @@
-.side-nav {
-    width: 260px;
-    height: 100vh;
-    background-color: #4a154b;
-    padding-top: 38px;
-    color: rgb(253, 248, 242);
-    // margin-right: 0;
-    position: absolute;
-    overflow-y: auto;
-}
+// .side-nav {
+//     width: 260px;
+//     height: 100vh;
+//     background-color: #4a154b;
+//     padding-top: 38px;
+//     color: rgb(253, 248, 242);
+//     // margin-right: 0;
+//     position: absolute;
+//     overflow-y: auto;
+// }
 
-.workspace-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 6vh;
-    border: .5px solid $border-purple;
-    padding-left: 5%;
-    padding-right: 5%;
-    color: white;
-    font-weight: bold;
+// .workspace-container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     height: 6vh;
+//     border: .5px solid $border-purple;
+//     padding-left: 5%;
+//     padding-right: 5%;
+//     color: white;
+//     font-weight: bold;
 
-    button {
-        background-color: white;
-        color: $light-purple;
-        border: none;
-        border-radius: 100%;
-        height: 4vh;
-        width: 4vh;
-        cursor: pointer;
-    }
-}
+//     button {
+//         background-color: white;
+//         color: $light-purple;
+//         border: none;
+//         border-radius: 100%;
+//         height: 4vh;
+//         width: 4vh;
+//         cursor: pointer;
+//     }
+// }
 
 .channel-message-container {
     padding-top: 5%;
     color: lightgray;
     font-size: smaller;
+    width: 100%;
 }
 
 .channel-header-container, .dm-message-container {
@@ -92,4 +93,46 @@
     span {
         padding: 5%;
     }
+}
+
+.sidenav-container {
+    width: 280px;
+    height: 100vh;
+    background-color: #4a154b;
+    color: rgb(253, 248, 242);
+    padding-top: 38px;
+    display: flex;
+}
+
+.workspace-container {
+    // height: 6vh;
+    width: 25%;
+    border: 1px solid $border-purple;
+    // color: white;
+}
+
+.workspace-index {
+    height: 100%;
+    // overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.workspace-link {
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.workspace-index-item {
+    margin: 5%;
+    color: rgb(253, 248, 242);
+    border: .5px solid $border-purple;
+    border-radius: 4px;
+    height: 40px;
+    width: 40px;
+}
+
+.chat-container {
+    width: 100%;
 }

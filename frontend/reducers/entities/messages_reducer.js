@@ -1,3 +1,4 @@
+import { RECEIVE_CHAT } from "../../actions/chat_actions";
 import { RECEIVE_MESSAGE, RECEIVE_MESSAGES, REMOVE_MESSAGE } from "../../actions/message_actions";
 
 const MessagesReducer = (state = {}, action) => {
@@ -10,6 +11,8 @@ const MessagesReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_MESSAGES:
             return action.messages;
+        case RECEIVE_CHAT:
+            return action.chat.messages
         case REMOVE_MESSAGE:
             delete nextState[action.messageId];
             return nextState;

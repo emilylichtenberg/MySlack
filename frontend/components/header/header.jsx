@@ -6,13 +6,18 @@ class Header extends React.Component {
     }
 
     render() {
-        const {logout} = this.props
-        return(
-            <div className="header">
-                <input type="text" placeholder="search workspace" />
-                <button onClick={() => logout()}>Log Out</button>
-            </div>
-        )
+        const {logout, workspace} = this.props
+            return(
+                workspace ? 
+                <div className="header">
+                    <input type="text" placeholder={`Search ${workspace.name}`} />
+                    <button onClick={() => logout()}>Log Out</button>
+                </div> : 
+                <div className="header">
+                    <input type="text" placeholder={`Search WORKSPACE`} />
+                    <button onClick={() => logout()}>Log Out</button>
+                </div>
+            )
     }
 }
 

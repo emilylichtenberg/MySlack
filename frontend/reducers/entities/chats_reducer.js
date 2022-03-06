@@ -1,4 +1,5 @@
 import { RECEIVE_CHATS, RECEIVE_CHAT, REMOVE_CHAT } from "../../actions/chat_actions";
+import { RECEIVE_WORKSPACE } from "../../actions/workspace_actions";
 
 const ChatsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -9,6 +10,9 @@ const ChatsReducer = (state = {}, action) => {
         case RECEIVE_CHAT:
             nextState[action.chat.id] = action.chat;
             return nextState;
+        case RECEIVE_WORKSPACE:
+            // debugger
+            return action.workspace.chats
         case REMOVE_CHAT:
             delete nextState[action.chatId];
             return nextState;

@@ -2,12 +2,22 @@ import { connect } from "react-redux";
 import ChannelForm from './new_channel_form';
 import { createChat, removeChatErrors } from "../../actions/chat_actions";
 import { closeModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router-dom";
 
-const mSTP = state => ({
-    channel: {chat_type: 'channel', name: '', description: '', private: false, admin_id: 1, workspace_id: 1},
-    formType: 'Create a channel',
-    errors: state.errors.chat
-})
+const mSTP = (state, ownProps) => {
+    // debugger
+    return ({
+        channel: {chat_type: 'channel', 
+                  name: '', 
+                  description: '', 
+                  private: false, 
+                  admin_id: state.entities.users[state.session.id],
+                  workspace_id: ownProps.match.params.workspaceId},
+        formType: 'Create a channel',
+        errors: state.errors.chat,
+        currentWorkspace: ownProps.match.params.workspaceId
+    })
+}
 
 const mDTP = dispatch => ({
     action: channel => dispatch(createChat(channel)),
@@ -15,4 +25,4 @@ const mDTP = dispatch => ({
     removeChatErrors: () => dispatch(removeChatErrors())
 })
 
-export default connect(mSTP,mDTP)(ChannelForm)
+export default withRouter(connect(mSTP,mDTP)(ChannelForm))
