@@ -6,30 +6,36 @@ class WorkspaceIndexItem extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchWorkspace(this.props.workspace.id)
+
+    }
     componentDidUpdate() {
-        // this.props.fetchWorkspace(this.props.workspace.id)
     }
 
+
     render () {
-        const {workspace, fetchWorkspace, fetchChat, currentWorkspace} = this.props
+        const {workspace, fetchWorkspace, fetchChat, currentWorkspace, currentWorkspaceId} = this.props
         // debugger
         return (
-            currentWorkspace ? 
-            <Link  to={`/workspaces/${workspace.id}/chats/${currentWorkspace.chats[0].id}`} 
-                onClick={() => fetchWorkspace(workspace.id)
-                        .then(fetchChat(currentWorkspace.chats[0]))} 
-                className='workspace-link'>
-                <li className='workspace-index-item'>
-                    {workspace.name}
-                </li>
-            </Link> : 
-            <Link  to={`/workspaces/${workspace.id}`} 
-                onClick={() => fetchWorkspace(workspace.id)}
-                className='workspace-link'>
-                <li className='workspace-index-item'>
-                    {workspace.name}
-                </li>
-            </Link>
+          
+                // currentWorkspace ? 
+                // <Link  to={`/workspaces/${workspace.id}/chats/${currentWorkspace.chats[0].id}`} 
+                //     onClick={() => fetchWorkspace(workspace.id)
+                //             .then(fetchChat(currentWorkspace.chats[0]))} 
+                //     className='workspace-link'>
+                //     <li className='workspace-index-item'>
+                //         {workspace.name}
+                //     </li>
+                // </Link> : 
+                <Link  to={`/workspaces/${workspace.id}`} 
+                    onClick={() => fetchWorkspace(workspace.id)}
+                    className='workspace-link'>
+                    <li className={workspace.id === currentWorkspaceId ?
+                        'workspace-index-item active' : 'workspace-index-item'}>
+                        {workspace.name}
+                    </li>
+                </Link>
         )
     }
 }

@@ -19,7 +19,7 @@ class Workspace extends React.Component {
     }
 
     render() {
-        const {usersWorkspaces, fetchWorkspace, currentWorkspace, fetchChat, openModal, closeModal, logout} = this.props
+        const {usersWorkspaces, fetchWorkspace, currentWorkspace, fetchChat, openModal, closeModal, logout, currentWorkspaceId} = this.props
         // debugger
         return(
             <div >
@@ -28,7 +28,7 @@ class Workspace extends React.Component {
                 </div>
                 <div className="sidenav-container">
                     <div className="workspace-container">
-                        <WorkspaceIndex usersWorkspaces={usersWorkspaces} fetchWorkspace={fetchWorkspace} fetchChat={fetchChat} currentWorkspace={currentWorkspace}/>
+                        <WorkspaceIndex usersWorkspaces={usersWorkspaces} fetchWorkspace={fetchWorkspace} fetchChat={fetchChat} currentWorkspace={currentWorkspace} currentWorkspaceId={currentWorkspaceId}/>
                     </div>
                     <div className="chat-container">
                         <ChatIndex currentWorkspace={currentWorkspace} fetchChat={fetchChat}

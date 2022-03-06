@@ -30,9 +30,28 @@
 //         cursor: pointer;
 //     }
 // }
-
+.current-workspace-header {
+    height: 7vh;
+    border: 1px solid $border-purple;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+    h1 {
+        padding-left: 5%;
+    }
+    button {
+        height: 4vh;
+        width: 4vh;
+        border: none;
+        border-radius: 50%;
+    }
+}
 .channel-message-container {
-    padding-top: 5%;
+    // padding-top: 5%;
     color: lightgray;
     font-size: smaller;
     width: 100%;
@@ -116,12 +135,12 @@
     // overflow-y: auto;
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+    align-items: center;
 }
 
 .workspace-link {
     text-decoration: none;
-    justify-content: center;
-    align-items: center;
 }
 
 .workspace-index-item {
@@ -129,8 +148,15 @@
     color: rgb(253, 248, 242);
     border: .5px solid $border-purple;
     border-radius: 4px;
+    transition: border .5s ease;
     height: 40px;
     width: 40px;
+    &:hover {
+        border: 2px solid grey;
+    }
+}
+.workspace-index-item.active {
+    border: 2px solid white; 
 }
 
 .chat-container {

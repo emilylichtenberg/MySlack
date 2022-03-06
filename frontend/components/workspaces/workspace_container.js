@@ -10,6 +10,7 @@ const mSTP = (state, ownProps) => {
     return ({
         usersWorkspaces: state.entities.users[state.session.id].workspaces,
         currentWorkspace: state.entities.workspaces[ownProps.match.params.workspaceId],
+        currentWorkspaceId: parseInt(ownProps.match.params.workspaceId),
         currentUser: state.entities.users[state.session.id],
         chats: Object.values(state.entities.chats).filter(chat => chat.workspaceId === ownProps.match.params.workspaceId)
     })
