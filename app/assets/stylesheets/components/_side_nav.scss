@@ -101,6 +101,10 @@
         background-color: $dark-purple;
     }
 }
+.chat-li.active {
+    background-color: rgb(18, 79, 146);
+}
+
 #add-chat {
     padding: 5%;
     // background-color: $grey-purple;

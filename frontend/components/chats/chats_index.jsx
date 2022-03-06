@@ -26,7 +26,7 @@ class ChatIndex extends React.Component {
     }
 
     render () {
-        const {openModal, fetchChat, currentWorkspace} = this.props
+        const {openModal, fetchChat, currentWorkspace, currentChatId} = this.props
         // debugger
         let chats = currentWorkspace ? currentWorkspace.chats : ''
         let channels = [];
@@ -55,7 +55,7 @@ class ChatIndex extends React.Component {
                 </div>
                 <ul className={this.state.channelActive ? '' : 'hidden'}>
                     {
-                        channels.map(channel => <ChatIndexItem key={channel.id} chat={channel} fetchChat={fetchChat} workspaceId={currentWorkspace.id}/>)
+                        channels.map(channel => <ChatIndexItem key={channel.id} chat={channel} fetchChat={fetchChat} workspaceId={currentWorkspace.id} currentChatId={currentChatId}/>)
                     }
                     <li onClick={() => openModal('createChannel')} className="chat-li"><span id="add-chat">+</span>Add Channels</li>
                 </ul>
