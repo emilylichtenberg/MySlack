@@ -84,16 +84,17 @@ class ChatRoom extends React.Component {
 
 
     render() {
-
+        // debugger
+        const {currentUser, chatId, workspaceId, messages, users} = this.props
         return(
             <div className="chatroom-container">
                 <ul className="message-list">
                     {
-                        this.props.messages.map((message) => <MessageItem key={message.id} message={message} users={this.props.users} />)
+                        messages.map((message) => <MessageItem key={message.id} message={message} users={users} />)
                     }
                     <div ref={this.bottom} />
                 </ul>
-                <MessageForm currentUser={this.props.currentUser} chatId={this.props.chatId}/>
+                <MessageForm currentUser={currentUser} chatId={chatId} workspaceId={workspaceId}/>
             </div>
         )
     }

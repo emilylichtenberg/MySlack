@@ -12,9 +12,15 @@ class MessageItem extends React.Component {
         // props.receiveUsers(props.users) // when you fetch channel you will also fet all users in that channel
     }
 
+    componentDidMount() {
+        // debugger
+    }
+
     render() {
         const {message, users} = this.props
+        // debugger
         return (
+            message ? 
             <div className="message-item-container">
                <FontAwesomeIcon icon={faUser} className='user-icon'/>
                 <div className="message-details-container">
@@ -27,6 +33,7 @@ class MessageItem extends React.Component {
                     </div>
                 </div>
             </div>
+            : ''
         )
     }
 }
