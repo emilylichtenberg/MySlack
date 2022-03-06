@@ -32,13 +32,11 @@ export const removeChatErrors = () => ({
 export const fetchChats = () => dispatch => (
     ChatApiUtil.fetchChats()
         .then(chats => dispatch(receiveChats(chats)))
-        .fail(errors => dispatch(receiveChatErrors(errors))) 
 );
 
 export const fetchChat = chatId => dispatch => (
     ChatApiUtil.fetchChat(chatId)
         .then(chat => dispatch(receiveChat(chat)))
-        .fail(errors => dispatch(receiveChatErrors(errors)))
 );
 
 export const createChat = chat => dispatch => (
