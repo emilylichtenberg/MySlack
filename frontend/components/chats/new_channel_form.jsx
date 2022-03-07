@@ -26,10 +26,14 @@ class ChannelForm extends React.Component {
         // debugger    
         let submitForm = async () => this.props.action(this.state);
         submitForm()
-            .then(() => this.setState({name: '', description: '', private: false}))
+            // .then(() => this.setState({name: '', description: '', private: false}))
+            .then(channel => {
+                // debugger
+                this.props.history.push({pathname: `/workspaces/${this.state.workspace_id}/chats/${channel.chat.id}`})
+            })
             .then(() => this.props.removeChatErrors())
-            // .then(channel => this.props.history.push({pathname: `/chats/${channel.id}`}))
             .then(() => this.props.closeModal())
+
     }
 
     togglePrivate() {

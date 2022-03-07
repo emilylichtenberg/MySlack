@@ -5,17 +5,17 @@ import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    // debugger    
     return ({
         channel: {chat_type: 'channel', 
                   name: '', 
                   description: '', 
                   private: false, 
                   admin_id: state.entities.users[state.session.id],
-                  workspace_id: ownProps.match.params.workspaceId},
+                  workspace_id: ownProps.workspaceId},
         formType: 'Create a channel',
         errors: state.errors.chat,
-        currentWorkspace: ownProps.match.params.workspaceId
+        // currentWorkspace: ownProps.match.params.workspaceId
     })
 }
 

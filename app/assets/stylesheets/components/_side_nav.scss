@@ -148,17 +148,20 @@
 }
 
 .workspace-index-item {
+    // box-sizing: border-box;
     margin: 5%;
     color: rgb(253, 248, 242);
     border: .5px solid $border-purple;
     border-radius: 4px;
-    transition: border .5s ease;
+    transition: border .5s ease-in;
     height: 40px;
     width: 40px;
-    &:hover {
-        border: 2px solid grey;
-    }
 }
+
+.workspace-index-item:hover, .workspace-index-item:focus {
+    border: 2px solid grey;
+}
+
 .workspace-index-item.active {
     border: 2px solid white; 
 }

@@ -13,8 +13,8 @@ const ChatsReducer = (state = {}, action) => {
             nextState[action.chat.id] = action.chat;
             return nextState;
         case RECEIVE_WORKSPACE:
-            // debugger
-            return action.workspace.chats
+            action.workspace.chats.forEach(chat => nextState[chat.id] = chat);
+            return nextState;
         case REMOVE_CHAT:
             delete nextState[action.chatId];
             return nextState;

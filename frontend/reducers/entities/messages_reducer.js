@@ -11,8 +11,8 @@ const MessagesReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_MESSAGES:
             return action.messages;
-        case RECEIVE_CHAT:
-            return action.chat.messages
+        // case RECEIVE_CHAT:
+        //     return action.chat.messages
         case REMOVE_MESSAGE:
             delete nextState[action.messageId];
             return nextState;

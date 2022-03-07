@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import ChannelFormContainer from './chats/new_channel_form_container'
-
+import {withRouter} from 'react-router-dom'
 // function Modal({modal, closeModal}) {
 //   if (!modal) {
 //     return null;
@@ -31,14 +31,15 @@ class Modal extends React.Component {
   }
 
   render () {
-    const {modal, closeModal} = this.props
+    // debugger
+    const {modal, closeModal, workspaceId} = this.props
     if (!modal) {
       return null;
     }
     let component;
     switch (modal) {
       case 'createChannel':
-        component = <ChannelFormContainer />;
+        component = <ChannelFormContainer workspaceId={workspaceId}/>;
         break;
       default:
         return null;
@@ -53,9 +54,13 @@ class Modal extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state,ownProps) => {
+  // debugger
+  let location = ownProps.location.pathname.split('/')
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    workspaceId: parseInt(location[2]),
+    chatId: parseInt(location[4])
   };
 };
 
@@ -65,4 +70,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));

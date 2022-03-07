@@ -16,8 +16,6 @@ class ChatChannel < ApplicationCable::Channel
     chat = Chat.find(params['chatId'])
     messages = chat.messages
     users = chat.users
-  
-    # messages = Message.all
     socket = { messages: messages, type: 'messages'}
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
     # this info goes to our redux state

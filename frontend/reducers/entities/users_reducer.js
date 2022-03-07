@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from "../../actions/session_actions";
 import { RECEIVE_USER } from "../../actions/user_actions";
+import { RECEIVE_WORKSPACE } from "../../actions/workspace_actions";
 
 const usersReducer = (state={}, action) => {
     Object.freeze(state);
@@ -9,8 +10,14 @@ const usersReducer = (state={}, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
         case RECEIVE_USER:
+            debugger
             nextState[action.user.id] = action.user
-            return nextState
+            return nextState;
+        // case RECEIVE_WORKSPACE:
+            // debugger
+            // action.workspace.users.forEach(user => nextState[user.id] = user);
+            // return nextState
+            // nextState[action.workspace.users] action.workspace.users;
         default:
             return state;
     }

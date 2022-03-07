@@ -17,11 +17,9 @@ const App = () => (
     <AuthRoute exact path='/' component={SplashContainer}/>
     <AuthRoute path='/signin' component={LoginFormContainer}/>
     <AuthRoute path='/signup' component={SignupFormContainer}/>
-    {/* <ProtectedRoute path='/workspaces' component={HeaderContainer}/> */}
-    {/* <ProtectedRoute path='/workspaces' component={SideNavContainer}/> */}
-    {/* <ProtectedRoute path='/workspaces/:workspaceId' component={WorkspaceContainer}/> */}
+
     <ProtectedRoute path='/workspaces/:workspaceId/chats/:chatId' component={WorkspaceContainer}/>
-    {/* <ProtectedRoute path='/workspaces/:workspaceId/chats/:chatId' component={ChatRoomContainer}/> */}
+    <ProtectedRoute path='' component={Modal} />
     
   </div>
 );

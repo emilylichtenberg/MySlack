@@ -11,13 +11,22 @@ class MessageForm extends React.Component {
     }
 
     handleUpdate(field) {
-        return e => this.setState({[field]: e.currentTarget.value})
+        return e => this.setState({[field]: e.currentTarget.value, chat_id: this.props.chatId})
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
-        App.cable.subscriptions.subscriptions[0].speak({message: this.state})
+        // this.setState({chat_id: this.props.chatId})
+        // debugger
+        let subIndex;
+        for (let i = 0; i < App.cable.subscriptions.subscriptions.length; i++) {
+            if (JSON.parse(App.cable.subscriptions.subscriptions[i].identifier).chatId === this.props.chatId) {
+                // debugger
+                subIndex = i;
+            }
+        }
+
+        App.cable.subscriptions.subscriptions[subIndex].speak({message: this.state})
             // [0] is the reason not automatically updating
             // look at subsriptions and make sure speaking to correct
         this.setState({body: ''}) //
@@ -25,16 +34,19 @@ class MessageForm extends React.Component {
 
     render() {
         // debugger
+        const {chat} = this.props
         return(
+            chat ? 
             <div className="message-submit-container">
                 <form className="message-form" onSubmit={this.handleSubmit}>
-                    <input className="message-input" type="text" value={this.state.body} placeholder='type message' onChange={this.handleUpdate('body')}/>
+                    <input className="message-input" type="text" value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
                     <input className="message-submit" type="submit" value='>'/>
                     {/* <button>
                         <FontAwesomeIcon icon='fa-solid fa-paper-plane-top' onClick={this.handleSubmit}/>
                     </button> */}
                 </form>
             </div>
+            : ''
         )
     }
 }

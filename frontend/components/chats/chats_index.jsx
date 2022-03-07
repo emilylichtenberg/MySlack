@@ -26,9 +26,9 @@ class ChatIndex extends React.Component {
     }
 
     render () {
-        const {openModal, fetchChat, currentWorkspace, currentChatId} = this.props
+        const {openModal, fetchChat, currentWorkspace, currentChatId, chats} = this.props
         // debugger
-        let chats = currentWorkspace ? currentWorkspace.chats : ''
+        // let chats = currentWorkspace ? currentWorkspace.chats : ''
         let channels = [];
         let dms = [];
       

@@ -1,4 +1,5 @@
 import React from "react";
+import { formatTime } from "../../util/date_util";
 import HeaderContainer from "../header/header_container";
 import MessageForm from './message_form'
 import MessageItem from "./message_item";
@@ -19,7 +20,7 @@ class ChatRoom extends React.Component {
         // this.props.receiveMessages()
 
 
-        // this.createSubscription()
+        this.createSubscription()
     }
 
     createSubscription () {
@@ -64,21 +65,31 @@ class ChatRoom extends React.Component {
     //         // check which subscription this is
     // }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         this.bottom.current.scrollIntoView();
-        // const subId = this.props.chatId
-        // const subIndex = []
-        // App.cable.subscriptions.subscriptions.forEach((sub,i) => {
-        //     let subIdentifier = JSON.parse(sub.identifier)
-        //     subIdentifier.chatId === subId ? subIndex.push(i) : null
-        //   
-        // })
+        // debugger
+        const subId = this.props.chatId
+        const subIndex = []
+        App.cable.subscriptions.subscriptions.forEach((sub,i) => {
+            let subIdentifier = JSON.parse(sub.identifier)
+            subIdentifier.chatId === subId ? subIndex.push(sub) : null
+          
+        })
 
-        // if (subIndex.length === 0) {
-        this.createSubscription()
+
+        if (subIndex.length === 0) {
+            this.createSubscription()
+        } else if (prevProps.chatId !== this.props.chatId) {
+            // debugger
+            subIndex[0].load()
+        }
+        // else if  (this.props.messages[0].chat_id !== this.props.chatId ) {
+        //     subIndex[0].load()
         // } 
-
-        // if chat id is already in subscription, call subscribe function in CDM. 
+        // else if (this.props.messages.length === 0) {
+        //     // debugger
+        //     // subIndex[0].load()
+        // } 
     }
 
 
@@ -90,7 +101,7 @@ class ChatRoom extends React.Component {
             <div className="chatroom-container">
                 <ul className="message-list">
                     {
-                        messages.map((message) => <MessageItem key={message.id} message={message} users={users} />)
+                        messages.map((message) => <MessageItem key={message.id} message={message} users={users}/>)
                     }
                     <div ref={this.bottom} />
                 </ul>
