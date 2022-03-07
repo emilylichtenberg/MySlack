@@ -6,12 +6,12 @@ class WorkspaceIndexItem extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.props.fetchWorkspace(this.props.workspace.id)
+    // componentDidMount() {
+    //     this.props.fetchWorkspace(this.props.workspace.id)
 
-    }
-    componentDidUpdate() {
-    }
+    // }
+    // componentDidUpdate() {
+    // }
 
 
     render () {
