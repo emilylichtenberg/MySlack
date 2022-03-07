@@ -6,8 +6,10 @@ const ChatsReducer = (state = {}, action) => {
     let nextState = Object.assign({},state)
     switch (action.type) {
         case RECEIVE_CHATS:
+            // debugger
             return action.chats
         case RECEIVE_CHAT:
+            // debugger
             nextState[action.chat.id] = action.chat;
             return nextState;
         case RECEIVE_WORKSPACE:

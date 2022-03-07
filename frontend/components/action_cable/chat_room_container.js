@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => {
         users: state.entities.users,
         chatId: parseInt(ownProps.match.params.chatId),
         workspaceId: parseInt(ownProps.match.params.workspaceId),
-        // chat: state.entities.chats[ownProps.match.params.chatId]
+        chat: state.entities.chats[ownProps.match.params.chatId],
         messages: Object.values(state.entities.messages)
     })
 };

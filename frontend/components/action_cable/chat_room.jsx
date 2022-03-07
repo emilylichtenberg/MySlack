@@ -85,7 +85,7 @@ class ChatRoom extends React.Component {
 
     render() {
         // debugger
-        const {currentUser, chatId, workspaceId, messages, users} = this.props
+        const {currentUser, chatId, workspaceId, messages, users, chat} = this.props
         return(
             <div className="chatroom-container">
                 <ul className="message-list">
@@ -94,7 +94,7 @@ class ChatRoom extends React.Component {
                     }
                     <div ref={this.bottom} />
                 </ul>
-                <MessageForm currentUser={currentUser} chatId={chatId} workspaceId={workspaceId}/>
+                <MessageForm currentUser={currentUser} chatId={chatId} workspaceId={workspaceId} chat={chat}/>
             </div>
         )
     }

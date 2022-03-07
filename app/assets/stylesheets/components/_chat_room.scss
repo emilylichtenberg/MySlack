@@ -4,4 +4,78 @@
 
 .chatroom-container {
     margin-top: 38px;
+    // margin-left: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.message-submit-container {
+    display: flex;
+    width: 100%;
+    margin-left: 1%;
+}
+
+.message-form {
+    width: 100%;
+}
+.message-input {
+    width: 90%;
+    height: 2.5rem;
+    margin-bottom: 1%;
+}
+
+.message-submit {
+    width: 5%;
+    height: 75%;
+    border: none;
+    background-color: transparent;
+}
+
+.message-list {
+    padding-bottom: .5%;
+    overflow-y: auto;
+}
+
+.message-item-container {
+    display: flex;
+    padding: 1%;
+    &:hover {
+        background-color: rgb(245, 245, 245);
+    }
+}
+
+.user-icon {
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+}
+
+.message-details-container {
+    padding-left: 1%;
+    padding-right: 5%;
+}
+
+.message-header {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    // width: 30vw;
+}
+
+#message-username {
+    padding-right: 4%;
+    font-weight: bold;
+}
+
+#message-time {
+    color: gray;
+    font-size: x-small;
+}
+
+.message-content {
+    line-height: 1.4;
 }

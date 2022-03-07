@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faPaperPlane} from '@fortawesome/free-solid-svg-icons'
 
 class MessageForm extends React.Component {
     constructor(props) {
@@ -13,6 +15,7 @@ class MessageForm extends React.Component {
     }
 
     handleSubmit(e) {
+        // debugger
         e.preventDefault();
         App.cable.subscriptions.subscriptions[0].speak({message: this.state})
             // [0] is the reason not automatically updating
@@ -21,11 +24,15 @@ class MessageForm extends React.Component {
     }
 
     render() {
+        // debugger
         return(
             <div className="message-submit-container">
                 <form className="message-form" onSubmit={this.handleSubmit}>
                     <input className="message-input" type="text" value={this.state.body} placeholder='type message' onChange={this.handleUpdate('body')}/>
-                    <input className="message-submit" type="submit" />
+                    <input className="message-submit" type="submit" value='>'/>
+                    {/* <button>
+                        <FontAwesomeIcon icon='fa-solid fa-paper-plane-top' onClick={this.handleSubmit}/>
+                    </button> */}
                 </form>
             </div>
         )
