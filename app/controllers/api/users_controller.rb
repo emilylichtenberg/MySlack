@@ -3,6 +3,8 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login!(@user)
+            Subscription.create!(user_id: @user.id, workspace_id: 1)
+            Subscription.create!(user_id: @user.id, workspace_id: 2)
             render 'api/users/show'
         else
             render json: @user.errors.full_messages, status: 422

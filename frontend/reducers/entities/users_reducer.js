@@ -10,13 +10,13 @@ const usersReducer = (state={}, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
         case RECEIVE_USER:
-            debugger
+            // debugger
             nextState[action.user.id] = action.user
             return nextState;
-        // case RECEIVE_WORKSPACE:
+        case RECEIVE_WORKSPACE:
             // debugger
-            // action.workspace.users.forEach(user => nextState[user.id] = user);
-            // return nextState
+            action.workspace.users.forEach(user => nextState[user.id] = user);
+            return nextState
             // nextState[action.workspace.users] action.workspace.users;
         default:
             return state;

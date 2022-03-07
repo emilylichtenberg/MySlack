@@ -13,14 +13,14 @@ class WorkspaceIndex extends React.Component {
     }
 
     render () {
-        const {usersWorkspaces, fetchWorkspace, fetchChat, currentWorkspace, currentWorkspaceId} = this.props
+        const {usersWorkspaces, fetchWorkspace, fetchChat, currentWorkspace, currentWorkspaceId, workspaces} = this.props
         // debugger
         return (
         
                 <ul className="workspace-index">
                     {
-                        usersWorkspaces ? 
-                            usersWorkspaces.map(workspace => <WorkspaceIndexItem key={workspace.id} 
+                        workspaces ? 
+                            workspaces.map(workspace => <WorkspaceIndexItem key={workspace.id} 
                                             workspace={workspace} 
                                             fetchWorkspace={fetchWorkspace}
                                             fetchChat={fetchChat}
