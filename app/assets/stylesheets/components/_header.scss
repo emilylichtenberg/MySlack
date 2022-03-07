@@ -1,13 +1,18 @@
 .header {
     background-color: $dark-purple;
     display: flex;
-    justify-content: center;
+    justify-content: space-between  ;
     align-items: center;
     height: 38px;
     width: 100%;
     border-bottom: .1px solid $border-purple;
     position: fixed;
     z-index: 2;
+}
+
+.header p {
+    color: white;
+    padding-left: 3em;
 }
 
 .header input {
@@ -27,4 +32,7 @@
     color: white;
 }
 
-  
+.header button {
+    margin-right: 3em;
+    color: $dark-purple;
+}
