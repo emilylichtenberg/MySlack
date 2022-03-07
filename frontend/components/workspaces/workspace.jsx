@@ -21,12 +21,12 @@ class Workspace extends React.Component {
     }
 
     render() {
-        const {usersWorkspaces, fetchWorkspace, fetchWorkspaces, currentWorkspace, fetchChat, openModal, closeModal, logout, currentWorkspaceId, currentChatId, chats, workspaces} = this.props
+        const {currentUser, fetchWorkspace, fetchWorkspaces, currentWorkspace, fetchChat, openModal, closeModal, logout, currentWorkspaceId, currentChatId, chats, workspaces} = this.props
         // debugger
         return(
             <div >
                 <div className="header-container">
-                    <Header logout={logout} workspace={currentWorkspace}/> 
+                    <Header logout={logout} workspace={currentWorkspace} currentUser={currentUser}/> 
                 </div>
                 <div className="full-content-container">
                     <div className="sidenav-container">
