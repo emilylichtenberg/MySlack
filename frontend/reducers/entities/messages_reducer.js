@@ -14,7 +14,11 @@ const MessagesReducer = (state = {}, action) => {
         // case RECEIVE_CHAT:
         //     return action.chat.messages
         case REMOVE_MESSAGE:
-            delete nextState[action.messageId];
+            // debugger
+            Object.values(nextState).forEach((message,i) => {
+                message.id === action.messageId ?
+                    delete nextState[i] : null
+            })
             return nextState;
         default:
             return state;

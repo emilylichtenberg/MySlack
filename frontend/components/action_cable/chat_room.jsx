@@ -1,6 +1,4 @@
 import React from "react";
-import { formatTime } from "../../util/date_util";
-import HeaderContainer from "../header/header_container";
 import MessageForm from './message_form'
 import MessageItem from "./message_item";
 
@@ -9,8 +7,6 @@ class ChatRoom extends React.Component {
         super(props);
         this.bottom = React.createRef();
         this.createSubscription = this.createSubscription.bind(this)
-        // props.fetchChat(props.chatId)
-
     }
 
     componentDidMount() {
@@ -35,7 +31,6 @@ class ChatRoom extends React.Component {
                         this.props.receiveMessage(data.message);
                         break;
                       case "messages":
-                        
                         this.props.receiveMessages(data.messages)
                         // this.props.receiveUsers(data.users)
                         break;
@@ -59,35 +54,23 @@ class ChatRoom extends React.Component {
         );
     }
 
-    // loadChat(e) {
-    //     // shows all chat history even after refresh. maybe include this in component did mount?
-    //     e.preventDefault();
-    //     App.cable.subscriptions.subscriptions[0].load();
-    //         // check which subscription this is
-    // }
-
     componentDidUpdate(prevProps) {
         this.bottom.current.scrollIntoView();
-        // debugger
-        const subId = this.props.chatId
-        const subIndex = []
-        App.cable.subscriptions.subscriptions.forEach((sub,i) => {
-            let subIdentifier = JSON.parse(sub.identifier)
-            subIdentifier.chatId === subId ? subIndex.push(sub) : null
-          
+
+        const subscriptionId = this.props.chatId;
+        const subscription = [];
+        App.cable.subscriptions.subscriptions.forEach((sub, i) => {
+            let subIdentifier = JSON.parse(sub.identifier);
+            subIdentifier.chatId === subscriptionId ? subscription.push(sub) : null
         })
 
-
-        if (subIndex.length === 0) {
+        if (subscription.length === 0) {
             this.createSubscription()
         } else if (prevProps.chatId !== this.props.chatId) {
-            // debugger
-            subIndex[0].load()
+            subscription[0].load()
         }
 
     }
-
-
 
     render() {
         // debugger

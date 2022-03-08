@@ -16,19 +16,16 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.setState({chat_id: this.props.chatId})
         // debugger
-        let subIndex;
+        let currentSubscription;
         for (let i = 0; i < App.cable.subscriptions.subscriptions.length; i++) {
             if (JSON.parse(App.cable.subscriptions.subscriptions[i].identifier).chatId === this.props.chatId) {
                 // debugger
-                subIndex = i;
+                currentSubscription = i;
             }
         }
 
-        App.cable.subscriptions.subscriptions[subIndex].speak({message: this.state})
-            // [0] is the reason not automatically updating
-            // look at subsriptions and make sure speaking to correct
+        App.cable.subscriptions.subscriptions[currentSubscription].speak({message: this.state})
         this.setState({body: ''}) //
     }
 

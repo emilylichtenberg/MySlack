@@ -23,15 +23,17 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def update(data)
-    message = Message.find(data.id)
+    message = Message.find(data['id'])
     message.update(body: data.body)
     socket = {message: message, type: 'message'}
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end
 
   def delete(data)
-    message = Message.find(data.id)
+    # debugger
+    message = Message.find(data['id'])
     socket = {messageId: message.id, type: 'remove'}
+    # debugger
     message.destroy
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end
