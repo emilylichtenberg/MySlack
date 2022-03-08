@@ -25,7 +25,7 @@ gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'activestorage'
-
+gem "autoprefixer-rails"
 gem 'jquery-rails'
 # gem 'turbolinks'
 # gem 'rails-ujs'
