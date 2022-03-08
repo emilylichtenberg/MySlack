@@ -23,8 +23,9 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def update(data)
+    # debugger
     message = Message.find(data['id'])
-    message.update(body: data.body)
+    message.update(body: data['body'])
     socket = {message: message, type: 'message'}
     ChatChannel.broadcast_to("chat_channel_#{params['chatId']}", socket)
   end

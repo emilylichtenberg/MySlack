@@ -57,15 +57,22 @@
 .message-details-container {
     padding-left: 1%;
     padding-right: 5%;
+    width: 100%;
 }
 
 .message-header {
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     padding-bottom: 5px;
-    // width: 30vw;
+    width: 100%;
 }
 
+.message-header-content {
+    display: flex;
+    align-items: flex-end;
+
+}
 #message-username {
     padding-right: 4%;
     font-weight: bold;
@@ -78,4 +85,27 @@
 
 .message-content {
     line-height: 1.4;
+    display: flex;
+    align-items: center;
+    font-size: small;
+    .edited {
+        padding-left: 2px; 
+        // padding-bottom: 2px;
+        color: gray;
+        font-size: x-small;
+    }
+}
+
+.message-update-icons {
+    padding-right: 20px;
+    button {
+        background-color: transparent;
+        color: darkgray;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background-color: lightgray;
+            border-radius: 4px;
+        }
+    }
 }

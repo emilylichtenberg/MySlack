@@ -10,10 +10,12 @@ import {faTrashCan} from '@fortawesome/free-solid-svg-icons'
 class MessageItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            editActive: false,
-            message: props.message
-        }
+        // this.state = {
+        //     editActive: false,
+        //     message: props.message
+        // }
+        this.state = {...props.message, editActive: false}
+        // debugger
         this.deleteMessage = this.deleteMessage.bind(this);
         this.beginEdit = this.beginEdit.bind(this);
         this.endEdit = this.endEdit.bind(this);
@@ -41,18 +43,19 @@ class MessageItem extends React.Component {
     }
 
     handleChange(e) {
-        debugger
-        this.setState({message: {body: e.currentTarget.value}})
+        // debugger
+        this.setState({body: e.currentTarget.value})
     }
 
     editMessage() {
+        // debugger
         const subscription = [];
         App.cable.subscriptions.subscriptions.forEach(sub => {
             let subIdentifier = JSON.parse(sub.identifier);
             subIdentifier.chatId === this.props.message.chat_id ? subscription.push(sub) : null
         })
         // debugger
-        subscription[0].update(this.state.message)
+        subscription[0].update(this.state)
         subscription[0].load()
         this.setState({editActive: false})
     }
@@ -68,29 +71,36 @@ class MessageItem extends React.Component {
                    !this.state.editActive ?
                         <div className="message-details-container">
                             <div className="message-header">
-                                <p id="message-username">{users[message.sender_id].username}</p>
-                                <p id="message-time">{formatTime(message.created_at)}</p>
-                                {
-                                    currentUser.id === message.sender_id ?
-                                    <div>
-                                        <button onClick={this.beginEdit}>
-                                            <FontAwesomeIcon icon={faPenToSquare}/>
-                                        </button>
-                                        <button onClick={this.deleteMessage}>
-                                            <FontAwesomeIcon icon={faTrashCan}/>
-                                        </button>
-                                    </div>
-                                    : ''
-                                }
+                                <div className="message-header-content">
+                                    <p id="message-username">{users[message.sender_id].username}</p>
+                                    <p id="message-time">{formatTime(message.created_at)}</p>
+                                </div>
+                                <div>
+                                    {
+                                        currentUser.id === message.sender_id ?
+                                        <div className="message-update-icons">
+                                            <button onClick={this.beginEdit}>
+                                                <FontAwesomeIcon icon={faPenToSquare}/>
+                                            </button>
+                                            <button onClick={this.deleteMessage}>
+                                                <FontAwesomeIcon icon={faTrashCan}/>
+                                            </button>
+                                        </div>
+                                        : ''
+                                    }
+                                </div>
                             </div>
                             <div className="message-content">
                                 <p>{message.body}</p>
+                                {message.created_at !== message.updated_at ? 
+                                    <p className="edited">(edited)</p>
+                                    : ''} 
                             </div>
 
                         </div>  
                  :
-                       <div>
-                           <input type="text" value={message.body} onChange={this.handleChange}/>
+                       <div className="message-update-options">
+                           <input type="text" value={this.state.body} onChange={this.handleChange}/>
                            <button onClick={this.endEdit}>Cancel</button>
                            <button onClick={this.editMessage}>Save</button>
                        </div>            
