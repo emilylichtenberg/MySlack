@@ -70,12 +70,22 @@ class MessageItem extends React.Component {
                {
                    !this.state.editActive ?
                         <div className="message-details-container">
-                            <div className="message-header">
-                                <div className="message-header-content">
-                                    <p id="message-username">{users[message.sender_id].username}</p>
-                                    <p id="message-time">{formatTime(message.created_at)}</p>
+                            <div className="message-left">
+                                <div className="message-header">
+                                    <div className="message-header-content">
+                                        <p id="message-username">{users[message.sender_id].username}</p>
+                                        <p id="message-time">{formatTime(message.created_at)}</p>
+                                    </div>
+            
                                 </div>
-                                <div>
+                                <div className="message-content">
+                                    <p>{message.body}</p>
+                                    {message.created_at !== message.updated_at ? 
+                                        <p className="edited">(edited)</p>
+                                        : ''} 
+                                </div>
+                            </div>
+                            <div className="message-right">
                                     {
                                         currentUser.id === message.sender_id ?
                                         <div className="message-update-icons">
@@ -89,14 +99,6 @@ class MessageItem extends React.Component {
                                         : ''
                                     }
                                 </div>
-                            </div>
-                            <div className="message-content">
-                                <p>{message.body}</p>
-                                {message.created_at !== message.updated_at ? 
-                                    <p className="edited">(edited)</p>
-                                    : ''} 
-                            </div>
-
                         </div>  
                  :
                        <div className="message-update-options">

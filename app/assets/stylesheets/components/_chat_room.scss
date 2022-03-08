@@ -58,11 +58,13 @@
     padding-left: 1%;
     padding-right: 5%;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .message-header {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
     padding-bottom: 5px;
     width: 100%;
@@ -103,9 +105,15 @@
         color: darkgray;
         border: none;
         cursor: pointer;
+        display: none;
         &:hover {
             background-color: lightgray;
+            // color: white;
             border-radius: 4px;
         }
     }
+}
+
+.message-item-container:hover .message-update-icons button {
+    display: inline;
 }
