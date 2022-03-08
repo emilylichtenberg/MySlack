@@ -18,7 +18,7 @@ class WorkspaceIndex extends React.Component {
 
     render () {
         const {usersWorkspaces, fetchWorkspace, fetchChat, currentWorkspace, currentWorkspaceId, workspaces} = this.props
-        console.log(workspaces)
+        // console.log(workspaces)
         // debugger
         return (
                 <ul className="workspace-index">

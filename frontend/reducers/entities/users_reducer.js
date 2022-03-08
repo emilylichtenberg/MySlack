@@ -1,3 +1,4 @@
+import { RECEIVE_CHAT } from "../../actions/chat_actions";
 import { RECEIVE_CURRENT_USER } from "../../actions/session_actions";
 import { RECEIVE_USER } from "../../actions/user_actions";
 import { RECEIVE_WORKSPACE } from "../../actions/workspace_actions";
@@ -18,6 +19,9 @@ const usersReducer = (state={}, action) => {
             action.workspace.users.forEach(user => nextState[user.id] = user);
             return nextState
             // nextState[action.workspace.users] action.workspace.users;
+        case RECEIVE_CHAT:
+            action.chat.users.forEach(user => nextState[user.id] = user);
+            return nextState;
         default:
             return state;
     }

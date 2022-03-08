@@ -19,15 +19,15 @@ class WorkspaceIndexItem extends React.Component {
         // debugger
         return (
           
-                // currentWorkspace ? 
-                // <Link  to={`/workspaces/${workspace.id}/chats/${currentWorkspace.chats[0].id}`} 
-                //     onClick={() => fetchWorkspace(workspace.id)
-                //             .then(fetchChat(currentWorkspace.chats[0]))} 
-                //     className='workspace-link'>
-                //     <li className='workspace-index-item'>
-                //         {workspace.name}
-                //     </li>
-                // </Link> : 
+                currentWorkspace ? 
+                <Link  to={`/workspaces/${workspace.id}/chats/${currentWorkspace.chats[0].id}`} 
+                    onClick={() => fetchWorkspace(workspace.id)
+                            .then(workspace => fetchChat(currentWorkspace.chats[0]))} 
+                    className='workspace-link'>
+                    <li className='workspace-index-item'>
+                        {workspace.name}
+                    </li>
+                </Link> : 
                 <Link  to={`/workspaces/${workspace.id}`} 
                     onClick={() => fetchWorkspace(workspace.id)}
                     className='workspace-link'>

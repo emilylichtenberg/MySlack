@@ -14,10 +14,13 @@ class MessageItem extends React.Component {
 
     componentDidMount() {
         // debugger
+
     }
 
     render() {
         const {message, users} = this.props
+        // console.log(users)
+        // console.log(message)
         // debugger
         return (
             message ? 
@@ -26,7 +29,7 @@ class MessageItem extends React.Component {
                 <div className="message-details-container">
                     <div className="message-header">
                         <p id="message-username">{users[message.sender_id].username}</p>
-                        {/* <p id="message-username">username</p> */}
+                        
                         <p id="message-time">{formatTime(message.created_at)}</p>
                     </div>
                     <div className="message-content">

@@ -13,6 +13,7 @@
 .header p {
     color: white;
     padding-left: 3em;
+    font-size: smaller;
 }
 
 .header input {
@@ -34,5 +35,12 @@
 
 .header button {
     margin-right: 3em;
-    color: $dark-purple;
+    cursor: pointer;
+    border: 1px solid $light-purple;
+    background-color: white;
+    color: $light-purple;
+    border-radius: 4px;
+    &:hover {
+        background-color: #f7f3ee;
+    }
 }

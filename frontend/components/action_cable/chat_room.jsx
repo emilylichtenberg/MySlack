@@ -9,6 +9,7 @@ class ChatRoom extends React.Component {
         super(props);
         this.bottom = React.createRef();
         this.createSubscription = this.createSubscription.bind(this)
+        // props.fetchChat(props.chatId)
 
     }
 
@@ -83,13 +84,7 @@ class ChatRoom extends React.Component {
             // debugger
             subIndex[0].load()
         }
-        // else if  (this.props.messages[0].chat_id !== this.props.chatId ) {
-        //     subIndex[0].load()
-        // } 
-        // else if (this.props.messages.length === 0) {
-        //     // debugger
-        //     // subIndex[0].load()
-        // } 
+
     }
 
 

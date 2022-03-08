@@ -16,7 +16,7 @@ class Workspace extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchWorkspace(this.props.match.params.workspaceId)
-        this.props.fetchWorkspaces()
+        // this.props.fetchWorkspaces()
         // this.props.fetchChats()
     }
 
