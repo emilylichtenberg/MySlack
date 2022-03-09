@@ -60,7 +60,7 @@ class MessageItem extends React.Component {
     render() {
         const {message, users, currentUser} = this.props
         return (
-            message ? 
+            users[message.sender_id] ? 
             <div className="message-item-container">
                <FontAwesomeIcon icon={faUser} className='user-icon'/>
                {
