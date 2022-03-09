@@ -65,14 +65,18 @@
     padding-right: 5%;
  
     height: 4vh;
+    // h3 {
+    //     height: 4vh;
+    // }
     button {
         display: none;
         color: lightgray;
         background-color: transparent;
         border: none;
         font-size: large;
-        height: 4vh;
-        width: 4vh;
+        height: 3vh;
+        width: 3vh;
+        line-height: 1;
         cursor: pointer;
     }
     span {
@@ -118,6 +122,13 @@
     }
 }
 
+.full-workspace-container {
+    height: 100vh;
+}
+.full-content-container {
+    height: 100%;
+    display: flex;
+}
 .sidenav-container {
     width: 350px;
     height: 95vh;
@@ -129,6 +140,7 @@
 
 .workspace-container {
     // height: 6vh;
+    padding-top: 5px;
     width: 25%;
     border: 1px solid $border-purple;
     // color: white;
@@ -149,23 +161,29 @@
 
 .workspace-index-item {
     // box-sizing: border-box;
-    margin: 5%;
+    margin: 5% 0;
+    // background-color: white;
     color: rgb(253, 248, 242);
-    border: .5px solid $border-purple;
+    border: 1px solid $border-purple;
     border-radius: 4px;
-    transition: border .5s ease-in;
+    // transition: border .5s ease-in;
     height: 40px;
     width: 40px;
 }
 
-.workspace-index-item:hover, .workspace-index-item:focus {
+.workspace-index-item:hover {
     border: 2px solid grey;
 }
 
+img {
+    height: 40px;
+    width: 40px;
+}
 .workspace-index-item.active {
     border: 2px solid white; 
 }
 
 .chat-container {
     width: 100%;
+    border-radius: 4px;
 }

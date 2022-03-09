@@ -24,7 +24,7 @@ class Workspace extends React.Component {
         const {currentUser, fetchWorkspace, fetchWorkspaces, currentWorkspace, fetchChat, openModal, closeModal, logout, currentWorkspaceId, currentChatId, chats, workspaces} = this.props
         // debugger
         return(
-            <div >
+            <div className="full-workspace-container">
                 <div className="header-container">
                     <Header logout={logout} workspace={currentWorkspace} currentUser={currentUser}/> 
                 </div>

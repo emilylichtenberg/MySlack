@@ -1,6 +1,6 @@
-.full-content-container {
-    display: flex;
-}
+// .full-content-container {
+//     display: flex;
+// }
 
 .chatroom-container {
     margin-top: 38px;
@@ -11,157 +11,157 @@
     justify-content: flex-end;
 }
 
-.message-submit-container {
-    display: flex;
-    width: 100%;
-    margin-left: 1%;
-}
+// .message-submit-container {
+//     display: flex;
+//     width: 100%;
+//     margin-left: 1%;
+// }
 
-.message-form {
-    width: 100%;
-    button {
+// .message-form {
+//     width: 100%;
+//     button {
         
-        background-color: transparent;
-        color: lightgray;
-        border: none;
-    }
-}
-.message-input {
-    width: 90%;
-    height: 2.5rem;
-    margin-bottom: 1%;
-    padding-left: 16px;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    &:active {
-        border: none;
-    }
-}
+//         background-color: transparent;
+//         color: lightgray;
+//         border: none;
+//     }
+// }
+// .message-input {
+//     width: 90%;
+//     height: 2.5rem;
+//     margin-bottom: 1%;
+//     padding-left: 16px;
+//     border: 1px solid lightgray;
+//     border-radius: 3px;
+//     &:active {
+//         border: none;
+//     }
+// }
 
-.message-submit {
-    width: 5%;
-    height: 75%;
-    border: none;
-    background-color: transparent;
-}
+// .message-submit {
+//     width: 5%;
+//     height: 75%;
+//     border: none;
+//     background-color: transparent;
+// }
 
 .message-list {
     padding-bottom: .5%;
-    // overflow-y: auto;
+    overflow-y: auto;
 }
 
-.message-item-container {
-    display: flex;
-    padding: .5% 1%;
-    &:hover {
-        background-color: rgb(245, 245, 245);
-    }
-}
+// .message-item-container {
+//     display: flex;
+//     padding: .5% 1%;
+//     &:hover {
+//         background-color: rgb(245, 245, 245);
+//     }
+// }
 
-.user-icon {
-    height: 2rem;
-    width: 2rem;
-    border: 1px solid black;
-    color: white;
-    background-color: black;
-}
+// .user-icon {
+//     height: 2rem;
+//     width: 2rem;
+//     border: 1px solid black;
+//     color: white;
+//     background-color: black;
+// }
 
-.message-details-container {
-    padding-left: 1%;
-    padding-right: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
+// .message-details-container {
+//     padding-left: 1%;
+//     padding-right: 5%;
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+// }
 
-.message-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 5px;
-    width: 100%;
-}
+// .message-header {
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: space-between;
+//     padding-bottom: 5px;
+//     width: 100%;
+// }
 
-.message-header-content {
-    display: flex;
-    align-items: flex-end;
+// .message-header-content {
+//     display: flex;
+//     align-items: flex-end;
 
-}
-#message-username {
-    padding-right: 4%;
-    font-weight: bold;
-}
+// }
+// #message-username {
+//     padding-right: 4%;
+//     font-weight: bold;
+// }
 
-#message-time {
-    color: gray;
-    font-size: x-small;
-}
+// #message-time {
+//     color: gray;
+//     font-size: x-small;
+// }
 
-.message-content {
-    line-height: 1.4;
-    display: flex;
-    align-items: center;
-    font-size: small;
-    .edited {
-        padding-left: 2px; 
-        // padding-bottom: 2px;
-        color: gray;
-        font-size: x-small;
-    }
-}
+// .message-content {
+//     line-height: 1.4;
+//     display: flex;
+//     align-items: center;
+//     font-size: small;
+//     .edited {
+//         padding-left: 2px; 
+//         // padding-bottom: 2px;
+//         color: gray;
+//         font-size: x-small;
+//     }
+// }
 
-.message-update-icons {
-    padding-right: 20px;
-    button {
-        background-color: transparent;
-        color: darkgray;
-        border: none;
-        cursor: pointer;
-        display: none;
-        &:hover {
-            background-color: lightgray;
-            border-radius: 4px;
-        }
-    }
-}
+// .message-update-icons {
+//     padding-right: 20px;
+//     button {
+//         background-color: transparent;
+//         color: darkgray;
+//         border: none;
+//         cursor: pointer;
+//         display: none;
+//         &:hover {
+//             background-color: lightgray;
+//             border-radius: 4px;
+//         }
+//     }
+// }
 
-.message-item-container:hover .message-update-icons button {
-    display: inline;
-}
+// .message-item-container:hover .message-update-icons button {
+//     display: inline;
+// }
 
-.message-update-options {
-    padding-left: 1%;
-    width: 90%;
-    input {
-        height: 2rem;
-        width: 95%;
-    }
-}
+// .message-update-options {
+//     padding-left: 1%;
+//     width: 90%;
+//     input {
+//         height: 2rem;
+//         width: 95%;
+//     }
+// }
 
-.edit-message-options {
-    padding-right: 50px;
-    display: flex;
-    justify-content: right;
-    button {
-        margin: .5%;
-        border-radius: 4px;
-        height: 2rem;
-        width: 70px;
-        cursor: pointer;
-    }
-    #cancel-edit {
-        background-color: rgb(202, 202, 202);
-        border: .5px solid grey;
-        &:hover {
-            background-color: rgb(187, 187, 187);
-        }
-    }
-    #save-edit {
-        background-color: green;
-        color: white;
-        border: none;
-        &:hover {
-            background-color: rgb(87, 146, 87);
-        }
-    }
-}
+// .edit-message-options {
+//     padding-right: 50px;
+//     display: flex;
+//     justify-content: right;
+//     button {
+//         margin: .5%;
+//         border-radius: 4px;
+//         height: 2rem;
+//         width: 70px;
+//         cursor: pointer;
+//     }
+//     #cancel-edit {
+//         background-color: rgb(202, 202, 202);
+//         border: .5px solid grey;
+//         &:hover {
+//             background-color: rgb(187, 187, 187);
+//         }
+//     }
+//     #save-edit {
+//         background-color: green;
+//         color: white;
+//         border: none;
+//         &:hover {
+//             background-color: rgb(87, 146, 87);
+//         }
+//     }
+// }
