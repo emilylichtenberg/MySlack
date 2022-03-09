@@ -123,7 +123,7 @@
 }
 
 .full-workspace-container {
-    height: 100vh;
+    // height: 100vh;
 }
 .full-content-container {
     height: 100%;
@@ -161,18 +161,22 @@
 
 .workspace-index-item {
     // box-sizing: border-box;
-    margin: 5% 0;
+    margin: 10% 0;
     // background-color: white;
     color: rgb(253, 248, 242);
     border: 1px solid $border-purple;
     border-radius: 4px;
     // transition: border .5s ease-in;
-    height: 40px;
-    width: 40px;
+    height: 43px;
+    width: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // box-sizing: border-box;
 }
 
 .workspace-index-item:hover {
-    border: 2px solid grey;
+    // border: 2px solid grey;
 }
 
 img {
