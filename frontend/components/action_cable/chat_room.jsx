@@ -16,7 +16,7 @@ class ChatRoom extends React.Component {
         // speak - sends data to backend. invokes backend speak method
         // this.props.receiveMessages()
 
-
+        
         this.createSubscription()
     }
 
