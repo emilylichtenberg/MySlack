@@ -14,7 +14,7 @@ class MessageItem extends React.Component {
         //     editActive: false,
         //     message: props.message
         // }
-        this.state = {...props.message, editActive: false}
+        this.state = {...props.message, editActive: false, lastSavedBody: props.message.body}
         // debugger
         this.deleteMessage = this.deleteMessage.bind(this);
         this.beginEdit = this.beginEdit.bind(this);
@@ -40,6 +40,7 @@ class MessageItem extends React.Component {
     }
 
     endEdit() {
+        debugger
         this.setState({editActive: false})
     }
 

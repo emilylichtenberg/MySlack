@@ -139,6 +139,29 @@
 }
 
 .edit-message-options {
-    margin-left: auto;
-    margin-right: 0;
+    padding-right: 50px;
+    display: flex;
+    justify-content: right;
+    button {
+        margin: .5%;
+        border-radius: 4px;
+        height: 2rem;
+        width: 70px;
+        cursor: pointer;
+    }
+    #cancel-edit {
+        background-color: rgb(202, 202, 202);
+        border: .5px solid grey;
+        &:hover {
+            background-color: rgb(187, 187, 187);
+        }
+    }
+    #save-edit {
+        background-color: green;
+        color: white;
+        border: none;
+        &:hover {
+            background-color: rgb(87, 146, 87);
+        }
+    }
 }
