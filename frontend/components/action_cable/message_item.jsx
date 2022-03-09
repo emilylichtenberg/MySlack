@@ -20,7 +20,8 @@ class MessageItem extends React.Component {
         this.beginEdit = this.beginEdit.bind(this);
         this.endEdit = this.endEdit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.editMessage = this.editMessage.bind(this)
+        this.editMessage = this.editMessage.bind(this);
+        this.handleKey = this.handleKey.bind(this)
     }
 
     deleteMessage() {
@@ -58,6 +59,11 @@ class MessageItem extends React.Component {
         subscription[0].update(this.state)
         subscription[0].load()
         this.setState({editActive: false})
+    }
+
+    handleKey(e) {
+        // debugger
+        e.key === 'Enter' ? this.editMessage() : null
     }
 
     render() {
@@ -102,9 +108,11 @@ class MessageItem extends React.Component {
                         </div>  
                  :
                        <div className="message-update-options">
-                           <input type="text" value={this.state.body} onChange={this.handleChange}/>
-                           <button onClick={this.endEdit}>Cancel</button>
-                           <button onClick={this.editMessage}>Save</button>
+                           <input type="text" value={this.state.body} onChange={this.handleChange} onKeyPress={this.handleKey}/>
+                           <div className="edit-message-options">
+                                <button id='cancel-edit' onClick={this.endEdit}>Cancel</button>
+                                <button id="save-edit" onClick={this.editMessage}>Save</button>
+                           </div>
                        </div>            
                }
             </div>

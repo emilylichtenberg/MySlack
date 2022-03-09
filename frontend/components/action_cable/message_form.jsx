@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPaperPlane} from '@fortawesome/free-solid-svg-icons'
+import {faCircleArrowRight} from '@fortawesome/free-solid-svg-icons'
 
 class MessageForm extends React.Component {
     constructor(props) {
@@ -35,12 +35,12 @@ class MessageForm extends React.Component {
         return(
             chat ? 
             <div className="message-submit-container">
-                <form className="message-form" onSubmit={this.handleSubmit}>
+                <form className="message-form">
                     <input className="message-input" type="text" value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
-                    <input className="message-submit" type="submit" value='>'/>
-                    {/* <button>
-                        <FontAwesomeIcon icon='fa-solid fa-paper-plane-top' onClick={this.handleSubmit}/>
-                    </button> */}
+                    {/* <input className="message-submit" type="submit" value='>'/> */}
+                    <button onClick={this.handleSubmit}>
+                        <FontAwesomeIcon icon={faCircleArrowRight} />
+                    </button>
                 </form>
             </div>
             : ''

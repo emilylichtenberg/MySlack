@@ -19,11 +19,23 @@
 
 .message-form {
     width: 100%;
+    button {
+        
+        background-color: transparent;
+        color: lightgray;
+        border: none;
+    }
 }
 .message-input {
     width: 90%;
     height: 2.5rem;
     margin-bottom: 1%;
+    padding-left: 16px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    &:active {
+        border: none;
+    }
 }
 
 .message-submit {
@@ -40,7 +52,7 @@
 
 .message-item-container {
     display: flex;
-    padding: 1%;
+    padding: .5% 1%;
     &:hover {
         background-color: rgb(245, 245, 245);
     }
@@ -108,7 +120,6 @@
         display: none;
         &:hover {
             background-color: lightgray;
-            // color: white;
             border-radius: 4px;
         }
     }
@@ -116,4 +127,18 @@
 
 .message-item-container:hover .message-update-icons button {
     display: inline;
+}
+
+.message-update-options {
+    padding-left: 1%;
+    width: 90%;
+    input {
+        height: 2rem;
+        width: 95%;
+    }
+}
+
+.edit-message-options {
+    margin-left: auto;
+    margin-right: 0;
 }
