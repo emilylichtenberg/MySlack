@@ -10,15 +10,11 @@ const MessagesReducer = (state = {}, action) => {
             nextState[action.message.id] = action.message;
             return nextState;
         case RECEIVE_MESSAGES:
-            return action.messages;
-        // case RECEIVE_CHAT:
-        //     return action.chat.messages
+            nextState = {}
+            action.messages.forEach(message => nextState[message.id] = message)
+            return nextState
         case REMOVE_MESSAGE:
-            // debugger
-            Object.values(nextState).forEach((message,i) => {
-                message.id === action.messageId ?
-                    delete nextState[i] : null
-            })
+            delete nextState[action.messageId]
             return nextState;
         default:
             return state;

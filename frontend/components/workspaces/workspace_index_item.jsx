@@ -25,7 +25,7 @@ class WorkspaceIndexItem extends React.Component {
                             .then(workspace => fetchChat(currentWorkspace.chats[0]))} 
                     className='workspace-link'>
                     <li className='workspace-index-item'>
-                        {workspace.name}
+                        <img src={workspace.imgPath} alt={workspace.name} />
                     </li>
                 </Link> : 
                 <Link  to={`/workspaces/${workspace.id}`} 
@@ -33,7 +33,7 @@ class WorkspaceIndexItem extends React.Component {
                     className='workspace-link'>
                     <li className={workspace.id === currentWorkspaceId ?
                         'workspace-index-item active' : 'workspace-index-item'}>
-                        {workspace.name}
+                        <img src={workspace.imgPath} alt={workspace.name} />
                     </li>
                 </Link>
         )

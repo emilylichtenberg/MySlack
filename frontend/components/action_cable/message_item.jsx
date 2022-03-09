@@ -40,7 +40,7 @@ class MessageItem extends React.Component {
     }
 
     endEdit() {
-        debugger
+        // debugger
         this.setState({editActive: false})
     }
 
@@ -63,7 +63,7 @@ class MessageItem extends React.Component {
     }
 
     handleKey(e) {
-        // debugger
+        debugger
         e.key === 'Enter' ? this.editMessage() : null
     }
 
