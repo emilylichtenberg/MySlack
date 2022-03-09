@@ -37,9 +37,8 @@ class MessageForm extends React.Component {
             <div className="message-submit-container">
                 <form className="message-form">
                     <input className="message-input" type="text" value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
-                    {/* <input className="message-submit" type="submit" value='>'/> */}
                     <button onClick={this.handleSubmit}>
-                        <FontAwesomeIcon icon={faCircleArrowRight} />
+                        <FontAwesomeIcon icon={faCircleArrowRight} size='2x'/>
                     </button>
                 </form>
             </div>

@@ -15,9 +15,9 @@ workspace1 = Workspace.create!(name: 'App Academy', admin_id: 1, img_path: 'http
 workspace2 = Workspace.create!(name: 'Slack', admin_id: 2, img_path: 'https://raw.githubusercontent.com/emilylichtenberg/MySlack/main/app/assets/images/SlackIcon.png')
 
 chat1 = Chat.create!(chat_type: 'channel', name: 'general', description: 'for general discussion', private: false, admin_id: 1, workspace_id: 1)
-chat2 = Chat.create!(chat_type: 'channel', name: 'test', description: 'test', private: true, admin_id: 1, workspace_id: 1)
-chat3 = Chat.create!(chat_type: 'channel', name: 'other', description: 'for general discussion', private: false, admin_id: 1, workspace_id: 2)
-chat4 = Chat.create!(chat_type: 'channel', name: 'other2', description: 'test', private: true, admin_id: 1, workspace_id: 2)
+chat2 = Chat.create!(chat_type: 'channel', name: '2021-11-29-ny', description: 'test', private: true, admin_id: 1, workspace_id: 1)
+chat3 = Chat.create!(chat_type: 'channel', name: 'general', description: 'for general discussion', private: false, admin_id: 1, workspace_id: 2)
+chat4 = Chat.create!(chat_type: 'channel', name: 'slacking-off', description: 'test', private: true, admin_id: 1, workspace_id: 2)
 chat3 = Chat.create!(chat_type: 'DM', name: '1', workspace_id: 1)
 chat4 = Chat.create!(chat_type: 'GM', name: '2', workspace_id: 1)
 
