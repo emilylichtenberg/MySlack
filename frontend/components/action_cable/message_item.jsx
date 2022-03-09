@@ -10,12 +10,7 @@ import {faTrashCan} from '@fortawesome/free-solid-svg-icons'
 class MessageItem extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     editActive: false,
-        //     message: props.message
-        // }
         this.state = {...props.message, editActive: false, lastSavedBody: props.message.body}
-        // debugger
         this.deleteMessage = this.deleteMessage.bind(this);
         this.beginEdit = this.beginEdit.bind(this);
         this.endEdit = this.endEdit.bind(this);
@@ -30,7 +25,6 @@ class MessageItem extends React.Component {
             let subIdentifier = JSON.parse(sub.identifier);
             subIdentifier.chatId === this.props.message.chat_id ? subscription.push(sub) : null
         })
-        // debugger
         subscription[0].delete(this.props.message)
         subscription[0].load()
     }
@@ -40,36 +34,31 @@ class MessageItem extends React.Component {
     }
 
     endEdit() {
-        // debugger
-        this.setState({editActive: false})
+        this.setState({editActive: false, body: this.state.lastSavedBody})
     }
 
     handleChange(e) {
-        // debugger
         this.setState({body: e.currentTarget.value})
     }
 
     editMessage() {
-        // debugger
         const subscription = [];
         App.cable.subscriptions.subscriptions.forEach(sub => {
             let subIdentifier = JSON.parse(sub.identifier);
             subIdentifier.chatId === this.props.message.chat_id ? subscription.push(sub) : null
         })
-        // debugger
         subscription[0].update(this.state)
         subscription[0].load()
-        this.setState({editActive: false})
+        this.setState({editActive: false, lastSavedBody: this.state.body})
     }
 
     handleKey(e) {
-        debugger
+        // debugger
         e.key === 'Enter' ? this.editMessage() : null
     }
 
     render() {
         const {message, users, currentUser} = this.props
-        // debugger
         return (
             message ? 
             <div className="message-item-container">
