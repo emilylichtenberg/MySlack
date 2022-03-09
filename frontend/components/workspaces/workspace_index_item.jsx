@@ -21,8 +21,8 @@ class WorkspaceIndexItem extends React.Component {
           
                 currentWorkspace ? 
                 <Link  to={`/workspaces/${workspace.id}/chats/${workspace.chats[0].id}`} 
-                    onClick={() => fetchWorkspace(workspace.id)
-                            .then(workspace => fetchChat(currentWorkspace.chats[0]))} 
+                    onClick={() => fetchWorkspace(workspace.id)}
+                            // .then(workspace => fetchChat(currentWorkspace.chats[0]))} 
                     className='workspace-link'>
                     <li className={workspace.id === currentWorkspaceId ?
                         'workspace-index-item active' : 'workspace-index-item'}>

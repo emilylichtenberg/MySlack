@@ -3,26 +3,6 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import ChannelFormContainer from './chats/new_channel_form_container'
 import {withRouter} from 'react-router-dom'
-// function Modal({modal, closeModal}) {
-//   if (!modal) {
-//     return null;
-//   }
-//   let component;
-//   switch (modal) {
-//     case 'createChannel':
-//       component = <ChannelFormContainer />;
-//       break;
-//     default:
-//       return null;
-//   }
-//   return (
-//     <div className="modal-background" onClick={closeModal}>
-//       <div className="modal-child" onClick={e => e.stopPropagation()}>
-//         { component }
-//       </div>
-//     </div>
-//   );
-// }
 
 
 class Modal extends React.Component {
@@ -31,6 +11,7 @@ class Modal extends React.Component {
   }
 
   render () {
+    // document.addEventListener('keypress', this.esca)
     // debugger
     const {modal, closeModal, workspaceId} = this.props
     if (!modal) {
