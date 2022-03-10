@@ -18,7 +18,8 @@ class ChannelForm extends React.Component {
     }
 
     updateField(field) {
-        return e => this.setState({[field]: e.currentTarget.value})
+        // debugger   
+        return e => this.setState({[field]: e.currentTarget.value, admin_id: this.props.currentUser.id})
     }
 
     handleSubmit(e) {
@@ -26,9 +27,7 @@ class ChannelForm extends React.Component {
         // debugger    
         let submitForm = async () => this.props.action(this.state);
         submitForm()
-            // .then(() => this.setState({name: '', description: '', private: false}))
             .then(channel => {
-                // debugger
                 this.props.history.push({pathname: `/workspaces/${this.state.workspace_id}/chats/${channel.chat.id}`})
             })
             .then(() => this.props.removeChatErrors())

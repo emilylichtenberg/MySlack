@@ -1,6 +1,7 @@
 import React from "react";
 import MessageForm from './message_form'
 import MessageItem from "./message_item";
+import ChatRoomHeader from "./chat_room_header";
 
 class ChatRoom extends React.Component {
     constructor(props) {
@@ -77,6 +78,7 @@ class ChatRoom extends React.Component {
         const {currentUser, chatId, workspaceId, messages, users, chat} = this.props
         return(
             <div className="chatroom-container">
+                <ChatRoomHeader chat={chat} currentUser={currentUser}/>
                 <ul className="message-list">
                     {
                         messages.map((message,i) => <MessageItem key={message.id} message={message} users={users} currentUser={currentUser} prevMessage={messages[i-1]}/>)

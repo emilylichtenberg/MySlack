@@ -4,7 +4,7 @@
 }
 
 .chatroom-container {
-    // margin-top: 38px;
+    margin-top: 38px;
     // margin-bottom: 38px;
     // margin-left: 2%;
     width: 100%;
@@ -58,11 +58,11 @@
     padding-bottom: .5%;
     overflow-y: scroll;
     // height: 100%;
-    max-height: 85vh;
+    max-height: 81vh;
     // display: flex;
     // flex-direction: column;
     // justify-content: flex-end;
-    padding-top: 38px;
+    // padding-top: 38px;
 }
 
 .full-message-item-container {
@@ -196,5 +196,26 @@
         &:hover {
             background-color: rgb(87, 146, 87);
         }
+    }
+}
+
+.chat-room-header-container {
+    // padding-top: 38px;
+    // background-color: red;
+    height: 38px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8% 0 2%;
+    border-bottom: 1px solid $border-purple;
+    p {
+        font-weight: bold;
+    }
+    button {
+        color: $dark-purple;
+        background-color: transparent;
+        border: 1px solid $dark-purple;
+        border-radius: 4px;
     }
 }
