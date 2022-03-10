@@ -36,6 +36,35 @@
     cursor: pointer;
 }
 
+.about-me {
+    position: relative;
+    display: inline-block;
+}
+
+.about-me-dropdown-content {
+    position: absolute;
+    display: none;
+    z-index: 5;
+    font-size: larger;
+    background-color: $grey-purple;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    min-width: 300px;
+    padding: 10px 5px;
+    margin-top: 2%;
+    cursor: auto;
+    p {
+        padding: 1% 0;
+    }
+    span {
+        font-style: italic;
+    }
+}
+
+.about-me:hover .about-me-dropdown-content {
+    display: block;
+}
+
 .nav-slackLogo, .nav-slackLogo a {
     font-weight: bold;
     color: $light-beige;
