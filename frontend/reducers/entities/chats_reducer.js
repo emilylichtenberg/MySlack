@@ -16,6 +16,7 @@ const ChatsReducer = (state = {}, action) => {
             action.workspace.chats.forEach(chat => nextState[chat.id] = chat);
             return nextState;
         case REMOVE_CHAT:
+            debugger
             delete nextState[action.chatId];
             return nextState;
         default:

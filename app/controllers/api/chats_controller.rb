@@ -1,4 +1,18 @@
 class Api::ChatsController < ApplicationController
+    def index
+        @chats = Chat.all
+        render '/api/chats/index'
+    end
+
+    def show
+        @chat = Chat.find(params[:id])
+        if @chat
+            render '/api/chats/show'
+        else
+            render json: ['Chat does not exist'], status: 422
+        end
+    end
+
     def create
         @chat = Chat.new(chat_params)
         
@@ -14,7 +28,6 @@ class Api::ChatsController < ApplicationController
     end
 
     def update
-        # debugger
         @chat = Chat.find(params[:id])
         if @chat.update(chat_params)
             render '/api/chats/show'
@@ -23,18 +36,10 @@ class Api::ChatsController < ApplicationController
         end
     end
 
-    def index
-        @chats = Chat.all
-        render '/api/chats/index'
-    end
-
-    def show
+    def destroy
+        debugger
         @chat = Chat.find(params[:id])
-        if @chat
-            render '/api/chats/show'
-        else
-            render json: ['Chat does not exist'], status: 422
-        end
+        @chat.destroy
     end
 
     private

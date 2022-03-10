@@ -6,7 +6,7 @@ import { formatTime } from "../../util/date_util";
 // import { receiveUsers } from "../../actions/user_actions";
 
 import ChatRoom from "./chat_room";
-import { fetchChat } from "../../actions/chat_actions";
+import { deleteChat, fetchChat } from "../../actions/chat_actions";
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -30,6 +30,7 @@ const mDTP = dispatch => ({
     fetchChat: chatId => dispatch(fetchChat(chatId)),
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
+    deleteChat: chatId => dispatch(deleteChat(chatId))
 })
 
 export default withRouter(connect(mSTP,mDTP)(ChatRoom))

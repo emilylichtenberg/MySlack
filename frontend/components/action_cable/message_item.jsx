@@ -38,6 +38,7 @@ class MessageItem extends React.Component {
     }
 
     handleChange(e) {
+        e.preventDefault()
         this.setState({body: e.currentTarget.value})
     }
 
@@ -54,6 +55,7 @@ class MessageItem extends React.Component {
 
     handleKey(e) {
         // debugger
+        // e.preventDefault()
         e.key === 'Enter' ? this.editMessage() : null
     }
 

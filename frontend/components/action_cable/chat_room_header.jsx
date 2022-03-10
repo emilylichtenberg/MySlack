@@ -5,7 +5,7 @@ import {faLock} from '@fortawesome/free-solid-svg-icons'
 class ChatRoomHeader extends React.Component {
 
     render () {
-        const {chat, currentUser, openModal} = this.props
+        const {chat, currentUser, openModal, deleteChat} = this.props
         // const icon = this.props.chat.private ? <FontAwesomeIcon icon={faLock} /> : '#'
         // debugger
         return(
@@ -18,9 +18,15 @@ class ChatRoomHeader extends React.Component {
                     </div>
                     {
                         chat.adminId === currentUser.id ?
-                            <button onClick={() => openModal('editChannel')}>
-                                EDIT
-                            </button>
+                            <div>
+                                <button onClick={() => openModal('editChannel')}>
+                                    Edit
+                                </button>
+                                <p>/</p>
+                                <button onClick={() => deleteChat(chat.id)}>
+                                    Delete
+                                </button>
+                            </div>
                         : ''
                     }
                 </div>

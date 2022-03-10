@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch;   
 })
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'escape') {
-        console.log('escape pressed')
-    }
-})
+// document.addEventListener('keydown', (e) => {
+//     if (e.key === 'escape') {
+//         console.log('escape pressed')
+//     }
+// })

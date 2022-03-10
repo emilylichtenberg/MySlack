@@ -75,11 +75,11 @@ class ChatRoom extends React.Component {
 
     render() {
         // debugger
-        const {currentUser, chatId, workspaceId, messages, users, chat, openModal, closeModal} = this.props
+        const {currentUser, chatId, workspaceId, messages, users, chat, openModal, closeModal, deleteChat} = this.props
         return(
             <div className="chatroom-container">
                 <div>
-                    <ChatRoomHeader chat={chat} currentUser={currentUser} openModal={openModal} closeModal={closeModal}/>
+                    <ChatRoomHeader chat={chat} currentUser={currentUser} openModal={openModal} closeModal={closeModal} deleteChat={deleteChat}/>
                 </div>
                 <div>
                     <ul className="message-list">

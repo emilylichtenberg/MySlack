@@ -17,8 +17,8 @@ const SplashNav = ({logout, loginDemo, currentUser}) => {
                     <span>About Me</span>
                     <div className="about-me-dropdown-content">
                         <p><FontAwesomeIcon icon={faFire} /><span>   Survivor </span>superfan</p>
-                        <p><FontAwesomeIcon icon={faHockeyPuck} />   New York Rangers enthusiast</p>
-                        <p><FontAwesomeIcon icon={faMusic} />   Classical piano player</p>
+                        <p><FontAwesomeIcon icon={faHockeyPuck} />   New York Rangers fanatic</p>
+                        <p><FontAwesomeIcon icon={faMusic} />   Classical piano enthusiast</p>
                     </div>
                 </div>
             </div>
