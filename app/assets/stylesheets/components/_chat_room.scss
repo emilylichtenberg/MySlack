@@ -64,7 +64,7 @@
     // justify-content: flex-end;
 }
 
-.message-item-container {
+.full-message-item-container {
     display: flex;
     padding: .5% 1%;
     &:hover {
@@ -80,102 +80,102 @@
     background-color: black;
 }
 
-.message-details-container {
-    padding-left: 1%;
-    padding-right: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
+// .message-details-container {
+//     padding-left: 1%;
+//     padding-right: 5%;
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+// }
 
-.message-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 5px;
-    width: 100%;
-}
+// .message-header {
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: space-between;
+//     padding-bottom: 5px;
+//     width: 100%;
+// }
 
-.message-header-content {
-    display: flex;
-    align-items: flex-end;
+// .message-header-content {
+//     display: flex;
+//     align-items: flex-end;
 
-}
-#message-username {
-    padding-right: 4%;
-    font-weight: bold;
-}
+// }
+// #message-username {
+//     padding-right: 4%;
+//     font-weight: bold;
+// }
 
-#message-time {
-    color: gray;
-    font-size: x-small;
-}
+// #message-time {
+//     color: gray;
+//     font-size: x-small;
+// }
 
-.message-content {
-    line-height: 1.4;
-    display: flex;
-    align-items: center;
-    font-size: small;
-    .edited {
-        padding-left: 2px; 
-        // padding-bottom: 2px;
-        color: gray;
-        font-size: x-small;
-    }
-}
+// .message-content {
+//     line-height: 1.4;
+//     display: flex;
+//     align-items: center;
+//     font-size: small;
+//     .edited {
+//         padding-left: 2px; 
+//         // padding-bottom: 2px;
+//         color: gray;
+//         font-size: x-small;
+//     }
+// }
 
-.message-update-icons {
-    padding-right: 20px;
-    button {
-        background-color: transparent;
-        color: darkgray;
-        border: none;
-        cursor: pointer;
-        display: none;
-        &:hover {
-            background-color: lightgray;
-            border-radius: 4px;
-        }
-    }
-}
+// .message-update-icons {
+//     padding-right: 20px;
+//     button {
+//         background-color: transparent;
+//         color: darkgray;
+//         border: none;
+//         cursor: pointer;
+//         display: none;
+//         &:hover {
+//             background-color: lightgray;
+//             border-radius: 4px;
+//         }
+//     }
+// }
 
-.message-item-container:hover .message-update-icons button {
-    display: inline;
-}
+// .message-item-container:hover .message-update-icons button {
+//     display: inline;
+// }
 
-.message-update-options {
-    padding-left: 1%;
-    width: 90%;
-    input {
-        height: 2rem;
-        width: 95%;
-    }
-}
+// .message-update-options {
+//     padding-left: 1%;
+//     width: 90%;
+//     input {
+//         height: 2rem;
+//         width: 95%;
+//     }
+// }
 
-.edit-message-options {
-    padding-right: 50px;
-    display: flex;
-    justify-content: right;
-    button {
-        margin: .5%;
-        border-radius: 4px;
-        height: 2rem;
-        width: 70px;
-        cursor: pointer;
-    }
-    #cancel-edit {
-        background-color: rgb(202, 202, 202);
-        border: .5px solid grey;
-        &:hover {
-            background-color: rgb(187, 187, 187);
-        }
-    }
-    #save-edit {
-        background-color: green;
-        color: white;
-        border: none;
-        &:hover {
-            background-color: rgb(87, 146, 87);
-        }
-    }
-}
+// .edit-message-options {
+//     padding-right: 50px;
+//     display: flex;
+//     justify-content: right;
+//     button {
+//         margin: .5%;
+//         border-radius: 4px;
+//         height: 2rem;
+//         width: 70px;
+//         cursor: pointer;
+//     }
+//     #cancel-edit {
+//         background-color: rgb(202, 202, 202);
+//         border: .5px solid grey;
+//         &:hover {
+//             background-color: rgb(187, 187, 187);
+//         }
+//     }
+//     #save-edit {
+//         background-color: green;
+//         color: white;
+//         border: none;
+//         &:hover {
+//             background-color: rgb(87, 146, 87);
+//         }
+//     }
+// }

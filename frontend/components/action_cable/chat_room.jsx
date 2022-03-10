@@ -79,7 +79,7 @@ class ChatRoom extends React.Component {
             <div className="chatroom-container">
                 <ul className="message-list">
                     {
-                        messages.map((message) => <MessageItem key={message.id} message={message} users={users} currentUser={currentUser}/>)
+                        messages.map((message,i) => <MessageItem key={message.id} message={message} users={users} currentUser={currentUser} prevMessage={messages[i-1]}/>)
                     }
                     <div ref={this.bottom} />
                 </ul>

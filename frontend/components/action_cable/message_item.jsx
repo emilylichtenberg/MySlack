@@ -59,29 +59,39 @@ class MessageItem extends React.Component {
 
     render() {
         const {message, users, currentUser} = this.props
+        let prevMessageId = this.props.prevMessage ? this.props.prevMessage.sender_id : 0
+        
+        // debugger
         return (
             users[message.sender_id] ? 
-            <div className="message-item-container">
-               <FontAwesomeIcon icon={faUser} className='user-icon'/>
-               {
-                   !this.state.editActive ?
-                        <div className="message-details-container">
-                            <div className="message-left">
-                                <div className="message-header">
-                                    <div className="message-header-content">
-                                        <p id="message-username">{users[message.sender_id].username}</p>
-                                        <p id="message-time">{formatTime(message.created_at)}</p>
-                                    </div>
-            
+                <div className="full-message-item-container">
+                    {
+                        prevMessageId !== message.sender_id ?
+                        <div>
+                            <FontAwesomeIcon icon={faUser} className="user-icon"/>
+                        </div>
+                        : ''
+                    }
+                    {
+                        !this.state.editActive ? 
+                            <div>
+                                <div className="message-main-content">
+                                    {
+                                        prevMessageId !== message.sender_id ?
+                                            <div className="message-header">
+                                                <p id="message-username">{users[message.sender_id].username}</p>
+                                                <p id="message-time">{formatTime(message.created_at)}</p>
+                                            </div>
+                                        : ''
+                                    }
+                                            <div className="message-content">
+                                                <p>{message.body}</p>
+                                                {message.created_at !== message.updated_at ? 
+                                                <p className="edited">(edited)</p>
+                                                : ''} 
+                                            </div>
                                 </div>
-                                <div className="message-content">
-                                    <p>{message.body}</p>
-                                    {message.created_at !== message.updated_at ? 
-                                        <p className="edited">(edited)</p>
-                                        : ''} 
-                                </div>
-                            </div>
-                            <div className="message-right">
+                                <div className="message-right">
                                     {
                                         currentUser.id === message.sender_id ?
                                         <div className="message-update-icons">
@@ -95,20 +105,73 @@ class MessageItem extends React.Component {
                                         : ''
                                     }
                                 </div>
-                        </div>  
-                 :
-                       <div className="message-update-options">
-                           <input type="text" value={this.state.body} onChange={this.handleChange} onKeyPress={this.handleKey}/>
-                           <div className="edit-message-options">
-                                <button id='cancel-edit' onClick={this.endEdit}>Cancel</button>
-                                <button id="save-edit" onClick={this.editMessage}>Save</button>
-                           </div>
-                       </div>            
-               }
-            </div>
+                            </div>
+                            : 
+                            <div className="message-update-options">
+                                <input type="text" value={this.state.body} onChange={this.handleChange} onKeyPress={this.handleKey}/>
+                                <div className="edit-message-options">
+                                        <button id='cancel-edit' onClick={this.endEdit}>Cancel</button>
+                                        <button id="save-edit" onClick={this.editMessage}>Save</button>
+                                </div>
+                            </div> 
+                    }
+                </div>
             : ''
         )
-    }
+    }     
 }
 
 export default MessageItem
+
+
+
+
+// return (
+//     users[message.sender_id] ? 
+//     <div className="message-item-container">
+//        <FontAwesomeIcon icon={faUser} className={prevMessageId === message.sender_id ? "user-icon" : "user-icon-hidden"}/>
+//        {
+//            !this.state.editActive ?
+//                 <div className="message-details-container">
+//                     <div className="message-left">
+//                         <div className="message-header">
+//                             <div className="message-header-content">
+//                                 <p id="message-username">{users[message.sender_id].username}</p>
+//                                 <p id="message-time">{formatTime(message.created_at)}</p>
+//                             </div>
+    
+//                         </div>
+//                         <div className="message-content">
+//                             <p>{message.body}</p>
+//                             {message.created_at !== message.updated_at ? 
+//                                 <p className="edited">(edited)</p>
+//                                 : ''} 
+//                         </div>
+//                     </div>
+//                     <div className="message-right">
+//                             {
+//                                 currentUser.id === message.sender_id ?
+//                                 <div className="message-update-icons">
+//                                     <button onClick={this.beginEdit}>
+//                                         <FontAwesomeIcon icon={faPenToSquare}/>
+//                                     </button>
+//                                     <button onClick={this.deleteMessage}>
+//                                         <FontAwesomeIcon icon={faTrashCan}/>
+//                                     </button>
+//                                 </div>
+//                                 : ''
+//                             }
+//                         </div>
+//                 </div>  
+//          :
+//                <div className="message-update-options">
+//                    <input type="text" value={this.state.body} onChange={this.handleChange} onKeyPress={this.handleKey}/>
+//                    <div className="edit-message-options">
+//                         <button id='cancel-edit' onClick={this.endEdit}>Cancel</button>
+//                         <button id="save-edit" onClick={this.editMessage}>Save</button>
+//                    </div>
+//                </div>            
+//        }
+//     </div>
+//     : ''
+// )
