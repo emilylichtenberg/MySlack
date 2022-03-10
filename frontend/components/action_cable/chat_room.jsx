@@ -78,14 +78,18 @@ class ChatRoom extends React.Component {
         const {currentUser, chatId, workspaceId, messages, users, chat, openModal, closeModal} = this.props
         return(
             <div className="chatroom-container">
-                <ChatRoomHeader chat={chat} currentUser={currentUser} openModal={openModal} closeModal={closeModal}/>
-                <ul className="message-list">
-                    {
-                        messages.map((message,i) => <MessageItem key={message.id} message={message} users={users} currentUser={currentUser} prevMessage={messages[i-1]}/>)
-                    }
-                    <div ref={this.bottom} />
-                </ul>
-                <MessageForm currentUser={currentUser} chatId={chatId} workspaceId={workspaceId} chat={chat}/>
+                <div>
+                    <ChatRoomHeader chat={chat} currentUser={currentUser} openModal={openModal} closeModal={closeModal}/>
+                </div>
+                <div>
+                    <ul className="message-list">
+                        {
+                            messages.map((message,i) => <MessageItem key={message.id} message={message} users={users} currentUser={currentUser} prevMessage={messages[i-1]}/>)
+                        }
+                        <div ref={this.bottom} />
+                    </ul>
+                    <MessageForm currentUser={currentUser} chatId={chatId} workspaceId={workspaceId} chat={chat}/>
+                </div>
             </div>
         )
     }
