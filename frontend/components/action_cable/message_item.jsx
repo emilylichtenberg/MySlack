@@ -67,15 +67,15 @@ class MessageItem extends React.Component {
                 <div className="full-message-item-container">
                     {
                         prevMessageId !== message.sender_id ?
-                        <div>
+                        <div className="user-icon-container">
                             <FontAwesomeIcon icon={faUser} className="user-icon"/>
                         </div>
-                        : ''
+                        : <div className="user-icon-placeholder">{formatTime(message.created_at)}</div>
                     }
                     {
                         !this.state.editActive ? 
-                            <div>
-                                <div className="message-main-content">
+                            <div className="message-main-container">
+                                <div className="message-main">
                                     {
                                         prevMessageId !== message.sender_id ?
                                             <div className="message-header">
@@ -96,7 +96,7 @@ class MessageItem extends React.Component {
                                         currentUser.id === message.sender_id ?
                                         <div className="message-update-icons">
                                             <button onClick={this.beginEdit}>
-                                                <FontAwesomeIcon icon={faPenToSquare}/>
+                                                <FontAwesomeIcon icon={faPenToSquare} />
                                             </button>
                                             <button onClick={this.deleteMessage}>
                                                 <FontAwesomeIcon icon={faTrashCan}/>
