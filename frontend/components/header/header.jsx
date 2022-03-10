@@ -11,7 +11,7 @@ class Header extends React.Component {
                 workspace ? 
                 <div className="header">
                     <p>{`Welcome, ${currentUser.username}`}</p>
-                    <input type="text" placeholder={`Search ${workspace.name}`} />
+                    <input type="text" placeholder={`${workspace.name}`} disabled/>
                     <button onClick={() => logout()}>Log Out</button>
                 </div> : 
                 ''

@@ -44,7 +44,7 @@ class ChatIndex extends React.Component {
             <div className="channel-message-container">
                 <div className="current-workspace-header">
                         <h1 className="workspace-name">{currentWorkspace ? currentWorkspace.name : ''}</h1>
-                        <button><FontAwesomeIcon icon={faPenToSquare} className='create-workspace-icon'/></button>
+                        {/* <button><FontAwesomeIcon icon={faPenToSquare} className='create-workspace-icon'/></button> */}
                 </div>
                 <div className="channel-header-container">
                     <h3 onClick={this.toggleChannelActive}>
@@ -62,7 +62,7 @@ class ChatIndex extends React.Component {
         
                 <div className="dm-message-container">
                     <h3>Direct Messages</h3>
-                    <button onClick={this.openCreateNewMessage}>+</button>
+                    {/* <button onClick={this.openCreateNewMessage}>+</button> */}
                 </div>
 
             </div>
