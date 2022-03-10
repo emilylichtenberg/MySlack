@@ -6,12 +6,13 @@ class ChannelForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            chat_type: props.channel.chat_type,
+            chat_type: props.channel.chat_type ? props.channel.chat_type : props.channel.chatType,
             name: props.channel.name,
             description: props.channel.description,
             private: props.channel.private,
-            admin_id: props.channel.admin_id,
-            workspace_id: props.channel.workspace_id,
+            admin_id: props.channel.admin_id ? props.channel.admin_id : props.channel.adminId,
+            workspace_id: props.channel.workspace_id ? props.channel.workspace_id : props.channel.workspaceId,
+            id: props.chatId ? props.chatId : null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.togglePrivate = this.togglePrivate.bind(this)

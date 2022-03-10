@@ -45,6 +45,12 @@ export const createChat = chat => dispatch => (
         .fail(errors => dispatch(receiveChatErrors(errors)))
 );
 
+export const updateChat = chat => dispatch => (
+    ChatApiUtil.updateChat(chat)
+        .then(chat => dispatch(receiveChat(chat)))
+        .fail(errors => dispatch(receiveChatErrors(errors)))
+);
+
 export const deleteChat = chatId => dispatch => (
     ChatApiUtil.deleteChat(chatId)
         .then(() => dispatch(removeChat(chatId)))

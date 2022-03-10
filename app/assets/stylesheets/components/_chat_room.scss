@@ -11,7 +11,8 @@
     // height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    // justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .message-submit-container {
@@ -204,18 +205,38 @@
     // background-color: red;
     height: 38px;
     z-index: 2;
+    justify-self: flex-start;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8% 0 2%;
+    padding: 0 4.5% 0 2%;
     border-bottom: 1px solid $border-purple;
-    p {
-        font-weight: bold;
-    }
+
     button {
         color: $dark-purple;
         background-color: transparent;
         border: 1px solid $dark-purple;
         border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(202, 202, 202);
+        }
+    }
+}
+
+.channel-content {
+    display: flex;
+    align-items: flex-end;
+    #chat-icon {
+        padding-right: 5px;
+        font-weight: bold;
+    }
+    #chat-name {
+        font-weight: bold;
+        padding-right: 10px;
+    }
+    #chat-description {
+        color: grey;
+        font-size: .75em;
     }
 }

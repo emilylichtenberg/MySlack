@@ -20,6 +20,18 @@ export const createChat = chat => (
     })
 );
 
+export const updateChat = chat => {
+    // debugger
+    return (
+        $.ajax({
+            method: 'PATCH',
+            url: `/api/chats/${chat.id}`,
+            data: {chat}
+        })
+    )
+    
+}
+
 export const deleteChat = chatId => (
     $.ajax({
         method: 'DELETE',

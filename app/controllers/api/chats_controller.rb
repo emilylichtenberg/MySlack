@@ -13,6 +13,16 @@ class Api::ChatsController < ApplicationController
         end
     end
 
+    def update
+        # debugger
+        @chat = Chat.find(params[:id])
+        if @chat.update(chat_params)
+            render '/api/chats/show'
+        else
+            render json: @chat.errors.full_messages, status: 401
+        end
+    end
+
     def index
         @chats = Chat.all
         render '/api/chats/index'

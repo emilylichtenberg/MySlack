@@ -75,10 +75,10 @@ class ChatRoom extends React.Component {
 
     render() {
         // debugger
-        const {currentUser, chatId, workspaceId, messages, users, chat} = this.props
+        const {currentUser, chatId, workspaceId, messages, users, chat, openModal, closeModal} = this.props
         return(
             <div className="chatroom-container">
-                <ChatRoomHeader chat={chat} currentUser={currentUser}/>
+                <ChatRoomHeader chat={chat} currentUser={currentUser} openModal={openModal} closeModal={closeModal}/>
                 <ul className="message-list">
                     {
                         messages.map((message,i) => <MessageItem key={message.id} message={message} users={users} currentUser={currentUser} prevMessage={messages[i-1]}/>)
@@ -93,8 +93,3 @@ class ChatRoom extends React.Component {
 
 export default ChatRoom
 
-
-{/* <button className="load-button" 
-    onClick={this.loadChat.bind(this)}>
-    Load Chat History
-</button> */}

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { receiveMessage, receiveMessages, removeMessage } from "../../actions/message_actions";
 import { withRouter } from "react-router-dom";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import { formatTime } from "../../util/date_util";
 // import { receiveUsers } from "../../actions/user_actions";
 
@@ -26,7 +27,9 @@ const mDTP = dispatch => ({
     receiveMessages: messages => dispatch(receiveMessages(messages)),
     removeMessage: messageId => dispatch(removeMessage(messageId)),
     // receiveUsers: () => dispatch(receiveUsers()),
-    fetchChat: chatId => dispatch(fetchChat(chatId))
+    fetchChat: chatId => dispatch(fetchChat(chatId)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal()),
 })
 
 export default withRouter(connect(mSTP,mDTP)(ChatRoom))

@@ -1,7 +1,8 @@
 import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
-import ChannelFormContainer from './chats/new_channel_form_container'
+import NewChannelFormContainer from './chats/new_channel_form_container'
+import EditChannelFormContainer from './chats/edit_channel_form_container'
 import {withRouter} from 'react-router-dom'
 
 
@@ -13,14 +14,18 @@ class Modal extends React.Component {
   render () {
     // document.addEventListener('keypress', this.esca)
     // debugger
-    const {modal, closeModal, workspaceId} = this.props
+    const {modal, closeModal, workspaceId, chatId} = this.props
     if (!modal) {
       return null;
     }
     let component;
     switch (modal) {
       case 'createChannel':
-        component = <ChannelFormContainer workspaceId={workspaceId}/>;
+        component = <NewChannelFormContainer workspaceId={workspaceId}/>;
+        break;
+      case 'editChannel':
+        // debugger
+        component = <EditChannelFormContainer chatId={chatId}/>
         break;
       default:
         return null;
