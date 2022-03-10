@@ -58,15 +58,16 @@
     padding-bottom: .5%;
     overflow-y: scroll;
     // height: 100%;
-    max-height: 91vh;
+    max-height: 85vh;
     // display: flex;
     // flex-direction: column;
     // justify-content: flex-end;
+    padding-top: 38px;
 }
 
 .full-message-item-container {
     display: flex;
-    padding: 0% 1%;
+    padding: .2% 1%;
     &:hover {
         background-color: rgb(245, 245, 245);
     }
@@ -139,7 +140,7 @@
 }
 
 .message-right {
-    width: 10%;
+    width: 15%;
 }
 .message-update-icons {
     padding-right: 20px;
