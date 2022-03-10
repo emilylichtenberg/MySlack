@@ -7,7 +7,7 @@ import { closeModal } from "../../actions/modal_actions";
 const mSTP = (state, ownProps) => {
     // debugger
     return ({
-        formType: 'Update a channel',
+        formType: 'Update',
         errors: state.errors.chat,
         channel: state.entities.chats[ownProps.chatId],
         currentUser: state.entities.users[state.session.id],

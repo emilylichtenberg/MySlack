@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
                   private: false, 
                   admin_id: state.entities.users[state.session.id],
                   workspace_id: ownProps.workspaceId},
-        formType: 'Create a channel',
+        formType: 'Create',
         errors: state.errors.chat,
         // currentWorkspace: ownProps.match.params.workspaceId
         currentUser: state.entities.users[state.session.id]

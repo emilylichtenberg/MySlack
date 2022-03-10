@@ -42,14 +42,19 @@ class ChannelForm extends React.Component {
     }
 
     render() {
-        const {action} = this.props
+        const {action, formType} = this.props
         let chatErrors = this.props.errors
         return(
             <div className="new-channel-container">
+                {formType === 'Create' ?
                 <div className="create-channel-header">
                     {!this.state.private ? <h1>Create a channel</h1> : <h1>Create a private channel</h1>}
                     <button onClick={() => this.props.closeModal()}>X</button>
-                </div>
+                </div> : 
+                <div className="create-channel-header">
+                    <h1>Update channel</h1>
+                    <button onClick={() => this.props.closeModal()}>X</button>
+                </div> }
                 <h2>Channels are where your team communicates.  They're best when organized around a topic -- #marketing, for example.</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label className="form-label">Name
@@ -64,16 +69,20 @@ class ChannelForm extends React.Component {
                     </label>
                         <h2>What's this channel about?</h2>
                     <br />
-                    <label className="private-label">Make private
-                        <div className="private-details">
-                            {!this.state.private ? 
-                                    <h2>When a channel is set to private, it can only be viewed or joined by invitation.</h2>
-                                    : <h2>This can’t be undone. A private channel cannot be made public later on.</h2>}
-                            <input type="checkbox" id="private-checkbox" onChange={this.togglePrivate}/>
-                        </div>
-                    </label>
+                    {
+                        formType === 'Create' ?
+                        <label className="private-label">Make private
+                            <div className="private-details">
+                                {!this.state.private ? 
+                                        <h2>When a channel is set to private, it can only be viewed or joined by invitation.</h2>
+                                        : <h2>This can’t be undone. A private channel cannot be made public later on.</h2>}
+                                <input type="checkbox" id="private-checkbox" onChange={this.togglePrivate}/>
+                            </div>
+                        </label>
+                        : ''
+                    }
                     <br />
-                    <input className="submit" type="submit" value='Create'/>
+                    <input className="submit" type="submit" value={formType}/>
                 </form>
             </div>
         )

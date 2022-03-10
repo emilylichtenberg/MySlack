@@ -1,9 +1,9 @@
 import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
-import NewChannelFormContainer from './chats/new_channel_form_container'
-import EditChannelFormContainer from './chats/edit_channel_form_container'
-import {withRouter} from 'react-router-dom'
+import NewChannelFormContainer from './chats/new_channel_form_container';
+import EditChannelFormContainer from './chats/edit_channel_form_container';
+import {withRouter} from 'react-router-dom';
 
 
 class Modal extends React.Component {
