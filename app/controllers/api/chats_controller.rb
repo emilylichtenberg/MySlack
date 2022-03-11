@@ -37,7 +37,7 @@ class Api::ChatsController < ApplicationController
     end
 
     def destroy
-        debugger
+        # debugger
         @chat = Chat.find(params[:id])
         @chat.destroy
     end

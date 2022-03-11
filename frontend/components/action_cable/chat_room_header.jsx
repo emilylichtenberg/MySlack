@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 
 class ChatRoomHeader extends React.Component {
 
+    handleDelete() {
+
+    }
+
     render () {
-        const {chat, currentUser, openModal, deleteChat} = this.props
+        const {chat, currentUser, openModal, deleteChat, chats} = this.props
         // const icon = this.props.chat.private ? <FontAwesomeIcon icon={faLock} /> : '#'
         // debugger
         return(
@@ -18,14 +23,20 @@ class ChatRoomHeader extends React.Component {
                     </div>
                     {
                         chat.adminId === currentUser.id ?
-                            <div>
-                                <button onClick={() => openModal('editChannel')}>
+                            <div className="edit-chat-options">
+                                <button id='edit-chat' onClick={() => openModal('editChannel')}>
                                     Edit
                                 </button>
                                 <p>/</p>
-                                <button onClick={() => deleteChat(chat.id)}>
-                                    Delete
-                                </button>
+                                {
+                                    chat ? 
+                                    <Link onClick={() => deleteChat(chat.id)}
+                                        to={`/workspaces/${chat.workspaceId}/chats/${Object.values(chats)[0].id}`}
+                                        id='delete-chat'>
+                                        Delete
+                                    </Link>
+                                    : ''
+                                }
                             </div>
                         : ''
                     }

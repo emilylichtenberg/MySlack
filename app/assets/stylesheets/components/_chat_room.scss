@@ -212,16 +212,6 @@
     padding: 0 4.5% 0 2%;
     border-bottom: 1px solid $border-purple;
 
-    button {
-        color: $dark-purple;
-        background-color: transparent;
-        border: 1px solid $dark-purple;
-        border-radius: 4px;
-        cursor: pointer;
-        &:hover {
-            background-color: $light-beige;
-        }
-    }
 }
 
 .channel-content {
@@ -238,5 +228,32 @@
     #chat-description {
         color: grey;
         font-size: .75em;
+    }
+}
+
+.edit-chat-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+        color: $dark-purple;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    p {
+        color: $dark-purple;
+        padding-right: 4%;
+    }
+    #delete-chat {
+        text-decoration: none;
+        color: $dark-purple;
+        font-size: smaller;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
