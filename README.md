@@ -66,7 +66,6 @@ class ChatRoom extends React.Component {
                 }
             );
         }
-
 }
 ```
 Above you can see the basic set up of Action Cable.  The Chat Channel is set up to mimic a controller and is what determines the backend actions.  The Chat Room Component creates the subscription with frontend functions that call on the backend actions when invoked.  
