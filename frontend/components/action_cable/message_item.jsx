@@ -20,13 +20,14 @@ class MessageItem extends React.Component {
     }
 
     deleteMessage() {
-        const subscription = [];
-        App.cable.subscriptions.subscriptions.forEach(sub => {
-            let subIdentifier = JSON.parse(sub.identifier);
-            subIdentifier.chatId === this.props.message.chat_id ? subscription.push(sub) : null
-        })
-        subscription[0].delete(this.props.message)
-        subscription[0].load()
+        // debugger
+        // const subscription = [];
+        // App.cable.subscriptions.subscriptions.forEach(sub => {
+        //     let subIdentifier = JSON.parse(sub.identifier);
+        //     subIdentifier.chatId === this.props.message.chat_id ? subscription.push(sub) : null
+        // })
+        // subscription[0].delete(this.props.message)
+        // subscription[0].load()
     }
 
     beginEdit() {
@@ -60,7 +61,7 @@ class MessageItem extends React.Component {
     }
 
     render() {
-        const {message, users, currentUser} = this.props
+        const {message, users, currentUser, openModal} = this.props
         let prevMessageId = this.props.prevMessage ? this.props.prevMessage.sender_id : 0
         
         // debugger
@@ -100,7 +101,8 @@ class MessageItem extends React.Component {
                                             <button onClick={this.beginEdit}>
                                                 <FontAwesomeIcon icon={faPenToSquare} />
                                             </button>
-                                            <button onClick={this.deleteMessage}>
+                                            {/* <button onClick={this.deleteMessage}> */}
+                                            <button onClick={() => openModal(message)}>
                                                 <FontAwesomeIcon icon={faTrashCan}/>
                                             </button>
                                         </div>

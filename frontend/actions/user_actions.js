@@ -12,4 +12,3 @@ export const fetchUser = userId => dispatch => (
     UserApiUtil.fetchUser(userId)
         .then(user => dispatch(receiveUser(user)))
 );
-

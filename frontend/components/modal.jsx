@@ -3,6 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewChannelFormContainer from './chats/new_channel_form_container';
 import EditChannelFormContainer from './chats/edit_channel_form_container';
+import DeleteMessageModal from './action_cable/delete_message_modal';
 import {withRouter} from 'react-router-dom';
 
 
@@ -14,7 +15,7 @@ class Modal extends React.Component {
   render () {
     // document.addEventListener('keypress', this.esca)
     // debugger
-    const {modal, closeModal, workspaceId, chatId} = this.props
+    const {modal, closeModal, workspaceId, chatId, allUsers} = this.props
     if (!modal) {
       return null;
     }
@@ -27,6 +28,15 @@ class Modal extends React.Component {
         // debugger
         component = <EditChannelFormContainer chatId={chatId}/>
         break;
+      case modal:
+        component = <DeleteMessageModal message={modal} users={allUsers} closeModal={closeModal}/>;
+        return (
+          <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child_message" onClick={e => e.stopPropagation()}>
+              {component}
+          </div>
+      </div>
+        )
       default:
         return null;
     }
@@ -46,7 +56,8 @@ const mapStateToProps = (state,ownProps) => {
   return {
     modal: state.ui.modal,
     workspaceId: parseInt(location[2]),
-    chatId: parseInt(location[4])
+    chatId: parseInt(location[4]),
+    allUsers: state.entities.users
   };
 };
 

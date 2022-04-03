@@ -1,5 +1,7 @@
-json.partial! "api/workspaces/workspace", workspace: @workspace
 
+# json.workspace do
+    json.partial! "api/workspaces/workspace", workspace: @workspace
+# end
 json.users do
    json.array! @workspace.users, :id, :username
 end

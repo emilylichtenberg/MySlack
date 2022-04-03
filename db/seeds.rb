@@ -14,11 +14,11 @@ user3 = User.create!(username: 'kirby', password: '123456')
 workspace1 = Workspace.create!(name: 'App Academy', admin_id: 1, img_path: 'https://raw.githubusercontent.com/emilylichtenberg/MySlack/main/app/assets/images/aalogo.png')
 workspace2 = Workspace.create!(name: 'Slack', admin_id: 2, img_path: 'https://raw.githubusercontent.com/emilylichtenberg/MySlack/main/app/assets/images/SlackIcon.png')
 
-chat1 = Chat.create!(chat_type: 'channel', name: 'general', description: 'Company-wide announcements and work-based matters', private: false, admin_id: 1, workspace_id: 1)
-chat2 = Chat.create!(chat_type: 'channel', name: '2021-11-29-ny', description: 'the best cohort', private: true, admin_id: 1, workspace_id: 1)
-chat3 = Chat.create!(chat_type: 'channel', name: 'general', description: 'Company-wide announcements and work-based matters', private: false, admin_id: 1, workspace_id: 2)
-chat4 = Chat.create!(chat_type: 'channel', name: 'slacking-off', description: 'For when you need a break in the day', private: true, admin_id: 1, workspace_id: 2)
-# chat3 = Chat.create!(chat_type: 'DM', name: '1', workspace_id: 1)
+chat1 = Chat.create!(chat_type: 'channel', name: 'general', description: 'Company-wide announcements and work-based matters', private: false, admin_id: 2, workspace_id: 1)
+chat2 = Chat.create!(chat_type: 'channel', name: '2021-11-29-ny', description: 'the best cohort', private: true, admin_id: 2, workspace_id: 1)
+chat3 = Chat.create!(chat_type: 'channel', name: 'general', description: 'Company-wide announcements and work-based matters', private: false, admin_id: 2, workspace_id: 2)
+chat4 = Chat.create!(chat_type: 'channel', name: 'slacking-off', description: 'For when you need a break in the day', private: true, admin_id: 2, workspace_id: 2)
+chat5 = Chat.create!(chat_type: 'DM', name: '1', workspace_id: 1)
 # chat4 = Chat.create!(chat_type: 'GM', name: '2', workspace_id: 1)
 
 message1 = Message.create!(body: 'message1', chat_id: 1, sender_id: 1)
@@ -30,7 +30,7 @@ message6 = Message.create!(body: 'message6', chat_id: 3, sender_id: 2)
 message7 = Message.create!(body: 'message7', chat_id: 4, sender_id: 1)
 message8 = Message.create!(body: 'message8', chat_id: 4, sender_id: 2)
 
-converation1 = Conversation.create!(chat_id: 1, user_id: 1)
+# converation1 = Conversation.create!(chat_id: 1, user_id: 1)
 converation2 = Conversation.create!(chat_id: 1, user_id: 2)
 converation3 = Conversation.create!(chat_id: 2, user_id: 1)
 converation4 = Conversation.create!(chat_id: 2, user_id: 2)
@@ -38,6 +38,9 @@ converation5 = Conversation.create!(chat_id: 3, user_id: 1)
 converation6 = Conversation.create!(chat_id: 3, user_id: 2)
 converation7 = Conversation.create!(chat_id: 4, user_id: 1)
 converation8 = Conversation.create!(chat_id: 4, user_id: 2)
+converation8 = Conversation.create!(chat_id: 5, user_id: 1)
+converation9 = Conversation.create!(chat_id: 5, user_id: 2)
+
 
 subscription1 = Subscription.create!(user_id: 1, workspace_id: 1);
 subscription2 = Subscription.create!(user_id: 1, workspace_id: 2);

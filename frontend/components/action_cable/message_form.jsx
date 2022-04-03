@@ -17,6 +17,7 @@ class MessageForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger
+        if (this.state.body.length === 0) return
         let currentSubscription;
         for (let i = 0; i < App.cable.subscriptions.subscriptions.length; i++) {
             if (JSON.parse(App.cable.subscriptions.subscriptions[i].identifier).chatId === this.props.chatId) {
@@ -36,7 +37,7 @@ class MessageForm extends React.Component {
             chat ? 
             <div className="message-submit-container">
                 <form className="message-form">
-                    <input className="message-input" type="text" value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
+                    <input className="message-input" type="text" requried='true' value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
                     <button onClick={this.handleSubmit}>
                         <FontAwesomeIcon icon={faCircleArrowRight} size='2x'/>
                     </button>

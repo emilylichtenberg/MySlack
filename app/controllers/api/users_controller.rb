@@ -14,6 +14,9 @@ class Api::UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         if @user
+            @workspaces = @user.workspaces
+            @chats = @user.chats
+            # debugger
             render '/api/users/show'
         else
             render json: ['User does not exist'], status: 422

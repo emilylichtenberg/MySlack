@@ -34,6 +34,16 @@ const SplashBody = (props) => {
                 </div>
             </div>
 
+            <div className="splash-body-3">
+                <div className="splash-3-left">
+
+                </div>
+                <div className="splash-3-right">
+                    <p id="s3r-header">Move faster by organizing your work life</p>
+                    <p id="s3r-body">The key to productivity in Slack is organized spaces called channels—a different one for everything you’re working on. With all the people, messages and files related to a topic in one place, you can move a whole lot faster.</p>
+                </div>
+            </div>
+
             
         </div>
     )

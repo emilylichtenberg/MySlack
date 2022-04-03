@@ -277,9 +277,9 @@
 
 /* FOOTER */
 .splash-footer {
-    background-color: $light-beige;
+    background-color: $grey-purple;
     display: flex;
-    height: 100px;
+    height: 80px;
     align-items: center;
     justify-content: space-between;
 }
@@ -294,9 +294,48 @@
 }
 
 .splash-footer-right button {
-    color: $dark-purple;
+    // color: $dark-purple;
+    color: black;
     background-color: transparent;
     border: none;
     height: 50px;
     margin: 2%;
+    a {
+        color: black;
+    }
+}
+
+
+// SPLASH 3
+.splash-body-3 {
+    display: flex;
+    height: 300px;
+    background-color: $light-beige;
+    // padding-top: 160px;
+    display: flex;
+    // align-items: ;
+}
+
+.splash-3-right {
+    width: 35%;
+    max-width: 500px;
+    margin-left: 55%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+    // justify-content: right;
+}
+
+#s3r-header {
+    font-weight: bold;
+    font-size: 2rem;
+    // width: 120%;
+    padding-top: 15%;
+    padding-bottom: 5%;
+    transform: scaleY(1.2)
+}
+
+#s3r-body {
+    // width: 120%;
+    line-height: 1.2;
 }

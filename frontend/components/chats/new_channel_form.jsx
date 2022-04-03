@@ -1,6 +1,6 @@
 import React from "react";
-import 'regenerator-runtime/runtime'
-import { async } from "regenerator-runtime/runtime";
+// import 'regenerator-runtime/runtime'
+// import { async } from "regenerator-runtime/runtime";
 
 class ChannelForm extends React.Component {
     constructor(props) {
