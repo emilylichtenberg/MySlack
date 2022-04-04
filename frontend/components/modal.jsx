@@ -3,6 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewChannelFormContainer from './chats/new_channel_form_container';
 import EditChannelFormContainer from './chats/edit_channel_form_container';
+import NewDMFormContainer from './chats/new_dm_form_container'
 import DeleteMessageModal from './action_cable/delete_message_modal';
 import {withRouter} from 'react-router-dom';
 
@@ -13,8 +14,6 @@ class Modal extends React.Component {
   }
 
   render () {
-    // document.addEventListener('keypress', this.esca)
-    // debugger
     const {modal, closeModal, workspaceId, chatId, allUsers} = this.props
     if (!modal) {
       return null;
@@ -28,14 +27,23 @@ class Modal extends React.Component {
         // debugger
         component = <EditChannelFormContainer chatId={chatId}/>
         break;
+      case 'newDM':
+        component = <NewDMFormContainer workspaceId={workspaceId} />;
+        return (
+          <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+          </div>
+        )
       case modal:
         component = <DeleteMessageModal message={modal} users={allUsers} closeModal={closeModal}/>;
         return (
           <div className="modal-background" onClick={closeModal}>
-          <div className="modal-child_message" onClick={e => e.stopPropagation()}>
-              {component}
+            <div className="modal-child_message" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
           </div>
-      </div>
         )
       default:
         return null;

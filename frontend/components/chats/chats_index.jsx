@@ -73,7 +73,7 @@ class ChatIndex extends React.Component {
                         {this.state.DMActive ? <FontAwesomeIcon icon={faCaretDown}/> : <FontAwesomeIcon icon={faCaretRight}/>}
                         <span>Direct messages</span>
                     </h3>
-                    {/* <button onClick={this.openCreateNewMessage}>+</button> */}
+                    <button onClick={() => openModal('newDM')}>+</button>
                 </div>
                 <ul className={this.state.DMActive ? '' : 'hidden'}>
                     {
