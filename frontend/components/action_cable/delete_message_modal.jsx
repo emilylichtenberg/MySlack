@@ -9,7 +9,7 @@ class DeleteMessageModal extends React.Component {
   }
 
   handleDelete() {
-    debugger
+    // debugger
     const subscription = [];
     App.cable.subscriptions.subscriptions.forEach(sub => {
         let subIdentifier = JSON.parse(sub.identifier);

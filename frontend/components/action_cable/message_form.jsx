@@ -31,17 +31,39 @@ class MessageForm extends React.Component {
     }
 
     render() {
+        const {chat, currentUser} = this.props
+        let chatUsers = [];
+        chat?.users.map(user => {
+          if (user.username !== currentUser.username) {
+            chatUsers.push(user.username)
+          }
+        })
+        let chatUsersString = chatUsers.join(', ')
+        if (chatUsersString.length > 50) {
+            // debugger
+            chatUsersString = chatUsersString.slice(0,50).concat('...')
+          }
         // debugger
-        const {chat} = this.props
         return(
             chat ? 
             <div className="message-submit-container">
-                <form className="message-form">
-                    <input className="message-input" type="text" requried='true' value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
+                {
+                    chat.chatType === 'channel' ? 
+                    <form className="message-form">
+                        <input className="message-input" type="text" requried='true' value={this.state.body} placeholder={`Message #${chat.name}`} onChange={this.handleUpdate('body')}/>
+                        <button onClick={this.handleSubmit}>
+                            <FontAwesomeIcon icon={faCircleArrowRight} size='2x'/>
+                        </button>
+                    </form>
+                    :
+                    <form className="message-form">
+                    <input className="message-input" type="text" requried='true' value={this.state.body} placeholder={`Message ${chatUsersString}`} onChange={this.handleUpdate('body')}/>
                     <button onClick={this.handleSubmit}>
                         <FontAwesomeIcon icon={faCircleArrowRight} size='2x'/>
                     </button>
                 </form>
+
+                }
             </div>
             : ''
         )
