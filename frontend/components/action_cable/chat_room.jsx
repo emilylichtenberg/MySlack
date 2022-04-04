@@ -11,13 +11,6 @@ class ChatRoom extends React.Component {
     }
 
     componentDidMount() {
-        // creating a subscription to match the chat_channel.rb backend
-        // channel - subscription to this channel is created once.  will make this dynamic for specific channel?
-        // received - when new data is transmitted to stream, received function invoked and message added to state
-        // speak - sends data to backend. invokes backend speak method
-        // this.props.receiveMessages()
-
-        
         this.createSubscription()
     }
 
@@ -57,7 +50,7 @@ class ChatRoom extends React.Component {
 
     componentDidUpdate(prevProps) {
         this.bottom.current.scrollIntoView();
-
+        
         const subscriptionId = this.props.chatId;
         const subscription = [];
         App.cable.subscriptions.subscriptions.forEach((sub, i) => {

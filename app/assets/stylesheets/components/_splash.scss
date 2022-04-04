@@ -286,7 +286,7 @@
 
 .splash-footer-left {
     margin-left: 70px;
-    color: $light-beige;
+    color: white;
 }
 
 .splash-footer-right {
@@ -302,10 +302,17 @@
     height: 50px;
     margin: 2%;
     a {
-        color: $light-beige;
+        color: white;
     }
 }
 
+.email {
+    text-decoration: none;
+    color: white;
+    a {
+        text-decoration: none;
+    }
+}
 
 // SPLASH 3
 .splash-body-3 {
@@ -327,16 +334,17 @@
 }
 
 #s3-header {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     padding-bottom: 2%;
+    text-align: center;
     // color: $light-purple;
 }
 
 #s3-body {
     line-height: 1.2;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 20%;
+    padding-right: 20%;
     text-align: center;
     font-size: 1.2rem;
 }

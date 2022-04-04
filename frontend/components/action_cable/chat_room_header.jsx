@@ -42,6 +42,14 @@ class ChatRoomHeader extends React.Component {
                                 <p id="chat-icon">{chat.private ? <FontAwesomeIcon icon={faLock} /> : '#'}</p>
                                 <p id="chat-name">{chat.name}</p>
                                 <p id="chat-description">{chat.description}</p>
+                                <div id="chat-details"> 
+                                    <p id="see-all-users"><FontAwesomeIcon icon={faAngleDown} /></p>
+                                    <ul className="gm-full-users">
+                                        {
+                                            chat.users.map(user => <li key={user.id}><FontAwesomeIcon icon={faUser} /><span>{user.username === currentUser.username? `${user.username} (you)`: user.username}</span></li>)
+                                        }
+                                    </ul>
+                                </div>
                             </div>
                             : 
                             <div className="channel-content">
