@@ -5,6 +5,8 @@ class Api::UsersController < ApplicationController
             login!(@user)
             Subscription.create!(user_id: @user.id, workspace_id: 1)
             Subscription.create!(user_id: @user.id, workspace_id: 2)
+            Conversation.create!(user_id: @user.id, chat_id: 1)
+            Conversation.create!(user_id: @user.id, chat_id: 3)
             render 'api/users/show'
         else
             render json: @user.errors.full_messages, status: 422

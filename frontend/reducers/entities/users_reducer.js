@@ -21,6 +21,7 @@ const usersReducer = (state={}, action) => {
             return nextState
             // nextState[action.workspace.users] action.workspace.users;
         case RECEIVE_CHAT:
+            // debugger
             action.chat.users.forEach(user => nextState[user.id] = user);
             return nextState;
         default:

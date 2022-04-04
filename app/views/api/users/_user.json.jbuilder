@@ -14,5 +14,6 @@ json.workspaces do
 end
 
 json.chats do
-    json.array! user.chats, :id, :name, :description, :private, :admin_id, :workspace_id
+    json.array! user.chats
+    # json.array! user.chats, :id, :name, :description, :private, :admin_id, :workspace_id
 end

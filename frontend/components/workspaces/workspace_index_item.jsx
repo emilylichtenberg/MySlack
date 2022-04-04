@@ -15,11 +15,12 @@ class WorkspaceIndexItem extends React.Component {
 
 
     render () {
-        const {workspace, fetchWorkspace, fetchChat, currentWorkspace, currentWorkspaceId} = this.props
+        const {workspace, fetchWorkspace, fetchChat, currentWorkspace, currentWorkspaceId, chats} = this.props
         // debugger
         return (
           
-                currentWorkspace ? 
+                // currentWorkspace ? 
+                workspace ?
                 <Link  to={`/workspaces/${workspace.id}/chats/${workspace.chats[0].id}`} 
                     onClick={() => fetchWorkspace(workspace.id)}
                             // .then(workspace => fetchChat(currentWorkspace.chats[0]))} 

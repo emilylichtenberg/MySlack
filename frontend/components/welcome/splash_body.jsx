@@ -35,13 +35,21 @@ const SplashBody = (props) => {
             </div>
 
             <div className="splash-body-3">
-                <div className="splash-3-left">
-
+                <div className="splash-3">
+                    <p id="s3-header">Move faster by organizing your work life</p>
+                    <p id="s3-body">The key to productivity in mySlack is organized spaces called channels—a different one for everything you’re working on. With all the people, messages and files related to a topic in one place, you can move a whole lot faster.</p>
                 </div>
-                <div className="splash-3-right">
-                    <p id="s3r-header">Move faster by organizing your work life</p>
-                    <p id="s3r-body">The key to productivity in Slack is organized spaces called channels—a different one for everything you’re working on. With all the people, messages and files related to a topic in one place, you can move a whole lot faster.</p>
+                <div className="splash-3-divider"></div>
+                <div className="splash-3">
+                    <p id="s3-header">Focus your time, on your own terms</p>
+                    <p id="s3-body">Give yourself the flexibility to work when, where and how you work best. Take control of notifications, collaborate live or on your own time, and find answers in conversations from across your company.</p>
                 </div>
+                <div className="splash-3-divider"></div>
+                <div className="splash-3">
+                    <p id="s3-header">Simplify teamwork for everyone</p>
+                    <p id="s3-body">Give everyone you work with—inside and outside your company—a more productive way to stay in sync. Respond faster with emoji, keep conversations focused in channels, and simplify all your communication into one place.</p>
+                </div>
+                
             </div>
 
             

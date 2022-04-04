@@ -1,6 +1,7 @@
 class Api::ChatsController < ApplicationController
     def index
-        @chats = Chat.all
+        # @chats = Chat.all
+        @chats = current_user.chats
         render '/api/chats/index'
     end
 
@@ -21,6 +22,8 @@ class Api::ChatsController < ApplicationController
         end
 
         if @chat.save
+            # debugger
+            Conversation.create!(chat_id: @chat.id, user_id: @chat.admin_id)
             render '/api/chats/show'
         else
             render json: @chat.errors.full_messages, status: 401

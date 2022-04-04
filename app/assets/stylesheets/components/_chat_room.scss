@@ -102,6 +102,10 @@
     justify-content: space-between;
 }
 
+.message-main {
+    width: 50%;
+}
+
 .message-header {
     display: flex;
     align-items: center;
@@ -116,7 +120,7 @@
 }
 
 #message-username {
-    padding-right: 4%;
+    padding-right: 2%;
     font-weight: bold;
 }
 
@@ -211,7 +215,37 @@
     align-items: center;
     padding: 0 4.5% 0 2%;
     border-bottom: 1px solid $border-purple;
+}
 
+.gm-full-users {
+    position: absolute;
+    display: none;
+    z-index: 5;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 1%;
+    width: 250px;
+    // margin-top: 5%;
+    li {
+        margin: 5%;
+    }
+    span {
+        padding-left: 5%;
+    }
+}
+
+#see-all-users {
+    cursor: pointer;
+    color: lightgrey;
+}
+
+#chat-details:hover .channel-content {
+    background-color: rgb(229, 229, 229);
+}
+
+#chat-details:hover .gm-full-users {
+    display: block;
 }
 
 .channel-content {

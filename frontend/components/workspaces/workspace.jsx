@@ -32,11 +32,11 @@ class Workspace extends React.Component {
                 <div className="full-content-container">
                     <div className="sidenav-container">
                         <div className="workspace-container">
-                            <WorkspaceIndex workspaces={workspaces} fetchWorkspace={fetchWorkspace} fetchWorkspaces={fetchWorkspaces} fetchChat={fetchChat} currentWorkspace={currentWorkspace} currentWorkspaceId={currentWorkspaceId}/>
+                            <WorkspaceIndex chats={chats} workspaces={workspaces} fetchWorkspace={fetchWorkspace} fetchWorkspaces={fetchWorkspaces} fetchChat={fetchChat} currentWorkspace={currentWorkspace} currentWorkspaceId={currentWorkspaceId}/>
                         </div>
                         <div className="chat-container">
                             <ChatIndex currentWorkspace={currentWorkspace} fetchChat={fetchChat}
-                                openModal={openModal} closeModal={closeModal} currentChatId={currentChatId} chats={chats}/>
+                                openModal={openModal} closeModal={closeModal} currentChatId={currentChatId} chats={chats} currentUser={currentUser}/>
                         </div>
                     </div>
                     <ChatRoomContainer /> 
