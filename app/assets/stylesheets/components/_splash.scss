@@ -277,15 +277,16 @@
 
 /* FOOTER */
 .splash-footer {
-    background-color: $grey-purple;
+    background-color: $dark-purple;
     display: flex;
-    height: 80px;
+    height: 50px;
     align-items: center;
     justify-content: space-between;
 }
 
 .splash-footer-left {
     margin-left: 70px;
+    color: $light-beige;
 }
 
 .splash-footer-right {
@@ -295,13 +296,13 @@
 
 .splash-footer-right button {
     // color: $dark-purple;
-    color: black;
+    color: $light-beige;
     background-color: transparent;
     border: none;
     height: 50px;
     margin: 2%;
     a {
-        color: black;
+        color: $light-beige;
     }
 }
 
@@ -309,33 +310,39 @@
 // SPLASH 3
 .splash-body-3 {
     display: flex;
-    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // height: 300px;
     background-color: $light-beige;
-    // padding-top: 160px;
-    display: flex;
-    // align-items: ;
+
 }
 
-.splash-3-right {
-    width: 35%;
-    max-width: 500px;
-    margin-left: 55%;
+.splash-3 {
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
-    // justify-content: right;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
 }
 
-#s3r-header {
+#s3-header {
+    font-size: 40px;
     font-weight: bold;
-    font-size: 2rem;
-    // width: 120%;
-    padding-top: 15%;
-    padding-bottom: 5%;
-    transform: scaleY(1.2)
+    padding-bottom: 2%;
+    // color: $light-purple;
 }
 
-#s3r-body {
-    // width: 120%;
+#s3-body {
     line-height: 1.2;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.splash-3-divider {
+    border: 1px solid lightgrey;
+    // height: 1px;
+    width: 200px;
 }
