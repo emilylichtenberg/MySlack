@@ -81,13 +81,10 @@ class NewDMForm extends React.Component {
   renderUsers() {
     let showUsers;
     if (this.state.searchText === '') {
-      // debugger
       showUsers = this.props.allUsers.filter(user => user.id !== this.props.currentUser.id && !this.state.messageUsers.includes(user))
     } else {
-      // debugger
-      showUsers = this.props.allUsers.filter(user => (user.username.toLowerCase().includes(this.state.searchText) && user.id !== this.props.currentUser.id))
+      showUsers = this.props.allUsers.filter(user => (user.username.toLowerCase().includes(this.state.searchText) && user.id !== this.props.currentUser.id) && !this.state.messageUsers.includes(user))
     }
-    // debugger
     return (
       <div className="chat-users-container">
         <h2>Selected Users:</h2>
