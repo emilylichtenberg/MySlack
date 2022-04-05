@@ -31,7 +31,7 @@ class Modal extends React.Component {
         component = <NewDMFormContainer workspaceId={workspaceId} />;
         return (
           <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
+            <div className="modal-child_newDM" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
           </div>

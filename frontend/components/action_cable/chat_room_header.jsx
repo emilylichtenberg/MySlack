@@ -66,7 +66,7 @@ class ChatRoomHeader extends React.Component {
                         }
                     </div>
                     {
-                        chat.adminId === currentUser.id ?
+                        chat.adminId === currentUser.id && chat.chatType === 'channel' ?
                             <div className="edit-chat-options">
                                 <button id='edit-chat' onClick={() => openModal('editChannel')}>
                                     Edit

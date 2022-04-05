@@ -19,11 +19,17 @@ class Api::ChatsController < ApplicationController
         
         if @chat.chat_type != 'channel'
             @chat.name = SecureRandom::urlsafe_base64
+            @chat.description = SecureRandom::urlsafe_base64
         end
-
+        
         if @chat.save
-            # debugger
-            Conversation.create!(chat_id: @chat.id, user_id: @chat.admin_id)
+            if @chat.chat_type == 'channel'
+                Conversation.create!(chat_id: @chat.id, user_id: @chat.admin_id)
+            else
+                params["chat"]["users"].each do |user|
+                    Conversation.create!(chat_id: @chat.id, user_id: user[0].to_i)
+                end
+            end
             render '/api/chats/show'
         else
             render json: @chat.errors.full_messages, status: 401

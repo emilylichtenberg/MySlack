@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
   return ({
     currentUser: state.entities.users[state.session.id],
     allUsers: state.entities.workspaces[ownProps.workspaceId].users,
-    workspaceId: ownProps.workspaceId
+    workspaceId: ownProps.workspaceId,
+    allDMs: Object.values(state.entities.chats).filter(chat => chat.chatType !== 'channel')
   })
 }
 
