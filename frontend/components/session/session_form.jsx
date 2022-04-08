@@ -5,7 +5,7 @@ import logo from '../../../app/assets/images/SlackIcon.png'
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {username: '', password: ''};
+        this.state = {username: '', password: '', display_name: ''};
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state);
-        this.setState({username: '', password: ''})
+        this.setState({username: '', password: '', display_name: ''})
     }
 
     componentWillUnmount() {
@@ -41,6 +41,12 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input className="form-input" placeholder='Enter Username' type="text" value={this.state.username} onChange={this.handleChange('username')}/>
                 <br />
+                {
+                    formType === 'Sign Up' ? 
+                    <input className="form-input" placeholder='Enter Display Name' type="display_name" value={this.state.display_name} onChange={this.handleChange('display_name')}/>
+                    :
+                    ''
+                }
                 <input className="form-input" placeholder='Enter Password' type="password" value={this.state.password} onChange={this.handleChange('password')}/>
                 <br />
                 <ul className="form-errors">{sessionErrors}</ul>

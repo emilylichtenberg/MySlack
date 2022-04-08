@@ -6,6 +6,7 @@ import EditChannelFormContainer from './chats/edit_channel_form_container';
 import NewDMFormContainer from './chats/new_dm_form_container'
 import DeleteMessageModal from './action_cable/delete_message_modal';
 import {withRouter} from 'react-router-dom';
+import LogoutDD from './header/logout_modal';
 
 
 class Modal extends React.Component {
@@ -27,6 +28,15 @@ class Modal extends React.Component {
         // debugger
         component = <EditChannelFormContainer chatId={chatId}/>
         break;
+      case 'logoutDD':
+        component = <LogoutDD />
+        return (
+          <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child_logoutDD" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+          </div>
+        )
       case 'newDM':
         component = <NewDMFormContainer workspaceId={workspaceId} />;
         return (

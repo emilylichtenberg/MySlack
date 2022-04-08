@@ -8,7 +8,7 @@
 # # end
 
 
-json.extract! user, :id, :username
+json.extract! user, :id, :username, :display_name
 json.workspaces do
     json.array! user.workspaces, :id, :name
 end

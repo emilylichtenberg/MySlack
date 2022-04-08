@@ -44,3 +44,19 @@
         background-color: #f7f3ee;
     }
 }
+
+
+.modal-child_logoutDD {
+    position: absolute;
+    background-color: white;
+    top: 36px;
+    right: 10px;
+    height: 15vh;
+    // min-height: 300px;
+    width: 6vw;
+    min-width: 200px;
+    // transform: translate(-50%, -50%);
+    border-radius: 6px;
+    box-shadow: 3px 3px 20px black;
+    padding: 3%;
+  }
