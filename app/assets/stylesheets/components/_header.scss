@@ -51,12 +51,38 @@
     background-color: white;
     top: 36px;
     right: 10px;
-    height: 15vh;
+    height: 18vh;
     // min-height: 300px;
-    width: 6vw;
-    min-width: 200px;
+    width: 30vw;
+    min-width: 250px;
     // transform: translate(-50%, -50%);
     border-radius: 6px;
     box-shadow: 3px 3px 20px black;
-    padding: 3%;
+    // padding: 3%;
+  }
+
+  .logout-contact {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid lightgrey;
+      padding: 1rem;
+  } 
+
+  .logout-display{
+      font-weight: bold;
+  }
+  .logout-username {
+      color: lightgrey;
+      font-style: italic;
+  }
+  .logout-button-container {
+      &:hover {
+          background-color: rgb(18, 79, 146);;
+          color: white;
+      }
+      border-radius: 4px;
+  }
+  .logout-button {
+    padding: 1rem;
+    // padding-bottom: 2rem;
   }

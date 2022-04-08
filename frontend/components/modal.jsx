@@ -15,7 +15,7 @@ class Modal extends React.Component {
   }
 
   render () {
-    const {modal, closeModal, workspaceId, chatId, allUsers} = this.props
+    const {modal, closeModal, workspaceId, chatId, allUsers, currentUser, currentWorkspace} = this.props
     if (!modal) {
       return null;
     }
@@ -29,7 +29,8 @@ class Modal extends React.Component {
         component = <EditChannelFormContainer chatId={chatId}/>
         break;
       case 'logoutDD':
-        component = <LogoutDD />
+        debugger
+        component = <LogoutDD currentUser={currentUser} currentWorkspace={currentWorkspace} closeModal={closeModal}/>
         return (
           <div className="modal-background" onClick={closeModal}>
             <div className="modal-child_logoutDD" onClick={e => e.stopPropagation()}>
@@ -75,7 +76,9 @@ const mapStateToProps = (state,ownProps) => {
     modal: state.ui.modal,
     workspaceId: parseInt(location[2]),
     chatId: parseInt(location[4]),
-    allUsers: state.entities.users
+    allUsers: state.entities.users,
+    currentUser: state.entities.users[state.session.id],
+    currentWorkspace: state.entities.workspaces[ownProps.location.pathname.split('/')[2]]
   };
 };
 

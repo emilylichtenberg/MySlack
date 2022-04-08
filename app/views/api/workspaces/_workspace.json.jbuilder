@@ -4,7 +4,7 @@ json.extract! workspace, :id, :name, :admin_id, :img_path
 # end
 
 json.users do
-    json.array! workspace.users, :id, :username
+    json.array! workspace.users, :id, :username, :display_name
  end
  json.chats do 
      json.array! workspace.chats, :id, :chat_type, :name, :description, :private, :admin_id, :workspace_id
