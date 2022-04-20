@@ -129,7 +129,7 @@
 }
 
 #message-username {
-    padding-right: 2%;
+    padding-right: .3rem;
     font-weight: bold;
 }
 
@@ -243,15 +243,16 @@
     // span {
     //     padding-left: 5%;
     // }
-    #full-users-display {
-        font-weight: bold;
-        padding-left: 5%;
-    }
-    #full-users-username {
-        // font-weight: bold;
-        padding-left: 2%;
-        color: grey;
-    }
+}
+#full-users-display {
+    font-weight: bold;
+    padding-left: .5rem;
+}
+#full-users-username {
+    // font-weight: bold;
+    padding-left: 2%;
+    color: grey;
+    font-size: .8rem;
 }
 
 #see-all-users {

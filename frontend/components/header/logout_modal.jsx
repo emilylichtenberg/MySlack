@@ -15,7 +15,7 @@ class LogoutDD extends React.Component {
   }
 
   render () {
-    debugger
+    // debugger
     const {currentUser, currentWorkspace} = this.props;
     return (
       <div>

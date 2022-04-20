@@ -29,7 +29,7 @@ class Modal extends React.Component {
         component = <EditChannelFormContainer chatId={chatId}/>
         break;
       case 'logoutDD':
-        debugger
+        // debugger
         component = <LogoutDD currentUser={currentUser} currentWorkspace={currentWorkspace} closeModal={closeModal}/>
         return (
           <div className="modal-background" onClick={closeModal}>

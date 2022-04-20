@@ -16,7 +16,7 @@ class ChatRoomHeader extends React.Component {
         
         let chatUsers = [];
         chat?.users.map(user => {
-            debugger
+            // debugger
           if (user.displayName !== currentUser.displayName) {
             chatUsers.push(user.displayName)
           }

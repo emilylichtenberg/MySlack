@@ -97,7 +97,13 @@ class NewDMForm extends React.Component {
         <h2>Add More:</h2>
           <ul className="view-all-users">
             {
-              showUsers.map(user => <li key={user.id} onClick={() => this.addUser(user)}><FontAwesomeIcon icon={faUser} className="user-icon"/><span>{user.username}</span></li>)
+              showUsers.map(user => 
+              <li key={user.id} onClick={() => this.addUser(user)}>
+                <FontAwesomeIcon icon={faUser} className="user-icon"/>
+                {/* <span>{user.username}</span> */}
+                <span id="full-users-display">{user.username === currentUser.username? `${user.displayName} (you)`: user.displayName}</span>
+                <span id="full-users-username">{`@${user.username}`}</span>
+                </li>)
             }
           </ul>
       </div>
