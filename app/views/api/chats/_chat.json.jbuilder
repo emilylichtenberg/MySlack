@@ -3,5 +3,5 @@ json.messages do
     json.array! chat.messages, :id, :body, :sender_id
 end
 json.users do
-    json.array! chat.users, :id, :username
+    json.array! chat.users, :id, :username, :display_name
 end

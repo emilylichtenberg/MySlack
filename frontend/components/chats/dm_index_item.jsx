@@ -7,8 +7,9 @@ const DMIndexItem = props => {
     const icon =  <FontAwesomeIcon icon={faUser} /> 
     let chatUsers = [];
     props.chat.users.map(user => {
+      // debugger
       if (user.username !== props.currentUser.username) {
-        chatUsers.push(user.username)
+        chatUsers.push(user.displayName)
       }
     })
     // debugger

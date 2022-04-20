@@ -13,11 +13,12 @@ class ChatRoomHeader extends React.Component {
 
     render () {
         const {chat, currentUser, openModal, deleteChat, chats} = this.props
-
+        
         let chatUsers = [];
         chat?.users.map(user => {
-          if (user.username !== currentUser.username) {
-            chatUsers.push(user.username)
+            debugger
+          if (user.displayName !== currentUser.displayName) {
+            chatUsers.push(user.displayName)
           }
         })
 
