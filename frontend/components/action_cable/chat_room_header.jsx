@@ -47,7 +47,12 @@ class ChatRoomHeader extends React.Component {
                                     <p id="see-all-users"><FontAwesomeIcon icon={faAngleDown} /></p>
                                     <ul className="gm-full-users">
                                         {
-                                            chat.users.map(user => <li key={user.id}><FontAwesomeIcon icon={faUser} /><span>{user.username === currentUser.username? `${user.username} (you)`: user.username}</span></li>)
+                                            chat.users.map(user => 
+                                                <li key={user.id}>
+                                                    <FontAwesomeIcon icon={faUser} />
+                                                    <span id="full-users-display">{user.username === currentUser.username? `${user.displayName} (you)`: user.displayName}</span>
+                                                    <span id="full-users-username">{`@${user.username}`}</span>
+                                                </li>)
                                         }
                                     </ul>
                                 </div>
@@ -59,7 +64,12 @@ class ChatRoomHeader extends React.Component {
                                     <p id="see-all-users"><FontAwesomeIcon icon={faAngleDown} /></p>
                                     <ul className="gm-full-users">
                                         {
-                                            chat.users.map(user => <li key={user.id}><FontAwesomeIcon icon={faUser} /><span>{user.username === currentUser.username? `${user.username} (you)`: user.username}</span></li>)
+                                            chat.users.map(user => 
+                                                <li key={user.id}>
+                                                    <FontAwesomeIcon icon={faUser} />
+                                                    <span id="full-users-display">{user.username === currentUser.username? `${user.displayName} (you)`: user.displayName}</span>
+                                                    <span id="full-users-username">{`@${user.username}`}</span>
+                                                </li>)
                                         }
                                     </ul>
                                 </div>

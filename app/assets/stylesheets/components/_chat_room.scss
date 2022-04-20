@@ -234,14 +234,23 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
     padding: 1%;
-    width: 250px;
+    width: 400px;
     overflow-y: auto;
     // margin-top: 5%;
     li {
         margin: 5%;
     }
-    span {
+    // span {
+    //     padding-left: 5%;
+    // }
+    #full-users-display {
+        font-weight: bold;
         padding-left: 5%;
+    }
+    #full-users-username {
+        // font-weight: bold;
+        padding-left: 2%;
+        color: grey;
     }
 }
 
