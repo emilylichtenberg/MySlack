@@ -83,7 +83,10 @@ class NewDMForm extends React.Component {
     if (this.state.searchText === '') {
       showUsers = this.props.allUsers.filter(user => user.id !== this.props.currentUser.id && !this.state.messageUsers.includes(user))
     } else {
-      showUsers = this.props.allUsers.filter(user => (user.username.toLowerCase().includes(this.state.searchText) && user.id !== this.props.currentUser.id) && !this.state.messageUsers.includes(user))
+      showUsers = this.props.allUsers.filter(user => 
+        (user.username.toLowerCase().includes(this.state.searchText) || user.displayName.toLowerCase().includes(this.state.searchText))
+        && user.id !== this.props.currentUser.id 
+        && !this.state.messageUsers.includes(user))
     }
     return (
       <div className="chat-users-container">
@@ -91,7 +94,7 @@ class NewDMForm extends React.Component {
           <ul className="selected-users">
             {
               this.state.messageUsers.filter(user => user.id !== this.props.currentUser.id).map(user => 
-              <li key={user.id} onClick={() => this.addUser(user)}>{`${user.username} `}<span>x</span></li>)
+              <li key={user.id} onClick={() => this.addUser(user)}>{`${user.displayName} `}<span>x</span></li>)
             }
           </ul>
         <h2>Add More:</h2>
