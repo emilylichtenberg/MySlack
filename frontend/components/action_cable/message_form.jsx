@@ -35,7 +35,7 @@ class MessageForm extends React.Component {
         let chatUsers = [];
         chat?.users.map(user => {
           if (user.username !== currentUser.username) {
-            chatUsers.push(user.username)
+            chatUsers.push(user.displayName)
           }
         })
         let chatUsersString = chatUsers.join(', ')
