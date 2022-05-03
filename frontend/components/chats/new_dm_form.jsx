@@ -50,7 +50,7 @@ class NewDMForm extends React.Component {
     })
     
     if (existingChat && existingChat.workspaceId === this.props.workspaceId) {
-      debugger
+      // debugger
       this.props.history.push({pathname: `/workspaces/${this.props.workspaceId}/chats/${existingChat.id}`});
       this.props.closeModal()
     } else {
